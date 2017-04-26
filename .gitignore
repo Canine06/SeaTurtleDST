@@ -8,5 +8,3 @@ config.codekit3
 ### CodeKit Patch ###
 */codekit-config.json
 .codekit-cache
-
-config.codekit3
