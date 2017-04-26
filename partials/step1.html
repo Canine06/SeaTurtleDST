@@ -10,12 +10,25 @@
     <h1 id="Step1-Header"></h1>
     <p id="Step1-Instructions"></p>
 
-    <div id="timeofyearcontainer" class="timeofyearcontainer">
-        <select id="timeofyear">
-            <option value="" selected style="display:none;">Select time period</option>
-            <option value="Seasons">Seasons</option>
-            <option value="Months">Months</option>
-        </select>
-    </div>
-    <div id="selectocsblockscontainer" class="selectocsblockscontainer"><button id="selectocsblocks" disabled="disabled" class="button disabled">Select OCS Blocks</button></div>
+    <div class="data-container">
+      <div class="grid grid-bottom">
+        <div class="gcol">
+          <div id="timeofyearcontainer">
+            <label for="timeofyear">Organize Date By</label>
+              <select id="timeofyear">
+                  <option value="" selected style="display:none;">Select time period</option>
+                  <option value="Seasons">Seasons</option>
+                  <option value="Months">Months</option>
+              </select>
+          </div>
+        </div>
+        <div class="gcol">
+          <div id="selectocsblockscontainer">
+            <button id="selectocsblocks" disabled class="button disabled small">Select OCS Blocks</button>
+          </div>
+        </div>
+      </div> <!-- Grid -->
+    </div><!-- Data Container -->
+
+
 </div>
