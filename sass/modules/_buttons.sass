@@ -1,0 +1,38 @@
+.button
+  display: inline-block
+  vertical-align: middle
+  margin: 0 0 1rem 0
+  padding: 0.85em 1em
+  -webkit-appearance: none
+  border: 1px solid transparent
+  border-radius: 3px
+  transition: background-color 0.25s ease-out, color 0.25s ease-out
+  font-size: 0.9rem
+  line-height: 1
+  text-align: center
+  cursor: pointer
+  background-color: #1779ba
+  color: #fefefe
+
+  &:hover, &:focus
+    background-color: #14679e
+    color: #fefefe
+
+  &.tiny
+    font-size: 0.6rem
+  &.small
+    font-size: 0.75rem
+  &.large
+    font-size: 1.25rem
+  &.expanded
+    display: block
+    width: 100%
+    margin-right: 0
+    margin-left: 0
+  &.disabled, &[disabled]
+  opacity: 0.25
+  cursor: not-allowed
+
+  &.disabled, &.disabled:hover, &.disabled:focus, &[disabled], &[disabled]:hover, &[disabled]:focus
+    background-color: #1779ba
+    color: #fefefe
