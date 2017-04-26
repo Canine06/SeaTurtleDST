@@ -8,10 +8,12 @@
   li
     float: left
     margin-bottom: 0 !important
+    width: 25%
+    background: white
 
     span
       color: $deep-blue
-      padding: 10px 50px 10px 60px
+      padding: 10px 16px 10px 40px
       background: white
       position: relative
       display: block
@@ -53,5 +55,8 @@
         &:after
           border-left: 30px solid $light-blue
 
-    &:first-child span
-      padding-left: 50px
+    // &:first-child span
+    //   padding-left: 50px
+    &:last-child span
+      &:after, &:before
+        display: none
