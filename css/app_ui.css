@@ -516,9 +516,6 @@ ul ul, ol ul, ul ol, ol ol {
   margin-left: 1.25rem;
   margin-bottom: 0; }
 
-#app-container {
-  /*overflow: hidden;*/ }
-
 #page {
   overflow: hidden;
   width: 100%;
@@ -547,7 +544,7 @@ ul ul, ol ul, ul ol, ol ol {
   @media only screen and (min-device-width: 768px) {
     .app-content {
       float: right; } }
-  /*Change container to 3rem - KCriss*/
+
 .container {
   padding: 0 3rem; }
 
@@ -587,6 +584,7 @@ ul ul, ol ul, ul ol, ol ol {
     float: right;
     text-align: center;
     cursor: pointer;
+    -webkit-transition: background-color 0.2s ease-in-out;
     transition: background-color 0.2s ease-in-out; }
     @media only screen and (min-device-width: 768px) {
       .header #button-pane {
@@ -620,6 +618,7 @@ ul ul, ol ul, ul ol, ol ol {
   cursor: pointer;
   line-height: 85px;
   white-space: nowrap;
+  -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out; }
   #new-report-button:hover {
     background-color: #f0f0f0; }

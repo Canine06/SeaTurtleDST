@@ -1,0 +1,137 @@
+body
+  margin: 0
+  padding: 0
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td
+  margin: 0
+  padding: 0
+
+h1,h2,h3,h4,h5,h6
+  font-style: normal
+  font-weight: normal
+  text-rendering: optimizeLegibility
+p
+  margin-bottom: 1rem
+  font-size: inherit
+  line-height: 1.6
+  text-rendering: optimizeLegibility
+
+h1
+  font-size: 1.5rem
+  line-height: 1.4
+  margin-top: 0
+  margin-bottom: 0.5rem
+
+h2
+  font-size: 1.25rem
+  line-height: 1.4
+  margin-top: 0
+  margin-bottom: 0.5rem
+
+h3
+  font-size: 1.1875rem
+  line-height: 1.4
+  margin-top: 0
+  margin-bottom: 0.5rem
+
+h4
+  font-size: 1.125rem
+  line-height: 1.4
+  margin-top: 0
+  margin-bottom: 0.5rem
+
+h5
+  font-size: 1.0625rem
+  line-height: 1.4
+  margin-top: 0
+  margin-bottom: 0.5rem
+
+h6
+  font-size: 1rem
+  line-height: 1.4
+  margin-top: 0
+  margin-bottom: 0.5rem
+
+@media print, screen and (min-width: 40em)
+  h1
+    font-size: 3rem
+  h2
+    font-size: 2.5rem
+  h3
+    font-size: 1.9375rem
+  h4
+    font-size: 1.5625rem
+  h5
+    font-size: 1.25rem
+  h6
+    font-size: 1rem
+
+ul,
+ol,
+dl
+  margin-bottom: 1rem
+  list-style-position: outside
+  line-height: 1.6
+
+li
+  font-size: inherit
+
+ul
+  margin-left: 1.25rem
+  list-style-type: disc
+
+ol
+  margin-left: 1.25rem
+
+ul ul, ol ul, ul ol, ol ol
+  margin-left: 1.25rem
+  margin-bottom: 0
+
+#page
+  overflow: hidden
+  width: 100%
+  margin-top: 85px
+  position: relative
+  z-index: 98
+  @media only screen and (min-device-width: 768px)
+    margin-top: 44px
+
+.map-content, .app-content
+  float: none
+  height: 50vh
+  width: 100%
+  //padding: 0 20px
+
+  @media only screen and (min-device-width: 768px)
+    width: 50%
+    height: 95vh
+
+.map-content
+  @media only screen and (min-device-width:768px)
+    float: left
+
+.app-content
+  background-color: $pale-blue
+
+  @media only screen and (min-device-width:768px)
+    float: right
+
+.container
+  padding: 0 3rem
