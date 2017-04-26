@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="myApp" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sea Turtle DST</title>
+    <meta name="description" content="SEO description of this app">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="x-dns-prefetch-control" content="off">
+    <link href="css/app_style.css?2113d5cfb06ad3aa" rel="stylesheet" />
+    <link href="css/app_ui.css?6e678796c2e3cc99" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="stylesheet" href="//coast.noaa.gov/assets/fonts/fonts.css">
+    <!-- Application CSS file -->
+    <link rel="stylesheet" href="css/stdst.min.css?657d9d0d6b599cfa">
+
+    <link href="css/app_style.css?2113d5cfb06ad3aa" rel="stylesheet" />
+    <link href="js/leaflet/leaflet.css?772083c71fa064e6" rel="stylesheet" />
+    <script src="js/leaflet/leaflet-src.js?b1aadf426928ef49"></script>
+    <script src="https://unpkg.com/leaflet-draw@0.4.7/dist/leaflet.draw-src.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@0.4.7/dist/leaflet.draw-src.css">
+    <script src="js/esri-leaflet-v2.0.8/dist/esri-leaflet.js?54ae0048817f644a"></script>
+    <script src="js/esri-leaflet-renderers-master/src/EsriLeafletRenderers.js?cc245b557258c26a"></script>
+    <script src="js/esri-leaflet-legend-master/dist/esri-leaflet-legend-compat-src.js?45e4e66a82abd2ca"></script>
+    <!-- Google Analytics -->
+    <script src="//coast.noaa.gov/js/federated-angularlitics.js?angular=true"></script>
+</head>
+<body ng-controller="AppController">
+    <div id="app-container">
+        <header class="header">
+            <div class="header-left float-left">
+                <h1>Sea Turtle Decision Support Tool</h1>
+            </div>
+            <div class="header-right float-right">
+                <a id="button-pane" tabindex="0" title="Click for New Report" ng-keypress="newReportKeyPress($event)" ng-click="changeView('step1')"><img src="img/icon-file-white.png?a968cfbd819a9456" alt="">&nbsp; New Report</a>
+            </div>
+        </header>
+        <div id="page">
+            <div id="left-pane" class="map-content">
+                <div class="map-controls">
+                    <div class="nv-control-btn-legend" href="" ng-click="testLegend()" ng-keypress="testLegendKeyPress($event)" tabindex="0" title="Legend">
+                        <span>Legend</span>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-view id="right-pane" class="app-content"></div>
+
+
+        </div>
+        <!-- DO NOT INCLUDE SCRIPTS HERE, USE GRUNT. README! -->
+        <script src="js/stdst.js?a464632979403045"></script>
+        <script src="js/app_jquery.js?ebf8655c422a0568"></script>
+        <script src="js/app_gis.js?2f104bdf7a7aba24"></script>
+        <!-- HTML5 Polyfil to help screen readers with HTML5 elements https://github.com/yatil/accessifyhtml5.js -->
+        <script>AccessifyHTML5();</script>
+        <script src="js/angulartics.js?c2597b5f8bd7b740"></script>
+        <script src="js/angulartics-google-analytics.js?ba5aa92affb327fa"></script>
+</body>
+</html>

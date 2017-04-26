@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+.container {
+	position: relative;
+    float:left;
+    text-align:center;
+}
+.container1{
+    z-index:4;
+}
+.container2{
+    z-index:3;
+}
+.container3{
+    z-index:2;
+}
+.container4{
+    z-index:1;
+}
+svg {
+	position: absolute;
+	z-index: -1;
+}
+path {
+  stroke: #74CDF7;
+  stroke-width:2px;
+  /*stroke-dasharray: 2,2;*/
+  stroke-linejoin: round;
+}
+#content {
+	position: relative;
+	word-break: break-all;
+  width: 110px;
+  padding: 10px;
+  box-sizing: border-box;
+  -moz-text-overflow: ellipsis;
+}
+.span_not_selected{
+    margin-left:35px;
+    color:#74CDF7;
+}
+.span_selected{
+    margin-left:0px;
+    color:whitesmoke;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <div class="container container1">
+            <svg id="bg" height="100%" width="150" viewBox="0 0 150 100" preserveAspectRatio="none" shape-rendering="geometricPrecision">
+                <path d="M0,0 h110 l40,50 l-40,50 h-110z" fill="#74CDF7" />
+            </svg>
+            <div id="content"><span class="span_selected">Analyze</span></div>
+        </div>
+        <div class="container container2">
+            <svg id="bg" height="100%" width="150" viewBox="0 0 150 100" preserveAspectRatio="none" shape-rendering="geometricPrecision">
+                <path d="M0,0 h110 l40,50 l-40,50 h-110z" fill="white" />
+            </svg>
+            <div id="content"><span class="span_not_selected">Define</span></div>
+        </div>
+        <div class="container container3">
+            <svg id="bg" height="100%" width="150" viewBox="0 0 150 100" preserveAspectRatio="none" shape-rendering="geometricPrecision">
+                <path d="M0,0 h110 l40,50 l-40,50 h-110z" fill="white" />
+            </svg>
+            <div id="content"><span class="span_not_selected">Mitigate</span></div>
+        </div>
+        <div class="container container4">
+            <svg id="bg" height="100%" width="150" viewBox="0 0 150 100" preserveAspectRatio="none" shape-rendering="geometricPrecision">
+                <path d="M0,0 h110 l40,50 l-40,50 h-110z" fill="white" />
+            </svg>
+            <div id="content"><span class="span_not_selected">Report</span></div>
+        </div>
+    </div>
+
+</body>
+</html>

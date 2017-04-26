@@ -1,0 +1,16 @@
+[
+    "js/lib/jquery.min.js",
+    "js/lib/accessifyhtml5.min.js",
+    "js/lib/underscore-min.js",
+    "js/lib/angular.min.js",
+    "js/lib/angular-route.min.js",
+    "js/app/services.js",
+    "js/app/controllers.js",
+    "js/app/filters.js",
+    "js/app/directives.js",
+    "js/app/app.js",
+    "js/app_gis.js",
+    "js/app_jquery.js",
+    "js/angulartics.js",
+    "js/angulartics-google-analytics.js"
+]

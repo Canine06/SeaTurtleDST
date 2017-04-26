@@ -1,0 +1,40 @@
+﻿{
+  "Header": "The Sea Turtle Decision Support Tool (DST)  integrates multiple data sources within a simple and standardized user interface.  The DST enables users to qualitatively analyze project specific sea turtle entrainment risk associated with Trailing Suction Hopper Dredges.",
+  "InstructionsHeader" :  "How to get started",
+  "Instructions": [
+
+    "Pan and Zoom to your area of interest using the interactive map on the left side of the screen.",
+    "Once the area of interest is defined, create a new analysis by clicking the button below.",
+    "After creating a new analysis the user will be guided through a 4 step process to “ANALYZE” relevant data, “DEFINE” absolute risk thresholds, “MITIGATE” risk, and generate a final “REPORT.”"
+  ],
+  "Footer": "The results of the analysis will be available for export as both a PDF and related data.",
+  "Step1Header": "Step 1. Analysis",
+  "Step1Instructions":  "Select a time period over which the analyses will be summarized. Select an area of interest (one or more consecutive OCS blocks)",
+  "BaseMap": "Oceans",
+  "MapLayers": [
+    {
+      "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/OCSBlocks/MapServer",
+      "label": "OCSBlocks"
+    },
+    {
+      "url": "http://23.23.179.177/arcgis/rest/services/PlanningandAdministration/MapServer",
+      "label": "Sand Resource Areas",
+      "layers": "7"
+    }
+  ],
+  "LinksHeader": "Links",
+  "Links": [
+    {
+      "url": "http://arcg.is/298s5BO",
+      "label": "Sea Turtle DST Story Map"
+    },
+    {
+      "url": "https://marinecadastre.gov/",
+      "label": "MarineCadastre.gov"
+    },
+    {
+      "url": "http://www.google.com",
+      "label": "Marine Minerals Information System"
+    }
+  ]
+}

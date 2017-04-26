@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sea Turtle DST Unit Tests</title>
+    <!--<link href="css/less/header.less" rel="stylesheet/less" type="text/css" />
+    <link href="css/less/slider.less" rel="stylesheet/less" type="text/css" />
+    <link href="css/less/map.less" rel="stylesheet/less" type="text/css" />
+    <script src="js/less.js"></script>-->
+    <link href="js/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="js/leaflet/leaflet-src.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@0.4.7/dist/leaflet.draw-src.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@0.4.7/dist/leaflet.draw-src.css">
+    <!--script src="https://unpkg.com/esri-leaflet@2.0.8"></script-->
+    <script src="js/esri-leaflet-v2.0.8/dist/esri-leaflet.js"></script>
+    <!-- Load Esri Leaflet Renderers -->
+    <script src="js/esri-leaflet-renderers-master/src/EsriLeafletRenderers.js"></script>
+    <!--script src="//unpkg.com/esri-leaflet-renderers@2.0.4/dist/esri-leaflet-renderers-debug.js"></script-->
+    <script src="js/esri-leaflet-legend-master/dist/esri-leaflet-legend-compat-src.js"></script>
+    <script src="js/app_gis.js"></script>
+    <link href="css/qunit-2.3.0.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="left-pane" style="display:none"></div>
+    <div id="right-pane"></div>
+    <div id="step-1-container"></div>
+    <p id="ContentHeader" style="display:none;"></p>
+    <ul id="ContentInstructions" style="display:none;"></ul>
+    <p id="ContentFooter" style="display:none;"></p>
+    <select id="timeofyear" style="display:none">
+        <option selected value="Monthly">Monthly</option>
+    </select>
+    <button id="selectocsblocks" style="display:none"></button>
+    <div style="display:none;"><span id="Step1-Header"></span><br /><span id="Step1-Instructions"></span></div>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="js/qunit-2.3.0.js"></script>
+    <script src="js/tests.js"></script>
+    <script src="js/jquery-3.2.0.js"></script>
+    <script src="js/app_jquery.js"></script>
+</body>
+</html>
