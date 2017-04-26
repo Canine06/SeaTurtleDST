@@ -3,9 +3,10 @@ node_modules/
 
 ### CodeKit ###
 # General CodeKit files to ignore
-config.codekit
-/min
+config.codekit3
 
 ### CodeKit Patch ###
 */codekit-config.json
 .codekit-cache
+
+config.codekit3
