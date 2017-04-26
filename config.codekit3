@@ -12,37 +12,37 @@
 	"\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/.gitignore",
+		"oAP": "\/.gitignore",
 		"oF": 0
 		},
 	"\/.vs\/config\/applicationhost.config": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/.vs\/config\/applicationhost.config",
+		"oAP": "\/.vs\/config\/applicationhost.config",
 		"oF": 0
 		},
 	"\/.vs\/SeaTurtleDST_V2\/v14\/.suo": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/.vs\/SeaTurtleDST_V2\/v14\/.suo",
+		"oAP": "\/.vs\/SeaTurtleDST_V2\/v14\/.suo",
 		"oF": 0
 		},
 	"\/App_Data\/PublishProfiles\/STDST_V2.pubxml": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/App_Data\/PublishProfiles\/STDST_V2.pubxml",
+		"oAP": "\/App_Data\/PublishProfiles\/STDST_V2.pubxml",
 		"oF": 0
 		},
 	"\/breadcrumb_menu.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/breadcrumb_menu.html",
+		"oAP": "\/breadcrumb_menu.html",
 		"oF": 0
 		},
 	"\/config\/config.json": {
 		"ft": 524288,
 		"oA": 0,
-		"oAP": "\/build\/config\/config.json",
+		"oAP": "\/config\/config.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -53,7 +53,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/css\/app_style.css",
+		"oAP": "\/css\/app_style.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -63,7 +63,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/css\/app_ui.css",
+		"oAP": "\/css\/app_ui.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -73,7 +73,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/css\/esri-leaflet-geocoder.css",
+		"oAP": "\/css\/esri-leaflet-geocoder.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -83,7 +83,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/css\/leaflet.css",
+		"oAP": "\/css\/leaflet.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -93,7 +93,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/css\/leaflet.pm.css",
+		"oAP": "\/css\/leaflet.pm.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -106,7 +106,7 @@
 		"iI": 0,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/css\/less\/colors.css",
+		"oAP": "\/css\/less\/colors.css",
 		"oF": 0,
 		"oS": 0,
 		"rU": 0,
@@ -123,7 +123,7 @@
 		"iI": 0,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/css\/less\/fonts.css",
+		"oAP": "\/css\/less\/fonts.css",
 		"oF": 0,
 		"oS": 0,
 		"rU": 0,
@@ -140,7 +140,7 @@
 		"iI": 0,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/css\/less\/normalize.css",
+		"oAP": "\/css\/less\/normalize.css",
 		"oF": 0,
 		"oS": 0,
 		"rU": 0,
@@ -157,7 +157,7 @@
 		"iI": 0,
 		"ma": 1,
 		"oA": 1,
-		"oAP": "\/build\/css\/less\/print.css",
+		"oAP": "\/css\/less\/print.css",
 		"oF": 0,
 		"oS": 0,
 		"rU": 0,
@@ -174,7 +174,7 @@
 		"iI": 0,
 		"ma": 1,
 		"oA": 0,
-		"oAP": "\/build\/css\/less\/stdst.css",
+		"oAP": "\/css\/less\/stdst.css",
 		"oF": 0,
 		"oS": 0,
 		"rU": 0,
@@ -188,7 +188,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/css\/ort.min.css",
+		"oAP": "\/css\/ort.min.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -198,7 +198,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/css\/qunit-2.3.0.css",
+		"oAP": "\/css\/qunit-2.3.0.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -208,20 +208,20 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/css\/stdst.min.css",
+		"oAP": "\/css\/stdst.min.css",
 		"oF": 0,
 		"oS": 0
 		},
 	"\/docs\/index.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/docs\/index.html",
+		"oAP": "\/docs\/index.html",
 		"oF": 0
 		},
 	"\/docs\/project.json": {
 		"ft": 524288,
 		"oA": 0,
-		"oAP": "\/build\/docs\/project.json",
+		"oAP": "\/docs\/project.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -229,62 +229,62 @@
 	"\/docs\/README": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/docs\/README",
+		"oAP": "\/docs\/README",
 		"oF": 0
 		},
 	"\/fonts\/opensans-bold-webfont.woff": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/fonts\/opensans-bold-webfont.woff",
+		"oAP": "\/fonts\/opensans-bold-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/opensans-bold-webfont.woff2": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/fonts\/opensans-bold-webfont.woff2",
+		"oAP": "\/fonts\/opensans-bold-webfont.woff2",
 		"oF": 0
 		},
 	"\/fonts\/opensans-extrabold-webfont.woff": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/fonts\/opensans-extrabold-webfont.woff",
+		"oAP": "\/fonts\/opensans-extrabold-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/opensans-extrabold-webfont.woff2": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/fonts\/opensans-extrabold-webfont.woff2",
+		"oAP": "\/fonts\/opensans-extrabold-webfont.woff2",
 		"oF": 0
 		},
 	"\/fonts\/opensans-light-webfont.woff": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/fonts\/opensans-light-webfont.woff",
+		"oAP": "\/fonts\/opensans-light-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/opensans-light-webfont.woff2": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/fonts\/opensans-light-webfont.woff2",
+		"oAP": "\/fonts\/opensans-light-webfont.woff2",
 		"oF": 0
 		},
 	"\/fonts\/opensans-regular-webfont.woff": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/fonts\/opensans-regular-webfont.woff",
+		"oAP": "\/fonts\/opensans-regular-webfont.woff",
 		"oF": 0
 		},
 	"\/fonts\/opensans-regular-webfont.woff2": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/fonts\/opensans-regular-webfont.woff2",
+		"oAP": "\/fonts\/opensans-regular-webfont.woff2",
 		"oF": 0
 		},
 	"\/Gruntfile.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/Gruntfile.js",
+		"oAP": "\/Gruntfile.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -294,7 +294,7 @@
 		"iS": 899,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/chevron-right.png",
+		"oAP": "\/img\/chevron-right.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -304,7 +304,7 @@
 		"iS": 468,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/icon-close.png",
+		"oAP": "\/img\/icon-close.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -314,7 +314,7 @@
 		"iS": 512,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/icon-export.png",
+		"oAP": "\/img\/icon-export.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -324,7 +324,7 @@
 		"iS": 223,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/icon-file-white.png",
+		"oAP": "\/img\/icon-file-white.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -334,7 +334,7 @@
 		"iS": 301,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/icon-file.png",
+		"oAP": "\/img\/icon-file.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -344,7 +344,7 @@
 		"iS": 688,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/icon-preview.png",
+		"oAP": "\/img\/icon-preview.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -354,7 +354,7 @@
 		"iS": 977,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/Path 1.png",
+		"oAP": "\/img\/Path 1.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -364,7 +364,7 @@
 		"iS": 666,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/Path 2.png",
+		"oAP": "\/img\/Path 2.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -374,7 +374,7 @@
 		"iS": 347,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/Rectangle 39.png",
+		"oAP": "\/img\/Rectangle 39.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -384,7 +384,7 @@
 		"iS": 347,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/img\/Rectangle 8.png",
+		"oAP": "\/img\/Rectangle 8.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -392,14 +392,14 @@
 	"\/index.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/index.html",
+		"oAP": "\/index.html",
 		"oF": 0
 		},
 	"\/js\/angulartics-google-analytics.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/angulartics-google-analytics.js",
+		"oAP": "\/js\/angulartics-google-analytics.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -408,7 +408,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/angulartics.js",
+		"oAP": "\/js\/angulartics.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -417,7 +417,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/app\/app.js",
+		"oAP": "\/js\/app\/app.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -426,7 +426,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/app\/controllers.js",
+		"oAP": "\/js\/app\/controllers.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -435,7 +435,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/app\/directives.js",
+		"oAP": "\/js\/app\/directives.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -444,7 +444,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/app\/filters.js",
+		"oAP": "\/js\/app\/filters.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -453,7 +453,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/app\/services.js",
+		"oAP": "\/js\/app\/services.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -462,7 +462,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/app_gis.js",
+		"oAP": "\/js\/app_gis.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -471,7 +471,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/app_jquery.js",
+		"oAP": "\/js\/app_jquery.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -479,26 +479,26 @@
 	"\/js\/esri-leaflet-legend-master\/.editorconfig": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/.editorconfig",
+		"oAP": "\/js\/esri-leaflet-legend-master\/.editorconfig",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/.gitignore",
+		"oAP": "\/js\/esri-leaflet-legend-master\/.gitignore",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/.jshintrc": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/.jshintrc",
+		"oAP": "\/js\/esri-leaflet-legend-master\/.jshintrc",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat-src.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat-src.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat-src.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -506,14 +506,14 @@
 	"\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat-src.js.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat-src.js.map",
+		"oAP": "\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat-src.js.map",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -521,14 +521,14 @@
 	"\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat.js.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat.js.map",
+		"oAP": "\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-compat.js.map",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-src.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-src.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-src.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -536,14 +536,14 @@
 	"\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-src.js.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-src.js.map",
+		"oAP": "\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend-src.js.map",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -551,7 +551,7 @@
 	"\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend.js.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend.js.map",
+		"oAP": "\/js\/esri-leaflet-legend-master\/dist\/esri-leaflet-legend.js.map",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/example\/css\/style.css": {
@@ -560,27 +560,27 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/example\/css\/style.css",
+		"oAP": "\/js\/esri-leaflet-legend-master\/example\/css\/style.css",
 		"oF": 0,
 		"oS": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/example\/featureserver.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/example\/featureserver.html",
+		"oAP": "\/js\/esri-leaflet-legend-master\/example\/featureserver.html",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/example\/index.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/example\/index.html",
+		"oAP": "\/js\/esri-leaflet-legend-master\/example\/index.html",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-legend-master\/example\/js\/featureserver.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/example\/js\/featureserver.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/example\/js\/featureserver.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -589,7 +589,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/example\/js\/mapserver.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/example\/js\/mapserver.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -598,7 +598,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/Gruntfile.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/Gruntfile.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -607,7 +607,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/karma.conf.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/karma.conf.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -615,7 +615,7 @@
 	"\/js\/esri-leaflet-legend-master\/package.json": {
 		"ft": 524288,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/package.json",
+		"oAP": "\/js\/esri-leaflet-legend-master\/package.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -629,7 +629,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/README.html",
+		"oAP": "\/js\/esri-leaflet-legend-master\/README.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -642,7 +642,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/spec\/Layers\/DynamicMapLayerSpec.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/spec\/Layers\/DynamicMapLayerSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -651,7 +651,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/spec\/Layers\/FeatureLayer\/FeatureLayerSpec.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/spec\/Layers\/FeatureLayer\/FeatureLayerSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -660,7 +660,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/spec\/Tasks\/LegendSpec.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/spec\/Tasks\/LegendSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -669,7 +669,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Controls\/Legend.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Controls\/Legend.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -678,7 +678,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/EsriLeaflet.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/EsriLeaflet.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -687,7 +687,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Layers\/DynamicMapLayer.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Layers\/DynamicMapLayer.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -696,7 +696,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Layers\/FeatureLayer\/FeatureLayer.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Layers\/FeatureLayer\/FeatureLayer.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -705,7 +705,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Services\/FeatureLayer.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Services\/FeatureLayer.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -714,7 +714,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Services\/MapService.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Services\/MapService.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -723,7 +723,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Tasks\/Legend.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Tasks\/Legend.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -732,7 +732,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Tasks\/Legend\/SymbolLegend.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Tasks\/Legend\/SymbolLegend.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -741,7 +741,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Tasks\/Legend\/SymbolRenderer.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Tasks\/Legend\/SymbolRenderer.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -750,7 +750,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-legend-master\/src\/Util.js",
+		"oAP": "\/js\/esri-leaflet-legend-master\/src\/Util.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -758,19 +758,19 @@
 	"\/js\/esri-leaflet-renderers-master\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/.gitignore",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/.gitignore",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/.npmignore": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/.npmignore",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/.npmignore",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/.travis.yml": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/.travis.yml",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/.travis.yml",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/CHANGELOG.md": {
@@ -782,7 +782,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/CHANGELOG.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/CHANGELOG.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -800,7 +800,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/CONTRIBUTING.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/CONTRIBUTING.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -812,14 +812,14 @@
 	"\/js\/esri-leaflet-renderers-master\/debug\/sample.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/debug\/sample.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/debug\/sample.html",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/karma.conf.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/karma.conf.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/karma.conf.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -827,7 +827,7 @@
 	"\/js\/esri-leaflet-renderers-master\/package.json": {
 		"ft": 524288,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/package.json",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/package.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -836,7 +836,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/profiles\/base.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/profiles\/base.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -845,7 +845,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/profiles\/debug.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/profiles\/debug.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -854,7 +854,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/profiles\/production.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/profiles\/production.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -868,7 +868,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/README.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/README.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -880,7 +880,7 @@
 	"\/js\/esri-leaflet-renderers-master\/scripts\/release.sh": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/scripts\/release.sh",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/scripts\/release.sh",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/spec\/comparisons.css": {
@@ -889,33 +889,33 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/comparisons.css",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/comparisons.css",
 		"oF": 0,
 		"oS": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/spec\/comparisons.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/comparisons.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/comparisons.html",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/spec\/custom-pane.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/custom-pane.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/custom-pane.html",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/spec\/ignore-flag.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/ignore-flag.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/ignore-flag.html",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/spec\/Markers\/CrossMarkerSpec.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/Markers\/CrossMarkerSpec.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/Markers\/CrossMarkerSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -924,7 +924,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/Renderers\/ClassBreaksRendererSpec.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/Renderers\/ClassBreaksRendererSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -933,7 +933,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/Renderers\/SimpleRendererSpec.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/Renderers\/SimpleRendererSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -942,7 +942,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/Renderers\/SmartClassBreaksRendererSpec.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/Renderers\/SmartClassBreaksRendererSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -951,7 +951,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/Renderers\/UniqueValueRendererSpec.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/Renderers\/UniqueValueRendererSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -959,20 +959,20 @@
 	"\/js\/esri-leaflet-renderers-master\/spec\/reset-style.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/reset-style.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/reset-style.html",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/spec\/sample.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/sample.html",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/sample.html",
 		"oF": 0
 		},
 	"\/js\/esri-leaflet-renderers-master\/spec\/Symbols\/LineSymbolSpec.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/Symbols\/LineSymbolSpec.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/Symbols\/LineSymbolSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -981,7 +981,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/Symbols\/PointSymbolSpec.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/Symbols\/PointSymbolSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -990,7 +990,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/spec\/Symbols\/PolygonSymbolSpec.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/spec\/Symbols\/PolygonSymbolSpec.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -999,7 +999,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/EsriLeafletRenderers.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/EsriLeafletRenderers.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1008,7 +1008,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/FeatureLayerHook.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/FeatureLayerHook.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1017,7 +1017,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/Renderers\/ClassBreaksRenderer.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/Renderers\/ClassBreaksRenderer.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1026,7 +1026,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/Renderers\/Renderer.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/Renderers\/Renderer.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1035,7 +1035,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/Renderers\/SimpleRenderer.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/Renderers\/SimpleRenderer.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1044,7 +1044,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/Renderers\/UniqueValueRenderer.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/Renderers\/UniqueValueRenderer.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1053,7 +1053,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/Symbols\/LineSymbol.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/Symbols\/LineSymbol.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1062,7 +1062,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/Symbols\/PointSymbol.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/Symbols\/PointSymbol.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1071,7 +1071,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/Symbols\/PolygonSymbol.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/Symbols\/PolygonSymbol.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1080,7 +1080,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/build\/js\/esri-leaflet-renderers-master\/src\/Symbols\/Symbol.js",
+		"oAP": "\/js\/esri-leaflet-renderers-master\/src\/Symbols\/Symbol.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1089,7 +1089,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-v2.0.8\/dist\/esri-leaflet-debug.js",
+		"oAP": "\/js\/esri-leaflet-v2.0.8\/dist\/esri-leaflet-debug.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1098,7 +1098,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/esri-leaflet-v2.0.8\/dist\/esri-leaflet.js",
+		"oAP": "\/js\/esri-leaflet-v2.0.8\/dist\/esri-leaflet.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1106,14 +1106,14 @@
 	"\/js\/esri-leaflet-v2.0.8\/dist\/esri-leaflet.js.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/esri-leaflet-v2.0.8\/dist\/esri-leaflet.js.map",
+		"oAP": "\/js\/esri-leaflet-v2.0.8\/dist\/esri-leaflet.js.map",
 		"oF": 0
 		},
 	"\/js\/jquery-3.2.0.js": {
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/jquery-3.2.0.js",
+		"oAP": "\/js\/jquery-3.2.0.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1123,7 +1123,7 @@
 		"iS": 1259,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/leaflet\/images\/layers-2x.png",
+		"oAP": "\/js\/leaflet\/images\/layers-2x.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -1133,7 +1133,7 @@
 		"iS": 696,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/leaflet\/images\/layers.png",
+		"oAP": "\/js\/leaflet\/images\/layers.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -1143,7 +1143,7 @@
 		"iS": 2586,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/leaflet\/images\/marker-icon-2x.png",
+		"oAP": "\/js\/leaflet\/images\/marker-icon-2x.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -1153,7 +1153,7 @@
 		"iS": 1466,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/leaflet\/images\/marker-icon.png",
+		"oAP": "\/js\/leaflet\/images\/marker-icon.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -1163,7 +1163,7 @@
 		"iS": 618,
 		"l": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/leaflet\/images\/marker-shadow.png",
+		"oAP": "\/js\/leaflet\/images\/marker-shadow.png",
 		"oF": 0,
 		"opt": 0,
 		"q": 100
@@ -1172,7 +1172,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/leaflet\/leaflet-src.js",
+		"oAP": "\/js\/leaflet\/leaflet-src.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1180,7 +1180,7 @@
 	"\/js\/leaflet\/leaflet-src.map": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/js\/leaflet\/leaflet-src.map",
+		"oAP": "\/js\/leaflet\/leaflet-src.map",
 		"oF": 0
 		},
 	"\/js\/leaflet\/leaflet.css": {
@@ -1189,7 +1189,7 @@
 		"ft": 16,
 		"ma": 0,
 		"oA": 2,
-		"oAP": "\/build\/js\/leaflet\/leaflet.css",
+		"oAP": "\/js\/leaflet\/leaflet.css",
 		"oF": 0,
 		"oS": 0
 		},
@@ -1197,7 +1197,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/leaflet\/leaflet.js",
+		"oAP": "\/js\/leaflet\/leaflet.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1206,7 +1206,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/lib\/accessifyhtml5.min.js",
+		"oAP": "\/js\/lib\/accessifyhtml5.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1215,7 +1215,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/lib\/angular-route.min.js",
+		"oAP": "\/js\/lib\/angular-route.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1224,7 +1224,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/lib\/angular.min.js",
+		"oAP": "\/js\/lib\/angular.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1233,7 +1233,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/lib\/jquery.min.js",
+		"oAP": "\/js\/lib\/jquery.min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1242,7 +1242,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/lib\/underscore-min.js",
+		"oAP": "\/js\/lib\/underscore-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1251,7 +1251,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/qunit-2.3.0.js",
+		"oAP": "\/js\/qunit-2.3.0.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1260,7 +1260,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/stdst.js",
+		"oAP": "\/js\/stdst.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1268,7 +1268,7 @@
 	"\/js\/stdst.json": {
 		"ft": 524288,
 		"oA": 0,
-		"oAP": "\/build\/js\/stdst.json",
+		"oAP": "\/js\/stdst.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -1277,7 +1277,7 @@
 		"ft": 64,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/build\/js\/tests.js",
+		"oAP": "\/js\/tests.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -1285,7 +1285,7 @@
 	"\/package.json": {
 		"ft": 524288,
 		"oA": 0,
-		"oAP": "\/build\/package.json",
+		"oAP": "\/package.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
@@ -1293,19 +1293,19 @@
 	"\/partials\/intro.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/partials\/intro.html",
+		"oAP": "\/partials\/intro.html",
 		"oF": 0
 		},
 	"\/partials\/map.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/partials\/map.html",
+		"oAP": "\/partials\/map.html",
 		"oF": 0
 		},
 	"\/partials\/step1.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/partials\/step1.html",
+		"oAP": "\/partials\/step1.html",
 		"oF": 0
 		},
 	"\/README.md": {
@@ -1317,7 +1317,7 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/build\/README.html",
+		"oAP": "\/README.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -1329,7 +1329,7 @@
 	"\/robots.txt": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/robots.txt",
+		"oAP": "\/robots.txt",
 		"oF": 0
 		},
 	"\/sass\/app.sass": {
@@ -1353,7 +1353,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/global\/_fonts.css",
+		"oAP": "\/sass\/global\/_fonts.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1366,7 +1366,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/global\/_global.css",
+		"oAP": "\/sass\/global\/_global.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1379,7 +1379,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/global\/_helpers.css",
+		"oAP": "\/sass\/global\/_helpers.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1392,7 +1392,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/global\/_layout.css",
+		"oAP": "\/sass\/global\/_layout.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1405,7 +1405,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/global\/_normalize.css",
+		"oAP": "\/sass\/global\/_normalize.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1418,7 +1418,20 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/global\/_theme.css",
+		"oAP": "\/sass\/global\/_theme.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/modules\/_breadcrumb.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/modules\/_breadcrumb.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1431,7 +1444,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/modules\/_header.css",
+		"oAP": "\/sass\/modules\/_header.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1444,7 +1457,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/modules\/_intro.css",
+		"oAP": "\/sass\/modules\/_intro.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1457,7 +1470,7 @@
 		"ft": 2,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/build\/sass\/modules\/_modules.css",
+		"oAP": "\/sass\/modules\/_modules.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -1465,31 +1478,31 @@
 	"\/SeaTurtleDST_V2.sln": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/SeaTurtleDST_V2.sln",
+		"oAP": "\/SeaTurtleDST_V2.sln",
 		"oF": 0
 		},
 	"\/swipe_example.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/swipe_example.html",
+		"oAP": "\/swipe_example.html",
 		"oF": 0
 		},
 	"\/unittest.html": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/unittest.html",
+		"oAP": "\/unittest.html",
 		"oF": 0
 		},
 	"\/Web.config": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/Web.config",
+		"oAP": "\/Web.config",
 		"oF": 0
 		},
 	"\/website.publishproj": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/build\/website.publishproj",
+		"oAP": "\/website.publishproj",
 		"oF": 0
 		}
 	},
@@ -1755,8 +1768,8 @@
 	"bowerSaveDependencies": 1,
 	"bowerSaveDevDependencies": 0,
 	"bowerUseExactVersion": 0,
-	"browserRefreshDelay": 0,
-	"buildFolderActive": 1,
+	"browserRefreshDelay": 1,
+	"buildFolderActive": 0,
 	"buildFolderName": "build",
 	"cleanBuild": 1,
 	"coffeeLintFlags2": {

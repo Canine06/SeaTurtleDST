@@ -104,6 +104,13 @@ ul ul, ol ul, ul ol, ol ol
   margin-left: 1.25rem
   margin-bottom: 0
 
+a
+  color: $light-blue
+  text-decoration: none
+  transition: color 0.2s ease-in-out
+  &:hover
+    color: $deep-blue
+
 #page
   overflow: hidden
   width: 100%
@@ -121,7 +128,8 @@ ul ul, ol ul, ul ol, ol ol
 
   @media only screen and (min-device-width: 768px)
     width: 50%
-    height: 95vh
+    height: 100vh
+
 
 .map-content
   @media only screen and (min-device-width:768px)
@@ -135,3 +143,4 @@ ul ul, ol ul, ul ol, ol ol
 
 .container
   padding: 0 3rem
+  overflow: hidden
