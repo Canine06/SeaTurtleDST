@@ -1,6 +1,6 @@
-﻿body {
+﻿/*body {
     font-family: sans-serif;
-}
+}*/
 
 #app-container{
     height:94vh;
@@ -8,14 +8,14 @@
 #step-1-container{
     display: none;
 }
-.timeofyearcontainer{
+/*.timeofyearcontainer{
     float:left;
     margin-left:10px;
 }
 .selectocsblockscontainer{
     float:left;
     margin-left:10px;
-}
+}*/
 /*#nav-bar{
     width:100%;
     background-color:#2955A0;
@@ -110,8 +110,8 @@
 .legend-grip{
     cursor:pointer;
 }
-.button {
-    background-color: #2955A0; /* Green */
+/*.button {
+    background-color: #2955A0;
     border: none;
     color: whitesmoke;
     padding: 5px 10px;
@@ -123,22 +123,21 @@
     margin-right:20px;
     margin-bottom:20px;
     margin-top:23px;
-    /*margin: 20px;*/
+    margin: 20px;
     cursor: pointer;
-
-}
-.disabled {
+}*/
+/*.disabled {
     opacity: 0.6;
     cursor: not-allowed;
-}
-.button:hover {
-    background-color: #2955A0; /* Green */
+}*/
+/*.button:hover {
+    background-color: #2955A0;
     color: whitesmoke;
 }
 .button: {
-    background-color: #2955A0; /* Green */
+    background-color: #2955A0;
     color: whitesmoke;
-}
+}*/
 /*select#timeofyear {
    -webkit-appearance: button;
    -webkit-border-radius: 2px;
@@ -162,20 +161,20 @@
    white-space: nowrap;
    width: 150px;
 }*/
-.steps-menu-container{
+/*.steps-menu-container{
     width:100%;
     height:40px;
 }
 .steps-menu-container-content{
     margin-left:10px;
     margin-top:10px;
-}
+}*/
 /*.container {
 	position: relative;
     float:left;
     text-align:center;
 }*/
-.container1{
+/*.container1{
     z-index:4;
 }
 .container2{
@@ -194,9 +193,9 @@ svg {
 path {
   stroke: #74CDF7;
   stroke-width:2px;
-  /*stroke-dasharray: 2,2;*/
+  stroke-dasharray: 2,2;
   stroke-linejoin: round;
-}
+}*/
 #content {
 	position: relative;
 	word-break: break-all;
