@@ -740,7 +740,7 @@ label {
 
 .map-content, .app-content {
   float: none;
-  height: 50vh;
+  height: 44vh;
   width: 100%; }
   @media only screen and (min-device-width: 768px) {
     .map-content, .app-content {
@@ -938,10 +938,10 @@ label {
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  background-color: #1779ba;
+  background-color: #14679e;
   color: #fefefe;
   opacity: 0.25;
-  cursor: not-allowed; }
+   }
   .button:hover, .button:focus {
     background-color: #14679e;
     color: #fefefe; }
@@ -957,5 +957,7 @@ label {
     margin-right: 0;
     margin-left: 0; }
   .button.disabled, .button.disabled:hover, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:focus {
-    background-color: #1779ba;
-    color: #fefefe; }
+    /*background-color: #1779ba;*/
+    color: #fefefe; 
+    cursor: not-allowed;
+  }

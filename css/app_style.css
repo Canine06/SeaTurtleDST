@@ -126,10 +126,10 @@
     margin: 20px;
     cursor: pointer;
 }*/
-/*.disabled {
+.disabled {
     opacity: 0.6;
     cursor: not-allowed;
-}*/
+}
 /*.button:hover {
     background-color: #2955A0;
     color: whitesmoke;

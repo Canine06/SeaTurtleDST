@@ -19,6 +19,7 @@ angular.module('myApp.controllers', []).
       $scope.step1Header.innerHTML = $scope.AppConfig.Step1Header;
       $scope.step1Instructions.innerHTML = $scope.AppConfig.Step1Instructions;
       $("#selectocsblocks").addClass("disabled");
+      LoadStep1($scope.map);
 
   }])
 .controller('AppController', ['$scope', '$location', function ($scope, $location) {

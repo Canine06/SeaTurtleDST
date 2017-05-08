@@ -1,6 +1,6 @@
 ﻿var map;
 var AppConfig;
-var ocsBlocks, sandResources;
+var ocsBlocks, sandResources, poly;
 var selectedOCSBlocks;
 var drawnItems = new L.featureGroup();
 var resultsLayer = new L.featureGroup();
@@ -12,7 +12,7 @@ function initMap($scope) {
     AppConfig = $scope.AppConfig;
     BuildMap($scope);
     BuildLegend($scope);
-    
+
 }
 function BuildMap($scope) {
     if (!test) {
@@ -23,8 +23,12 @@ function BuildMap($scope) {
         //Add dynamic layers
         $scope.map.createPane("sandresources");
         $scope.sandResources = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[1].url, layers: [AppConfig.MapLayers[1].layers], pane: 'sandresources' }).addTo($scope.map);
+        sandResources = $scope.sandResources;
         $scope.map.createPane("ocsblocks");
         $scope.ocsBlocks = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[0].url, layers: [AppConfig.MapLayers[0].layers], pane: 'ocsblocks' }).addTo($scope.map);
+        ocsBlocks = $scope.ocsBlocks;
+        $scope.map.createPane("selectedblocks");
+
     }
     else {
         AppConfig = $scope.AppConfig;
@@ -93,79 +97,93 @@ function NewReportClick() {
     if (!test) {
         BuildStep1Content();
     }
-    
+
     var intro = document.getElementById("right-pane");
     var step1 = document.getElementById("step-1-container");
 
     return true;
 }
-function SelectAOIComplete(testmap) {
-    if (testmap != null) {
-        map = testmap;
-    }
+function SelectAOIComplete(map) {
     if (hasTool == 0) {
         map.addLayer(drawnItems);
 
         // create a new Leaflet Draw control
-        var drawControl = new L.Control.Draw({
-            edit: {
-                featureGroup: drawnItems // allow editing/deleting of features in this group
-            },
-            draw: {
-                circle: false, // disable circles
-                marker: false, // disable polylines
-                polyline: false, // disable polylines
-                polygon: {
-                    allowIntersection: false, // polygons cannot intersect thenselves
-                    drawError: {
-                        color: 'red', // color the shape will turn when intersects
-                        message: '<strong>Oh snap!<strong> you can\'t draw that!' // message that will show when intersect
-                    },
-                }
-            }
-        });
-        drawcontrol = drawControl;
+        //var drawControl = new L.Control.Draw({
+        //    edit: {
+        //        featureGroup: drawnItems // allow editing/deleting of features in this group
+        //    },
+        //    draw: {
+        //        circle: false, // disable circles
+        //        marker: false, // disable polylines
+        //        polyline: false, // disable polylines
+        //        polygon: {
+        //            allowIntersection: true, // polygons cannot intersect thenselves
+        //            drawError: {
+        //                color: 'red', // color the shape will turn when intersects
+        //                message: '<strong>Oh snap!<strong> you can\'t draw that!' // message that will show when intersect
+        //            },
+        //        }
+        //    }
+        //});
+        poly = new L.Draw.Polygon(map);
+        //drawcontrol = drawControl;
         // listen to the draw created event
         map.on('draw:created', function (e) {
             // add the feature as GeoJSON (feature will be converted to ArcGIS JSON internally)
-            QueryOCSBlocks(e.layer);
+
+            drawnItems.clearLayers();
+            drawnItems.addLayer(e.layer);
+            enableButton();
+            $("#selectocsblocks").click(function () {
+                QueryOCSBlocks(e.layer, map);
+            });
+            //poly.enable();
         });
 
         // add our drawing controls to the map
-        map.addControl(drawControl);
+        //map.addControl(drawControl);
+
+        poly.enable();
         hasTool = 1;
     }
-    
-    
+    poly.enable();
+
     return true;
 }
-function QueryOCSBlocks(polygon) {
+function QueryOCSBlocks(polygon, map) {
     // query the service executing the selected relation with the selected input geometry
-    $scope.ocsBlocks.query().layer(0).intersects(polygon).run(function (error, featureCollection, response) {
-        $scope.selectedOCSBlocks = featureCollection;
+    ocsBlocks.query().layer(0).intersects(polygon).run(function (error, featureCollection, response) {
+
+        selectedOCSBlocks = featureCollection;
 
         if (geojson != null) {
-            if ($scope.map.hasLayer(geojson)) {
-                $scope.map.removeLayer(geojson);
+            if (map.hasLayer(geojson)) {
+                map.removeLayer(geojson);
             }
         }
+        geojson = L.geoJSON(featureCollection, { pane: "selectedblocks" }).addTo(map);
 
-        geojson = L.geoJSON(featureCollection).addTo($scope.map);
+
+
     });
     drawnItems.clearLayers();
     return true;
 }
-function TimeOfYearChange() {
+function TimeOfYearChange(map) {
     var timeofyear = document.getElementById("timeofyear");
     var val = timeofyear.value;
-    if (val == "Select time period") {
-        if (test != true) {
-            //alert("You must choose a time of year.  Try again.");
-        }
+    if (hasTool == 1) {
+        //poly.enable();
     }
-    else {
-        var ocsblocksselector = document.getElementById("selectocsblocks");
-        ocsblocksselector.disabled = false;
-    }
+    SelectAOIComplete(map);
+    //if (val == "Select time period") {
+    //    if (test != true) {
+    //        //alert("You must choose a time of year.  Try again.");
+    //    }
+    //}
+    //else {
+    //    var ocsblocksselector = document.getElementById("selectocsblocks");
+    //    ocsblocksselector.disabled = false;
+    //}
     return true;
 }

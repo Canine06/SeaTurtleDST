@@ -47,13 +47,14 @@
 function LoadStep1(map) {
     //NewReportClick();
     $("#timeofyear").change(function () {
-        TimeOfYearChange();
-        $("#selectocsblocks").removeClass("disabled");
-        $("#selectocsblocks").click(function () {
-            SelectAOIComplete(map);
-        });
+        TimeOfYearChange(map);
+        //$("#selectocsblocks").removeClass("disabled");
+        
     });
 }
 function disableButton() {
     $("#selectocsblocks").addClass("disabled");
+}
+function enableButton() {
+    $("#selectocsblocks").removeClass("disabled");
 }
