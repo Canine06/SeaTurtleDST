@@ -731,12 +731,12 @@ label {
 #page {
   overflow: hidden;
   width: 100%;
-  margin-top: 85px;
+  margin-top: 44px;
   position: relative;
   z-index: 98; }
   @media only screen and (min-device-width: 768px) {
     #page {
-      margin-top: 44px; } }
+      margin-top: 58px; } }
 
 .map-content, .app-content {
   float: none;
@@ -745,21 +745,21 @@ label {
   @media only screen and (min-device-width: 768px) {
     .map-content, .app-content {
       width: 50%;
-      height: 100vh; } }
+      height: 94vh; } }
 
 @media only screen and (min-device-width: 768px) {
   .map-content {
     float: left; } }
 
 .app-content {
+  overflow: scroll;
   background-color: #F4F9FD; }
   @media only screen and (min-device-width: 768px) {
     .app-content {
       float: right; } }
 
 .container {
-  padding: 0 3rem;
-  overflow: hidden; }
+  padding: 0 3rem; }
 
 .row {
   margin-bottom: 1rem; }
@@ -769,6 +769,10 @@ label {
 
 .float-right {
   float: right !important; }
+
+.mar-top-17 {
+  margin-top: 17px !important;
+  margin-bottom: 0 !important; }
 
 .grid {
   display: -webkit-box;
@@ -797,30 +801,30 @@ label {
     width: 50%; }
   .header h1 {
     color: #fff;
-    font-size: 32px;
+    font-size: 13px;
     text-align: left;
-    margin: 20px 0 0 10px;
+    margin: 5px 0  0 10px;
     font-weight: 700; }
     @media only screen and (min-device-width: 768px) {
       .header h1 {
-        font-size: 1.125rem;
-        margin-top: 10px; } }
+        font-size: 23px;
+        margin: 20px 0 0 10px; } }
   .header #button-pane {
     color: #fff;
     display: block;
-    padding: 25px 5px;
-    font-size: 30px;
-    width: 250px;
+    padding: 10px 5px;
+    font-size: 0.875rem;
     float: right;
-    text-align: center;
-    cursor: pointer;
-    -webkit-transition: background-color 0.2s ease-in-out;
-    transition: background-color 0.2s ease-in-out; }
+    text-align: right; }
     @media only screen and (min-device-width: 768px) {
       .header #button-pane {
-        font-size: 0.875rem;
-        width: 150px;
-        padding: 10px 5px; } }
+        font-size: 18px;
+        width: 250px;
+        padding: 15px 20px;
+        cursor: pointer;
+        text-align: center;
+        -webkit-transition: background-color 0.2s ease-in-out;
+        transition: background-color 0.2s ease-in-out; } }
     .header #button-pane:hover, .header #button-pane:active {
       background-color: #3284BC; }
     .header #button-pane img {
@@ -842,9 +846,9 @@ label {
   border: 2px solid #46596D;
   text-align: center;
   background-color: #fff;
-  width: 185px;
-  height: 185px;
-  margin: 4rem auto 0;
+  width: 158px;
+  height: 158px;
+  margin: 3rem auto 2rem;
   cursor: pointer;
   line-height: 85px;
   white-space: nowrap;
@@ -938,10 +942,10 @@ label {
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  background-color: #14679e;
+  background-color: #1779ba;
   color: #fefefe;
   opacity: 0.25;
-   }
+  cursor: not-allowed; }
   .button:hover, .button:focus {
     background-color: #14679e;
     color: #fefefe; }
@@ -957,7 +961,5 @@ label {
     margin-right: 0;
     margin-left: 0; }
   .button.disabled, .button.disabled:hover, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:focus {
-    /*background-color: #1779ba;*/
-    color: #fefefe; 
-    cursor: not-allowed;
-  }
+    background-color: #14679e;
+    color: #fefefe; }
