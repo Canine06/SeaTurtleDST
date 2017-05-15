@@ -731,10 +731,10 @@ label {
 #page {
   overflow: hidden;
   width: 100%;
-  margin-top: 44px;
+  margin-top: 59px;
   position: relative;
   z-index: 98; }
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 769px) {
     #page {
       margin-top: 58px; } }
 
@@ -742,24 +742,27 @@ label {
   float: none;
   height: 44vh;
   width: 100%; }
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 769px) {
     .map-content, .app-content {
       width: 50%;
       height: 94vh; } }
 
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 769px) {
   .map-content {
     float: left; } }
 
 .app-content {
   overflow: scroll;
   background-color: #F4F9FD; }
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 769px) {
     .app-content {
       float: right; } }
 
 .container {
-  padding: 0 3rem; }
+  padding: 0 1rem; }
+  @media only screen and (min-width: 768px) {
+    .container {
+      padding: 0 3rem; } }
 
 .row {
   margin-bottom: 1rem; }
@@ -805,7 +808,7 @@ label {
     text-align: left;
     margin: 5px 0  0 10px;
     font-weight: 700; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .header h1 {
         font-size: 23px;
         margin: 20px 0 0 10px; } }
@@ -816,7 +819,7 @@ label {
     font-size: 0.875rem;
     float: right;
     text-align: right; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .header #button-pane {
         font-size: 18px;
         width: 250px;
@@ -870,58 +873,79 @@ label {
     #new-report-button .img-border img {
       margin-left: 4px; }
 
-.breadcrumbs {
-  list-style: none;
+#crumbs {
   margin: 2rem 0;
-  padding: 0;
-  border: 2px solid #46596D;
-  overflow: hidden; }
-  .breadcrumbs li {
-    float: left;
-    margin-bottom: 0 !important;
-    width: 25%;
-    background: white; }
-    .breadcrumbs li span {
-      color: #46596D;
-      padding: 10px 16px 10px 40px;
-      background: white;
-      position: relative;
-      display: block;
-      float: left; }
-      .breadcrumbs li span:after {
-        content: "";
+  text-align: center; }
+  #crumbs ul {
+    list-style: none;
+    display: inline-table;
+    margin-left: 0 !important; }
+    #crumbs ul li {
+      display: inline;
+      margin-bottom: 0 !important; }
+      #crumbs ul li a {
         display: block;
-        width: 0;
-        height: 0;
-        border-top: 50px solid transparent;
-        border-bottom: 50px solid transparent;
-        border-left: 30px solid white;
-        position: absolute;
-        top: 50%;
-        margin-top: -50px;
-        left: 100%;
-        z-index: 2; }
-      .breadcrumbs li span:before {
-        content: "";
-        display: block;
-        width: 0;
-        height: 0;
-        border-top: 50px solid transparent;
-        border-bottom: 50px solid transparent;
-        border-left: 30px solid #46596D;
-        position: absolute;
-        top: 50%;
-        margin-top: -50px;
-        margin-left: 2px;
-        left: 100%;
-        z-index: 1; }
-      .breadcrumbs li span.active {
-        background-color: #3284BC;
-        color: white; }
-        .breadcrumbs li span.active:after {
-          border-left: 30px solid #3284BC; }
-    .breadcrumbs li:last-child span:after, .breadcrumbs li:last-child span:before {
-      display: none; }
+        float: left;
+        height: 25px;
+        background: #46596D;
+        text-align: center;
+        padding: 5px 17px 0 17px;
+        position: relative;
+        margin: 0 1px 0 0;
+        color: white;
+        -webkit-transition: background 0.2s ease-in-out, padding 0.5s ease-in-out;
+        transition: background 0.2s ease-in-out, padding 0.5s ease-in-out;
+        font-size: 10px; }
+        @media only screen and (min-width: 768px) {
+          #crumbs ul li a {
+            padding: 10px 50px 0 60px;
+            height: 34px;
+            font-size: 16px; }
+            #crumbs ul li a:after {
+              content: "";
+              border-top: 22px solid transparent;
+              border-bottom: 22px solid transparent;
+              border-left: 22px solid #46596D;
+              position: absolute;
+              right: -22px;
+              top: 0;
+              z-index: 1;
+              -webkit-transition: border-left-color 0.2s ease-in-out;
+              transition: border-left-color 0.2s ease-in-out; }
+            #crumbs ul li a:before {
+              content: "";
+              border-top: 22px solid transparent;
+              border-bottom: 22px solid transparent;
+              border-left: 22px solid #F4F9FD;
+              position: absolute;
+              left: 0;
+              top: 0; } }
+  @media only screen and (min-width: 768px) and (min-width: 769px) and (max-width: 1023px) {
+    #crumbs ul li a {
+      padding: 10px 10px 0 10px;
+      font-size: 14px; }
+      #crumbs ul li a:after, #crumbs ul li a:before {
+        display: none; } }
+  @media only screen and (min-width: 768px) and (min-width: 1024px) {
+    #crumbs ul li a {
+      padding: 10px 19px 0 29px; } }
+  @media only screen and (min-width: 768px) and (min-width: 1440px) {
+    #crumbs ul li a {
+      padding: 10px 40px 0 60px; } }
+      #crumbs ul li:first-child a {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px; }
+        #crumbs ul li:first-child a:before {
+          display: none; }
+      #crumbs ul li:last-child a {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px; }
+        #crumbs ul li:last-child a:after {
+          display: none; }
+      #crumbs ul li a:hover, #crumbs ul li a.active {
+        background: #3284BC; }
+        #crumbs ul li a:hover:after, #crumbs ul li a.active:after {
+          border-left-color: #3284BC; }
 
 .data-container {
   padding: 20px;

@@ -294,10 +294,10 @@ label
 #page
   overflow: hidden
   width: 100%
-  margin-top: 44px
+  margin-top: 59px
   position: relative
   z-index: 98
-  @media only screen and (min-device-width: 768px)
+  @media only screen and (min-width: 769px)
     margin-top: 58px
 
 .map-content, .app-content
@@ -306,25 +306,26 @@ label
   width: 100%
   //padding: 0 20px
 
-  @media only screen and (min-device-width: 768px)
+  @media only screen and (min-width: 769px)
     width: 50%
     height: 94vh
 
 
 .map-content
-  @media only screen and (min-device-width:768px)
+  @media only screen and (min-width:769px)
     float: left
 
 .app-content
   overflow: scroll
   background-color: $pale-blue
 
-  @media only screen and (min-device-width:768px)
+  @media only screen and (min-width:769px)
     float: right
 
 .container
-  padding: 0 3rem
-
+  padding: 0 1rem
+  @media only screen and (min-width: 768px)
+    padding: 0 3rem
 
 .row
   margin-bottom: 1rem

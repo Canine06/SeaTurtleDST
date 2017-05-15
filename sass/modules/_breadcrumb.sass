@@ -1,62 +1,139 @@
-.breadcrumbs
-  list-style: none
+#crumbs
   margin: 2rem 0
-  padding: 0
-  border: 2px solid $deep-blue
-  overflow: hidden
+  text-align: center
 
-  li
-    float: left
-    margin-bottom: 0 !important
-    width: 25%
-    background: white
+  ul
+    list-style: none
+    display: inline-table
+    margin-left: 0 !important
+    //width: 100%
 
-    span
-      color: $deep-blue
-      padding: 10px 16px 10px 40px
-      background: white
-      position: relative
-      display: block
-      float: left
+    li
+      display: inline
+      margin-bottom: 0 !important
 
-      &:after
-        content: ""
+      a
         display: block
-        width: 0
-        height: 0
-        border-top: 50px solid transparent
-        border-bottom: 50px solid transparent
-        border-left: 30px solid white
-        position: absolute
-        top: 50%
-        margin-top: -50px
-        left: 100%
-        z-index: 2
-
-      &:before
-        content: ""
-        display: block
-        width: 0
-        height: 0
-        border-top: 50px solid transparent
-        border-bottom: 50px solid transparent
-        border-left: 30px solid $deep-blue
-        position: absolute
-        top: 50%
-        margin-top: -50px
-        margin-left: 2px
-        left: 100%
-        z-index: 1
-
-      &.active
-        background-color: $light-blue
+        float: left
+        height: 25px
+        background: $deep-blue
+        text-align: center
+        padding: 5px 17px 0 17px
+        position: relative
+        margin: 0 1px 0 0
         color: white
+        transition: background 0.2s ease-in-out, padding 0.5s ease-in-out
+        font-size: 10px
+
+        @media only screen and (min-width:768px)
+          padding: 10px 50px 0 60px
+          height: 34px
+          font-size: 16px
+
+          &:after
+            content: ""
+            border-top: 22px solid transparent
+            border-bottom: 22px solid transparent
+            border-left: 22px solid $deep-blue
+            position: absolute
+            right: -22px
+            top: 0
+            z-index: 1
+            transition: border-left-color 0.2s ease-in-out
+
+          &:before
+            content: ""
+            border-top: 22px solid transparent
+            border-bottom: 22px solid transparent
+            border-left: 22px solid $pale-blue
+            position: absolute
+            left: 0
+            top: 0
+
+          @media only screen and (min-width:769px) and (max-width:1023px)
+            padding: 10px 10px 0 10px
+            font-size: 14px
+
+            &:after, &:before
+              display: none
+
+          @media only screen and (min-width:1024px)
+            padding: 10px 19px 0 29px
+
+          @media only screen and (min-width:1440px)
+            padding: 10px 40px 0 60px
+
+      // first element
+      // remove chevron
+      &:first-child a
+        border-top-left-radius: 6px
+        border-bottom-left-radius: 6px
+        &:before
+          display: none
+      // last element
+      // remove chevron
+      &:last-child a
+        border-top-right-radius: 6px
+        border-bottom-right-radius: 6px
+        &:after
+          display: none
+
+      a:hover, a.active
+        background: $light-blue
 
         &:after
-          border-left: 30px solid $light-blue
+          border-left-color: $light-blue
 
-    // &:first-child span
-    //   padding-left: 50px
-    &:last-child span
-      &:after, &:before
-        display: none
+      // a
+      //   display: block
+      //   float: left
+      //   height: 34px
+      //   background: $deep-blue
+      //   text-align: center
+      //   padding: 10px 30px 0 48px
+      //   position: relative
+      //   margin: 0 2px 0 0
+      //   color: white
+      //   transition: background 0.2s ease-in-out
+      //
+      //   &:after
+      //     content: ""
+      //     border-top: 22px solid transparent
+      //     border-bottom: 22px solid transparent
+      //     border-left: 22px solid $deep-blue
+      //     position: absolute
+      //     right: -22px
+      //     top: 0
+      //     z-index: 1
+      //     transition: border-left-color 0.2s ease-in-out
+      //
+      //
+      //   &:before
+      //     content: ""
+      //     border-top: 22px solid transparent
+      //     border-bottom: 22px solid transparent
+      //     border-left: 22px solid $pale-blue
+      //     position: absolute
+      //     left: 0
+      //     top: 0
+      //
+      // // first element
+      // // remove chevron
+      // &:first-child a
+      //   border-top-left-radius: 6px
+      //   border-bottom-left-radius: 6px
+      //   &:before
+      //     display: none
+      // // last element
+      // // remove chevron
+      // &:last-child a
+      //   border-top-right-radius: 6px
+      //   border-bottom-right-radius: 6px
+      //   &:after
+      //     display: none
+      //
+      // a:hover, a.active
+      //   background: $light-blue
+      //
+      //   &:after
+      //     border-left-color: $light-blue
