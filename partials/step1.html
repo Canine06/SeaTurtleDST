@@ -26,11 +26,68 @@
         </div>
         <div class="gcol">
           <div id="selectocsblockscontainer">
-            <button id="selectocsblocks" class="button disabled small mar-top-17">Apply Selection</button>
+            <button id="selectocsblocks" class="button disabled small mar-top-30">Apply Selection</button>
           </div>
         </div>
       </div> <!-- Grid -->
+
+      <div class="grid">
+        <div class="gcol">
+          <div class="range-wrap">
+            <div class="range-checkbox-question-wrap">
+              <div class="range-checkbox">
+                <label for=""><input type="checkbox">Number of Turtle Records</label>
+              </div>
+              <div class="range-question">
+                <a href="#modal-text" class="question">?</a>
+              </div>
+            </div><!-- END checkbox question wrap -->
+
+            [insert range slider]
+
+            <div class="grid">
+              <div class="gcol">
+                <p class="small muted" id="range-low">Low: 0-29</p>
+              </div>
+              <div class="gcol">
+                <p class="small muted" id="range-med">Med: 30-70</p>
+              </div>
+              <div class="gcol">
+                <p class="small muted" id="range-high">High: 71-100</p>
+              </div>
+            </div>
+          </div> <!-- END range wrap -->
+        </div>
+        <div class="gcol">
+          <div class="range-slider-wrap">
+            <p>Test</p>
+          </div>
+        </div>
+        <div class="gcol">
+          <div class="range-slider-wrap">
+            <p>Test</p>
+          </div>
+        </div>
+      </div>
     </div><!-- Data Container -->
 
 
 </div>
+
+<!-- GLOBAL MODAL WINDOW -->
+<section class="modal--fade" id="modal-text" tabindex="-1"
+      role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+  <div class="modal-inner">
+    <header>
+      <h2 id="label-fade">A fading modal</h2>
+    </header>
+     <div class="modal-content">
+       <p id="modal-content-text">Content.</p>
+     </div>
+  </div>
+
+  <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+      data-dismiss="modal">?</a>
+</section>
+<!-- END MODAL -->

@@ -762,7 +762,7 @@ label {
   padding: 0 1rem; }
   @media only screen and (min-width: 768px) {
     .container {
-      padding: 0 3rem; } }
+      padding: 0 1.5rem; } }
 
 .row {
   margin-bottom: 1rem; }
@@ -773,15 +773,19 @@ label {
 .float-right {
   float: right !important; }
 
-.mar-top-17 {
-  margin-top: 17px !important;
+.mar-top-30 {
+  margin-top: 30px !important;
   margin-bottom: 0 !important; }
+
+.small {
+  font-size: 0.25rem;
+  color: #95989A; }
 
 .grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: -1em 0 0 -1em; }
+  margin: -1em 0 1em -1em; }
   .grid .gcol {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -790,6 +794,52 @@ label {
   .grid-bottom {
     -ms-flex-item-align: end;
         align-self: flex-end; }
+
+select {
+  height: 2.4375rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #cacaca;
+  border-radius: 0;
+  background-color: #fefefe;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: normal;
+  color: #0a0a0a;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>");
+  background-origin: content-box;
+  background-position: right -1rem center;
+  background-repeat: no-repeat;
+  background-size: 9px 6px;
+  padding-right: 1.5rem;
+  -webkit-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }
+
+@media screen and (min-width: 0\0) {
+  select {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg=="); } }
+
+select:focus {
+  outline: none;
+  border: 1px solid #8a8a8a;
+  background-color: #fefefe;
+  box-shadow: 0 0 5px #cacaca;
+  -webkit-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }
+
+select:disabled {
+  background-color: #e6e6e6;
+  cursor: not-allowed; }
+
+select::-ms-expand {
+  display: none; }
+
+select[multiple] {
+  height: auto;
+  background-image: none; }
 
 .header {
   width: 100%;
@@ -948,7 +998,7 @@ label {
           border-left-color: #3284BC; }
 
 .data-container {
-  padding: 20px;
+  padding: 15px;
   border: 2px solid #46596D;
   background: #fefefe; }
 
@@ -987,3 +1037,337 @@ label {
   .button.disabled, .button.disabled:hover, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:focus {
     background-color: #14679e;
     color: #fefefe; }
+
+.range-wrap, .range-checkbox-question-wrap {
+  overflow: hidden; }
+
+.range-checkbox {
+  float: left; }
+  .range-checkbox label {
+    font-size: 12px; }
+  .range-checkbox input[type=checkbox] {
+    margin-right: 5px; }
+
+.range-question {
+  float: right; }
+  .range-question a {
+    color: #4a4a4a;
+    font-size: 8px;
+    border: 1px solid #4a4a4a;
+    border-radius: 50%;
+    text-align: center;
+    display: block;
+    width: 10px;
+    height: 10px; }
+
+/**
+ * CSS Modal
+ * http://drublic.github.com/css-modal
+ *
+ * @author Hans Christian Reinl - @drublic
+ */
+/**
+ * CSS Modal Configuration
+ * http://drublic.github.com/css-modal
+ *
+ * @author Hans Christian Reinl - @drublic
+ */
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+.has-overlay {
+  overflow: hidden;
+  height: auto; }
+
+.has-overlay > body {
+  height: 100%;
+  overflow: hidden; }
+
+.modal--fade, .modal--show {
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  display: none\9; }
+
+.modal--fade:target, .modal--show:target, .is-active.modal--fade, .is-active.modal--show {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  width: auto;
+  height: auto;
+  opacity: 1; }
+
+.is-active.modal--fade, .is-active.modal--show {
+  display: block\9;
+  height: 100% \9;
+  width: 100% \9; }
+
+.modal--fade:target, .modal--show:target, .is-active.modal--fade, .is-active.modal--show {
+  display: block\9; }
+
+.modal--fade .modal-inner, .modal--show .modal-inner {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  z-index: 20;
+  margin-left: -325px;
+  width: 650px;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; }
+
+.modal--fade .modal-inner > img, .modal--show .modal-inner > img,
+.modal--fade .modal-inner > video,
+.modal--show .modal-inner > video,
+.modal--fade .modal-inner > iframe,
+.modal--show .modal-inner > iframe {
+  width: 100%;
+  height: auto;
+  min-height: 300px; }
+
+.modal--fade .modal-inner > img, .modal--show .modal-inner > img {
+  width: auto;
+  max-width: 100%; }
+
+.modal--fade .modal-inner iframe, .modal--show .modal-inner iframe {
+  display: block;
+  width: 100%;
+  border: 0; }
+
+.modal--fade .modal-content, .modal--show .modal-content {
+  position: relative;
+  max-height: 400px;
+  max-height: 60vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.modal--fade .modal-content > *, .modal--show .modal-content > * {
+  max-width: 100%; }
+
+.modal--fade footer, .modal--show footer {
+  border-top: 1px solid white;
+  padding: 0 1.2em 18px;
+  background: #f0f0f0;
+  border-radius: 2px; }
+
+.modal--fade .modal-close, .modal--show .modal-close {
+  display: block;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden; }
+
+.modal--fade .modal-close:focus:after, .modal--show .modal-close:focus:after {
+  outline: 1px dotted;
+  outline: -webkit-focus-ring-color auto 5px; }
+
+.modal--fade .modal-close:before, .modal--show .modal-close:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10; }
+
+.modal--fade .modal-close:after, .modal--show .modal-close:after {
+  content: '\00d7';
+  position: absolute;
+  top: 35px;
+  right: 50%;
+  z-index: 20;
+  margin-right: -325px; }
+
+@media screen and (max-width: 690px) {
+  .modal--fade .modal-inner, .modal--show .modal-inner {
+    width: auto;
+    left: 20px;
+    right: 20px;
+    margin-left: 0; }
+  .modal--fade .modal-close:after, .modal--show .modal-close:after {
+    margin-right: 0 !important;
+    right: 20px; } }
+
+@media screen and (max-width: 30em) {
+  .modal--fade, .modal--show {
+    -webkit-transform: translate(0, 400px);
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    -webkit-transition: opacity 1ms .25s;
+    transition: opacity 1ms .25s;
+    display: block;
+    right: auto;
+    bottom: auto; }
+  .modal--fade:target, .modal--show:target, .is-active.modal--fade, .is-active.modal--show {
+    width: 100%;
+    height: 100%; }
+  .modal--fade:target .modal-close, .modal--show:target .modal-close, .is-active.modal--fade .modal-close, .is-active.modal--show .modal-close {
+    display: block; }
+  .modal--fade .modal-inner, .modal--show .modal-inner {
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    overflow: auto; }
+  .modal--fade .modal-content, .modal--show .modal-content {
+    max-height: none;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto; }
+  .modal--fade .modal-close, .modal--show .modal-close {
+    display: none;
+    right: auto; }
+  .modal--fade .modal-close:before, .modal--show .modal-close:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20; }
+  .modal--fade .modal-close:after, .modal--show .modal-close:after {
+    top: 5px !important;
+    right: 5px;
+    left: auto;
+    margin-left: 0; } }
+
+@media screen and (max-height: 46em) and (min-width: 30em) {
+  .modal--fade .modal-content, .modal--show .modal-content {
+    max-height: 340px;
+    max-height: 50vh; } }
+
+@media screen and (max-height: 36em) and (min-width: 30em) {
+  .modal--fade .modal-content, .modal--show .modal-content {
+    max-height: 265px;
+    max-height: 40vh; } }
+
+.is-stacked.modal--fade, .is-stacked.modal--show {
+  -webkit-transform: translate(0, 0) scale(1, 1);
+  transform: translate(0, 0) scale(1, 1);
+  opacity: 1; }
+
+.is-stacked.modal--fade .modal-inner, .is-stacked.modal--show .modal-inner {
+  -webkit-animation: scaleDown .7s ease both;
+  animation: scaleDown .7s ease both; }
+
+.is-stacked.modal--fade .modal-close, .is-stacked.modal--show .modal-close {
+  opacity: 0; }
+
+@media screen and (max-width: 30em) {
+  .is-stacked.modal--fade, .is-stacked.modal--show {
+    -webkit-animation: scaleDown .7s ease both;
+    animation: scaleDown .7s ease both; }
+  .is-stacked.modal--fade .modal-inner, .is-stacked.modal--show .modal-inner {
+    -webkit-animation: none;
+    animation: none; }
+  .is-stacked.modal--fade .modal-close, .is-stacked.modal--show .modal-close {
+    opacity: 1; } }
+
+/**
+ * All animations for CSS Modal
+ *
+ * Available:
+ * - %modal--transition-fade (fade)
+ * - %modal--transition-zoomIn (zooms in)
+ * - %modal--transition-plainScreen (hides background)
+ *
+ * Usage:
+ *
+ * .selector {
+ * 		@extend %modal--transition-fade;
+ * }
+ *
+ */
+@media screen and (min-width: 30em) {
+  .modal--fade {
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s; } }
+
+/**
+ * CSS Modal Themes
+ * http://drublic.github.com/css-modal
+ *
+ * @author Hans Christian Reinl - @drublic
+ */
+/*
+ * Global Theme Styles
+ */
+.modal--fade, .modal--show {
+  color: #222;
+  line-height: 1.3; }
+
+.modal--fade .modal-inner, .modal--show .modal-inner {
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  max-width: 100%;
+  -webkit-transition: max-width 0.25s linear, margin-left 0.125s linear;
+  transition: max-width 0.25s linear, margin-left 0.125s linear; }
+
+.modal--fade header, .modal--show header {
+  border-bottom: 1px solid #ddd;
+  padding: 0 1.2em; }
+
+.modal--fade header > h2, .modal--show header > h2 {
+  margin: 0.5em 0; }
+
+.modal--fade .modal-content, .modal--show .modal-content {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 1.2em; }
+
+.modal--fade footer, .modal--show footer {
+  border-top: 1px solid white;
+  padding: 0 1.2em 18px;
+  background: #f0f0f0;
+  border-radius: 2px; }
+
+.modal--fade .modal-close, .modal--show .modal-close {
+  text-indent: -100px; }
+
+.modal--fade .modal-close:before, .modal--show .modal-close:before {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAEUlEQVQoz2NgeEYAjioYSQoAzOTmAXhPhyoAAAAASUVORK5CYII="); }
+
+.modal--fade .modal-close:after, .modal--show .modal-close:after {
+  content: '\00d7';
+  background: #fff;
+  border-radius: 2px;
+  padding: 2px 8px;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-indent: 0; }
+
+@media screen and (max-width: 30em) {
+  .modal--fade .modal-close:before, .modal--show .modal-close:before {
+    background: #27aae2;
+    height: 3em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6); }
+  .modal--fade .modal-inner, .modal--show .modal-inner {
+    padding-top: 3em;
+    box-shadow: none; }
+  .modal--fade .modal-close, .modal--show .modal-close {
+    text-decoration: none; }
+  .modal--fade .modal-close:after, .modal--show .modal-close:after {
+    content: attr(data-close);
+    font-size: 1em;
+    padding: 0.5em 1em; } }
+
+/*
+ * Plain Screen Theme Styles
+ */
+/**
+ * Apply the desired modal behavior to your container selector
+ */

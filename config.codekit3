@@ -7,7 +7,7 @@
 		"uuidString": "425AD2F8-2750-436E-9748-C6E274AEE9C8"
 		}
 	],
-"creatorBuild": "25704",
+"creatorBuild": "25813",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -292,101 +292,111 @@
 	"\/img\/chevron-right.png": {
 		"ft": 32768,
 		"iS": 899,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/chevron-right.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/icon-close.png": {
 		"ft": 32768,
 		"iS": 468,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/icon-close.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/icon-export.png": {
 		"ft": 32768,
 		"iS": 512,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/icon-export.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/icon-file-white.png": {
 		"ft": 32768,
 		"iS": 223,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/icon-file-white.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/icon-file.png": {
 		"ft": 32768,
 		"iS": 301,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/icon-file.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/icon-preview.png": {
 		"ft": 32768,
 		"iS": 688,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/icon-preview.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/Path 1.png": {
 		"ft": 32768,
 		"iS": 977,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/Path 1.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/Path 2.png": {
 		"ft": 32768,
 		"iS": 666,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/Path 2.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/Rectangle 39.png": {
 		"ft": 32768,
 		"iS": 347,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/Rectangle 39.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/img\/Rectangle 8.png": {
 		"ft": 32768,
 		"iS": 347,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/img\/Rectangle 8.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/index.html": {
@@ -1121,51 +1131,56 @@
 	"\/js\/leaflet\/images\/layers-2x.png": {
 		"ft": 32768,
 		"iS": 1259,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/js\/leaflet\/images\/layers-2x.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/js\/leaflet\/images\/layers.png": {
 		"ft": 32768,
 		"iS": 696,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/js\/leaflet\/images\/layers.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/js\/leaflet\/images\/marker-icon-2x.png": {
 		"ft": 32768,
 		"iS": 2586,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/js\/leaflet\/images\/marker-icon-2x.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/js\/leaflet\/images\/marker-icon.png": {
 		"ft": 32768,
 		"iS": 1466,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/js\/leaflet\/images\/marker-icon.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/js\/leaflet\/images\/marker-shadow.png": {
 		"ft": 32768,
 		"iS": 618,
-		"l": 1,
 		"oA": 0,
 		"oAP": "\/js\/leaflet\/images\/marker-shadow.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/js\/leaflet\/leaflet-src.js": {
@@ -1358,6 +1373,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/sass\/global\/_forms.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/global\/_forms.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/sass\/global\/_global.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -1501,6 +1529,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/sass\/modules\/_modal.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/modules\/_modal.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/sass\/modules\/_modules.sass": {
 		"aP": 0,
 		"bl": 0,
@@ -1510,6 +1551,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/sass\/modules\/_modules.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/sass\/modules\/_range-slider.sass": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 2,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/sass\/modules\/_range-slider.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -2513,6 +2567,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-prototype-builtins": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-redeclare": {
 			"active": 1,
 			"optionString": "{'builtinGlobals': false}"
@@ -3337,14 +3395,6 @@
 		"orderOutput": 0,
 		"outputStyle": 1
 		},
-	"languageDefaultsJSX": {
-		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "jsx",
-		"autoOutputPathReplace2": "js",
-		"autoOutputPathStyle": 0
-		},
 	"languageDefaultsKIT": {
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.html",
@@ -3407,7 +3457,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
-		"enableLossy": 1,
+		"optimizerType": 1,
 		"quality": 100
 		},
 	"languageDefaultsPUG": {
