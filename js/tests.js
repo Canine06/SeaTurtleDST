@@ -15,6 +15,7 @@ QUnit.test("Select Area Of Interest Test", function (assert) {
 });
 QUnit.test("Pick Time of Year Test", function (assert) {
     var result = TimeOfYearChange();
+    var blah = "";
     assert.equal(result, true, "Pick Time of Year Test passes");
 });
 QUnit.test("Load Layers Test", function (assert) {
