@@ -745,7 +745,7 @@ label {
   @media only screen and (min-width: 769px) {
     .map-content, .app-content {
       width: 50%;
-      height: 94vh; } }
+      height: 93vh; } }
 
 @media only screen and (min-width: 769px) {
   .map-content {
@@ -759,7 +759,7 @@ label {
       float: right; } }
 
 .container {
-  padding: 0 1rem; }
+  padding: 0 3rem; }
   @media only screen and (min-width: 768px) {
     .container {
       padding: 0 1.5rem; } }
@@ -1018,8 +1018,8 @@ select[multiple] {
   cursor: pointer;
   background-color: #1779ba;
   color: #fefefe;
-  opacity: 0.25;
-  cursor: not-allowed; }
+  opacity: 1;
+   }
   .button:hover, .button:focus {
     background-color: #14679e;
     color: #fefefe; }
@@ -1034,9 +1034,9 @@ select[multiple] {
     width: 100%;
     margin-right: 0;
     margin-left: 0; }
-  .button.disabled, .button.disabled:hover, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:focus {
+  /*.button.disabled, .button.disabled:hover, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:focus {
     background-color: #14679e;
-    color: #fefefe; }
+    color: #fefefe; }*/
 
 .range-wrap, .range-checkbox-question-wrap {
   overflow: hidden; }

@@ -361,6 +361,19 @@ angular.module('myApp.controllers', []).
       $("#selectocsblocks").addClass("disabled");
       LoadStep1($scope.map);
 
+      $scope.queryBlocks = function () {
+          var applyquerybutton = document.getElementById("selectocsblocks");
+          //applyquerybutton.disabled = true;
+
+          if (applyquerybutton.innerHTML == "Apply Selection") {
+              QueryOCSBlocks(elayer, $scope.map);
+          }
+          else {
+              poly.enable();
+              applyquerybutton.innerHTML = "Apply Selection";
+          }
+
+      }
   }])
 .controller('AppController', ['$scope', '$location', function ($scope, $location) {
     $scope.changeView = function (view) {
@@ -458,6 +471,15 @@ function BuildMap($scope) {
         $scope.map.createPane("ocsblocks");
         $scope.ocsBlocks = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[0].url, layers: [AppConfig.MapLayers[0].layers], pane: 'ocsblocks' }).addTo($scope.map);
         ocsBlocks = $scope.ocsBlocks;
+        $scope.map.createPane("selectedblocks");
+
+        var ocsb_feats = L.esri.featureLayer({
+            url: AppConfig.MapLayers[2].url
+        });
+
+        ocsb_feats.query().bounds(function (error, latlngbounds) {
+            $scope.map.fitBounds(latlngbounds);
+        });
 
     }
     else {
@@ -480,14 +502,10 @@ function BuildLegend($scope) {
         emptyLabel: '<all values>',
         container: null
     };
+
     //bind layers to legend control
     L.esri.legendControl($scope.ocsBlocks, opts).addTo($scope.map);
     L.esri.legendControl($scope.sandResources, opts).addTo($scope.map);
-
-    //$(".leaflet-right").append("<div style='text-align:center;'>Legend</div>").addClass("legend-grip").click(function () {
-    //    $(".leaflet-right").slideToggle("slow");
-    //});
-    //$("<p>Test</p>").insertAfter(".inner");
 }
 function BuildStep1Content() {
     var contentheader = document.getElementById("ContentHeader");
@@ -528,35 +546,15 @@ function NewReportClick() {
         BuildStep1Content();
     }
 
-    var intro = document.getElementById("right-pane");
-    var step1 = document.getElementById("step-1-container");
+    //var intro = document.getElementById("right-pane");
+    //var step1 = document.getElementById("step-1-container");
 
     return true;
 }
 function SelectAOIComplete(map) {
-    if (hasTool == 0) {
-        map.addLayer(drawnItems);
-
-        // create a new Leaflet Draw control
-        //var drawControl = new L.Control.Draw({
-        //    edit: {
-        //        featureGroup: drawnItems // allow editing/deleting of features in this group
-        //    },
-        //    draw: {
-        //        circle: false, // disable circles
-        //        marker: false, // disable polylines
-        //        polyline: false, // disable polylines
-        //        polygon: {
-        //            allowIntersection: true, // polygons cannot intersect thenselves
-        //            drawError: {
-        //                color: 'red', // color the shape will turn when intersects
-        //                message: '<strong>Oh snap!<strong> you can\'t draw that!' // message that will show when intersect
-        //            },
-        //        }
-        //    }
-        //});
+    
         poly = new L.Draw.Polygon(map);
-        //drawcontrol = drawControl;
+    
         // listen to the draw created event
         map.on('draw:created', function (e) {
             // add the feature as GeoJSON (feature will be converted to ArcGIS JSON internally)
@@ -564,20 +562,11 @@ function SelectAOIComplete(map) {
             drawnItems.clearLayers();
             drawnItems.addLayer(e.layer);
             enableButton();
-            $("#selectocsblocks").click(function () {
-                QueryOCSBlocks(e.layer, map);
-            });
-            //poly.enable();
+            var applyquerybutton = document.getElementById("selectocsblocks");
+
+            applyquerybutton.disabled = false;
+            poly.enable();
         });
-
-        // add our drawing controls to the map
-        //map.addControl(drawControl);
-
-        poly.enable();
-        hasTool = 1;
-    }
-    poly.enable();
-
     return true;
 }
 function QueryOCSBlocks(polygon, map) {
@@ -591,30 +580,24 @@ function QueryOCSBlocks(polygon, map) {
                 map.removeLayer(geojson);
             }
         }
-        geojson = L.geoJSON(featureCollection).addTo(map);
+        geojson = L.geoJSON(featureCollection, { pane: "selectedblocks" }).addTo(map);
 
-
-
+        var selectocsblocksbutton = document.getElementById("selectocsblocks");
+        selectocsblocksbutton.innerHTML = "Redraw Selection";
+        selectocsblocksbutton.disabled = false;
+        drawnItems.clearLayers();
     });
-    drawnItems.clearLayers();
+    
     return true;
 }
 function TimeOfYearChange(map) {
     var timeofyear = document.getElementById("timeofyear");
+
+    //val needs to be a global variable
     var val = timeofyear.value;
-    if (hasTool == 1) {
-        //poly.enable();
-    }
+
     SelectAOIComplete(map);
-    //if (val == "Select time period") {
-    //    if (test != true) {
-    //        //alert("You must choose a time of year.  Try again.");
-    //    }
-    //}
-    //else {
-    //    var ocsblocksselector = document.getElementById("selectocsblocks");
-    //    ocsblocksselector.disabled = false;
-    //}
+
     return true;
 }
 ;
@@ -638,12 +621,6 @@ function loadConfig($scope) {
                 return "failed";
             }
         });
-        //$("#new-report-button").click(function () {
-        //    LoadStep1();
-        //});
-        //$("#button-pane").click(function () {
-        //    LoadStep1();
-        //});
         
     }
     else
@@ -667,9 +644,12 @@ function loadConfig($scope) {
 function LoadStep1(map) {
     //NewReportClick();
     $("#timeofyear").change(function () {
-        TimeOfYearChange(map);
-        //$("#selectocsblocks").removeClass("disabled");
-        
+        var val = $("#timeofyear option:selected").text();
+        if (val == "Months" || val == "Seasons") {
+            TimeOfYearChange(map);
+            var applyquerybutton = document.getElementById("selectocsblocks");
+            applyquerybutton.disabled = true;
+        }        
     });
 }
 function disableButton() {

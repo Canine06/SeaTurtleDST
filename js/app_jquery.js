@@ -18,12 +18,6 @@
                 return "failed";
             }
         });
-        //$("#new-report-button").click(function () {
-        //    LoadStep1();
-        //});
-        //$("#button-pane").click(function () {
-        //    LoadStep1();
-        //});
         
     }
     else
@@ -47,9 +41,12 @@
 function LoadStep1(map) {
     //NewReportClick();
     $("#timeofyear").change(function () {
-        TimeOfYearChange(map);
-        //$("#selectocsblocks").removeClass("disabled");
-        
+        var val = $("#timeofyear option:selected").text();
+        if (val == "Months" || val == "Seasons") {
+            TimeOfYearChange(map);
+            var applyquerybutton = document.getElementById("selectocsblocks");
+            applyquerybutton.disabled = true;
+        }        
     });
 }
 function disableButton() {

@@ -21,6 +21,19 @@ angular.module('myApp.controllers', []).
       $("#selectocsblocks").addClass("disabled");
       LoadStep1($scope.map);
 
+      $scope.queryBlocks = function () {
+          var applyquerybutton = document.getElementById("selectocsblocks");
+          //applyquerybutton.disabled = true;
+
+          if (applyquerybutton.innerHTML == "Apply Selection") {
+              QueryOCSBlocks(elayer, $scope.map);
+          }
+          else {
+              poly.enable();
+              applyquerybutton.innerHTML = "Apply Selection";
+          }
+
+      }
   }])
 .controller('AppController', ['$scope', '$location', function ($scope, $location) {
     $scope.changeView = function (view) {

@@ -20,6 +20,10 @@
       "url": "http://23.23.179.177/arcgis/rest/services/PlanningandAdministration/MapServer",
       "label": "Sand Resource Areas",
       "layers": "7"
+    },
+    {
+      "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/OCSBlocks/FeatureServer/0",
+      "label": "OCSBlocksFeatures"
     }
   ],
   "LinksHeader": "Links",
