@@ -20,7 +20,7 @@ angular.module('myApp.controllers', []).
       $scope.step1Instructions.innerHTML = $scope.AppConfig.Step1Instructions;
       $("#selectocsblocks").addClass("disabled");
       LoadStep1($scope.map);
-
+      buildSlider($scope.AppConfig);
       $scope.queryBlocks = function () {
           var applyquerybutton = document.getElementById("selectocsblocks");
           //applyquerybutton.disabled = true;

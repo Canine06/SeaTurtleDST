@@ -1,74 +1,39 @@
 <div class="container">
 
     <div id="crumbs">
-      <ul>
-        <li><a href="#" class="active">Analyze</a></li>
-        <li><a href="#">Define</a></li>
-        <li><a href="#">Mitigate</a></li>
-        <li><a href="#">Report</a></li>
-      </ul>
+        <ul>
+            <li><a href="#" class="active">Analyze</a></li>
+            <li><a href="#">Define</a></li>
+            <li><a href="#">Mitigate</a></li>
+            <li><a href="#">Report</a></li>
+        </ul>
     </div>
 
     <h1 id="Step1-Header"></h1>
     <p id="Step1-Instructions"></p>
 
     <div class="data-container">
-      <div class="grid grid-bottom">
-        <div class="gcol">
-          <div id="timeofyearcontainer">
-            <label for="timeofyear">Organize Date By</label>
-              <select id="timeofyear">
-                  <option value="" selected style="display:none;">Select time period</option>
-                  <option value="Seasons">Seasons</option>
-                  <option value="Months">Months</option>
-              </select>
-          </div>
-        </div>
-        <div class="gcol">
-          <div id="selectocsblockscontainer">
-            <button id="selectocsblocks" class="button disabled small mar-top-17" ng-click="queryBlocks()" disabled>Apply Selection</button>
-          </div>
-        </div>
-      </div> <!-- Grid -->
-
-      <div class="grid">
-        <div class="gcol">
-          <div class="range-wrap">
-            <div class="range-checkbox-question-wrap">
-              <div class="range-checkbox">
-                <label for=""><input type="checkbox">Number of Turtle Records</label>
-              </div>
-              <div class="range-question">
-                <a href="#modal-text" class="question">?</a>
-              </div>
-            </div><!-- END checkbox question wrap -->
-
-            [insert range slider]
-
-            <div class="grid">
-              <div class="gcol">
-                <p class="small muted" id="range-low">Low: 0-29</p>
-              </div>
-              <div class="gcol">
-                <p class="small muted" id="range-med">Med: 30-70</p>
-              </div>
-              <div class="gcol">
-                <p class="small muted" id="range-high">High: 71-100</p>
-              </div>
+        <div class="grid grid-bottom">
+            <div class="gcol">
+                <div id="timeofyearcontainer">
+                    <label for="timeofyear">Organize Date By</label>
+                    <select id="timeofyear">
+                        <option value="" selected style="display:none;">Select time period</option>
+                        <option value="Seasons">Seasons</option>
+                        <option value="Months">Months</option>
+                    </select>
+                </div>
             </div>
-          </div> <!-- END range wrap -->
-        </div>
-        <div class="gcol">
-          <div class="range-slider-wrap">
-            <p>Test</p>
-          </div>
-        </div>
-        <div class="gcol">
-          <div class="range-slider-wrap">
-            <p>Test</p>
-          </div>
-        </div>
-      </div>
+            <div class="gcol">
+                <div id="selectocsblockscontainer">
+                    <button id="selectocsblocks" class="button disabled small mar-top-30" ng-click="queryBlocks()" disabled>Apply Selection</button>
+                </div>
+            </div>
+        </div> <!-- Grid -->
+    <div id="variables">
+        
+    </div>
+        
     </div><!-- Data Container -->
 
 
@@ -76,18 +41,18 @@
 
 <!-- GLOBAL MODAL WINDOW -->
 <section class="modal--fade" id="modal-text" tabindex="-1"
-      role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+         role="dialog" aria-labelledby="modal-label" aria-hidden="true">
 
-  <div class="modal-inner">
-    <header>
-      <h2 id="label-fade">A fading modal</h2>
-    </header>
-     <div class="modal-content">
-       <p id="modal-content-text">Content.</p>
-     </div>
-  </div>
+    <div class="modal-inner">
+        <header>
+            <h2 id="label-fade">A fading modal</h2>
+        </header>
+        <div class="modal-content">
+            <p id="modal-content-text">Content.</p>
+        </div>
+    </div>
 
-  <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
-      data-dismiss="modal">?</a>
+    <a href="#!" class="modal-close" title="Close this modal" data-close="Close"
+       data-dismiss="modal">?</a>
 </section>
 <!-- END MODAL -->
