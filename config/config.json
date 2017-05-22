@@ -9,7 +9,7 @@
   ],
   "Footer": "The results of the analysis will be available for export as both a PDF and related data.",
   "Step1Header": "Step 1. Analysis",
-  "Step1Instructions":  "Select a time period over which the analyses will be summarized. Select an area of interest (one or more consecutive OCS blocks)",
+  "Step1Instructions":  "In order to select your area of interest, first select a time period over which to summarize the data. This will activate the ability to select one or more contiguous blocks to analyze. Variables available for analysis will be enabled once you submit your area of interest using the “Apply Selection” button. When you have made your selections and documented any assumptions, click the “Analyze Data” button at the bottom of the screen.",
   "BaseMap": "Oceans",
   "MapLayers": [
     {
@@ -39,6 +39,88 @@
     {
       "url": "http://www.google.com",
       "label": "Marine Minerals Information System"
+    }
+  ],
+  "Variables": [
+    {
+      "Title": "Lease Areas",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Sand Resources",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Number of Trawl Encounters",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Number of Turtle Records",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Loggerhead Critical Habitat",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "USGS East Coast Sediment Texture",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Seagrasses",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "NAMERA Benthic Habitat",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "NOAA Benthic Habitat",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "US Navy Benthic Type",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Test 1",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Dropdown",
+      "Values": [ "High", "Medium", "Low"]
+    },
+    {
+      "Title": "SEAMAP Benthic Type",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Test 2",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Dropdown",
+      "Values": [ "High", "Medium", "Low"]
     }
   ]
 }

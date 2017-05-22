@@ -360,7 +360,7 @@ angular.module('myApp.controllers', []).
       $scope.step1Instructions.innerHTML = $scope.AppConfig.Step1Instructions;
       $("#selectocsblocks").addClass("disabled");
       LoadStep1($scope.map);
-
+      buildSlider($scope.AppConfig);
       $scope.queryBlocks = function () {
           var applyquerybutton = document.getElementById("selectocsblocks");
           //applyquerybutton.disabled = true;
@@ -444,7 +444,7 @@ angular.module('myApp', [
 ;
 var map;
 var AppConfig;
-var ocsBlocks, sandResources, poly;
+var ocsBlocks, sandResources, poly, elayer;
 var selectedOCSBlocks;
 var drawnItems = new L.featureGroup();
 var resultsLayer = new L.featureGroup();
@@ -472,7 +472,7 @@ function BuildMap($scope) {
         $scope.ocsBlocks = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[0].url, layers: [AppConfig.MapLayers[0].layers], pane: 'ocsblocks' }).addTo($scope.map);
         ocsBlocks = $scope.ocsBlocks;
         $scope.map.createPane("selectedblocks");
-
+        $scope.map.addLayer(drawnItems);
         var ocsb_feats = L.esri.featureLayer({
             url: AppConfig.MapLayers[2].url
         });
@@ -552,21 +552,23 @@ function NewReportClick() {
     return true;
 }
 function SelectAOIComplete(map) {
-    
-        poly = new L.Draw.Polygon(map);
-    
-        // listen to the draw created event
-        map.on('draw:created', function (e) {
-            // add the feature as GeoJSON (feature will be converted to ArcGIS JSON internally)
 
-            drawnItems.clearLayers();
-            drawnItems.addLayer(e.layer);
-            enableButton();
-            var applyquerybutton = document.getElementById("selectocsblocks");
+    poly = new L.Draw.Polygon(map);
 
-            applyquerybutton.disabled = false;
-            poly.enable();
-        });
+    // listen to the draw created event
+    map.on('draw:created', function (e) {
+        // add the feature as GeoJSON (feature will be converted to ArcGIS JSON internally)
+
+        drawnItems.clearLayers();
+        drawnItems.addLayer(e.layer);
+        elayer = e.layer;
+        enableButton();
+        var applyquerybutton = document.getElementById("selectocsblocks");
+
+        applyquerybutton.disabled = false;
+
+    });
+    poly.enable();
     return true;
 }
 function QueryOCSBlocks(polygon, map) {
@@ -587,7 +589,7 @@ function QueryOCSBlocks(polygon, map) {
         selectocsblocksbutton.disabled = false;
         drawnItems.clearLayers();
     });
-    
+
     return true;
 }
 function TimeOfYearChange(map) {
@@ -599,6 +601,18 @@ function TimeOfYearChange(map) {
     SelectAOIComplete(map);
 
     return true;
+}
+function buildSlider(info) {
+    var slider1 = document.getElementById("Slider1");
+    noUiSlider.create(slider1, {
+        start: [4, 7],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 10
+        }
+    });
+    var duh = "";
 }
 ;
 function loadConfig($scope) {
