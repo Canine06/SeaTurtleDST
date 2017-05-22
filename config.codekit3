@@ -182,6 +182,26 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/css\/nouislider.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/css\/nouislider.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/css\/nouislider.min.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/css\/nouislider.min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/css\/ort.min.css": {
 		"aP": 0,
 		"bl": 0,
@@ -1262,6 +1282,24 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/nouislider.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/nouislider.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/nouislider.min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/nouislider.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/qunit-2.3.0.js": {
 		"ft": 64,
 		"mi": 1,
@@ -1321,6 +1359,18 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/partials\/step1.html",
+		"oF": 0
+		},
+	"\/partials\/variabledropdown.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/variabledropdown.html",
+		"oF": 0
+		},
+	"\/partials\/variableslider.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/partials\/variableslider.html",
 		"oF": 0
 		},
 	"\/README.md": {
@@ -1596,6 +1646,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/website.publishproj",
+		"oF": 0
+		},
+	"\/workingfile.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/workingfile.html",
 		"oF": 0
 		}
 	},
