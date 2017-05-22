@@ -9,7 +9,7 @@
                 if (!test) {
                     initMap($scope);
                 }
-                
+
                 //BuildInitPageContent($scope);
                 return "completed";
             },
@@ -18,7 +18,7 @@
                 return "failed";
             }
         });
-        
+
     }
     else
     {
@@ -46,7 +46,7 @@ function LoadStep1(map) {
             TimeOfYearChange(map);
             var applyquerybutton = document.getElementById("selectocsblocks");
             applyquerybutton.disabled = true;
-        }        
+        }
     });
 }
 function disableButton() {
@@ -55,3 +55,13 @@ function disableButton() {
 function enableButton() {
     $("#selectocsblocks").removeClass("disabled");
 }
+
+$(function(){
+  console.log("Ready!");
+  $('.modal-toggle').click(function(e){
+    e.preventDefault();
+    $('.modal').toggleClass('is-visible');
+  });
+});
+
+
