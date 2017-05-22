@@ -10,7 +10,7 @@
   "Footer": "The results of the analysis will be available for export as both a PDF and related data.",
   "Step1Header": "Step 1. Analysis",
   "Step1Instructions":  "In order to select your area of interest, first select a time period over which to summarize the data. This will activate the ability to select one or more contiguous blocks to analyze. Variables available for analysis will be enabled once you submit your area of interest using the “Apply Selection” button. When you have made your selections and documented any assumptions, click the “Analyze Data” button at the bottom of the screen.",
-  "BaseMap": "Oceans",
+  "BaseMap": "Imagery",
   "MapLayers": [
     {
       "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/OCSBlocks/MapServer",
