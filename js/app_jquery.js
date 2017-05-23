@@ -51,6 +51,8 @@ function LoadStep1(map) {
 }
 function disableButton() {
     $("#selectocsblocks").addClass("disabled");
+    $("#selectocsblocks").attr("disabled", "disabled");
+    $("#selectocsblocks").html('Apply Selection');
 }
 function enableButton() {
     $("#selectocsblocks").removeClass("disabled");

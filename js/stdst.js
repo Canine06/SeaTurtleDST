@@ -348,6 +348,10 @@ angular.module('myApp.controllers', []).
       $scope.introNewReportKeyPress = function (e) {
           if (e.keyCode == 13) {
               $scope.changeView("step1");
+              disableButton();
+              resetTimeSelect();
+              clearSelection($scope.map);
+              disableDraw();
           }
       }
       $(".leaflet-right").slideUp(1);
@@ -380,11 +384,19 @@ angular.module('myApp.controllers', []).
         $location.path(view);
         if (view == "step1") {
             LoadStep1($scope.map);
+            disableButton();
+            resetTimeSelect();
+            clearSelection($scope.map);
+            disableDraw();
         }
     }
     $scope.newReportKeyPress = function (e) {
         if (e.keyCode == 13) {
             $scope.changeView("step1");
+            disableButton();
+            resetTimeSelect();
+            clearSelection($scope.map);
+            disableDraw();
         }
     }
     $scope.testLegend = function () {
@@ -477,10 +489,7 @@ function BuildMap($scope) {
             url: AppConfig.MapLayers[2].url
         });
 
-        ocsb_feats.query().bounds(function (error, latlngbounds) {
-            $scope.map.fitBounds(latlngbounds);
-        });
-
+        zoomToFullExtent($scope);
     }
     else {
         AppConfig = $scope.AppConfig;
@@ -493,6 +502,15 @@ function BuildMap($scope) {
         $scope.ocsBlocks = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[0].url, layers: [AppConfig.MapLayers[0].layers] }).addTo($scope.map);
     }
     return true;
+}
+function zoomToFullExtent($scope) {
+    var ocsb_feats = L.esri.featureLayer({
+        url: AppConfig.MapLayers[2].url
+    });
+
+    ocsb_feats.query().bounds(function (error, latlngbounds) {
+        $scope.map.fitBounds(latlngbounds);
+    });
 }
 function BuildLegend($scope) {
     var opts = {
@@ -551,6 +569,10 @@ function NewReportClick() {
 
     return true;
 }
+function resetTimeSelect() {
+    var timeselect = document.getElementById("timeofyear");
+    timeselect.selectedIndex = 0;
+}
 function SelectAOIComplete(map) {
 
     poly = new L.Draw.Polygon(map);
@@ -577,11 +599,8 @@ function QueryOCSBlocks(polygon, map) {
 
         selectedOCSBlocks = featureCollection;
 
-        if (geojson != null) {
-            if (map.hasLayer(geojson)) {
-                map.removeLayer(geojson);
-            }
-        }
+        clearSelection(map);
+        
         geojson = L.geoJSON(featureCollection, { pane: "selectedblocks" }).addTo(map);
 
         var selectocsblocksbutton = document.getElementById("selectocsblocks");
@@ -591,6 +610,19 @@ function QueryOCSBlocks(polygon, map) {
     });
 
     return true;
+}
+function clearSelection(map) {
+    if (geojson != null) {
+        if (map.hasLayer(geojson)) {
+            map.removeLayer(geojson);
+        }
+    }
+}
+function disableDraw() {
+    if (poly) {
+        poly.disable();
+    }
+    
 }
 function TimeOfYearChange(map) {
     var timeofyear = document.getElementById("timeofyear");
@@ -603,16 +635,131 @@ function TimeOfYearChange(map) {
     return true;
 }
 function buildSlider(info) {
-    var slider1 = document.getElementById("Slider1");
-    noUiSlider.create(slider1, {
-        start: [4, 7],
-        connect: true,
-        range: {
-            'min': 0,
-            'max': 10
+    var varscount = info.Variables.length;
+    var colcount = 0;
+    var grd, gcol, rangewrap, variablecontrol, variableranges;
+    var varscontainer = document.getElementById("variables");
+    for (i = 0; i < varscount; i++) {
+        if (colcount == 0) {
+            grd = document.createElement("div")
+            grd.className += "grid";
+            varscontainer.appendChild(grd);
         }
-    });
-    var duh = "";
+        if (colcount < 3) {
+            var chkbox = buildLabel(info.Variables[i]);
+            var infobutton = buildInfoButton(info.Variables[i]);
+            var header = buildCheckBoxQuestionContainer(chkbox, infobutton);
+            gcol = document.createElement("div");
+            gcol.className += "gcol";
+            gcol.style.width = "33%";
+            rangewrap = document.createElement("div");
+            rangewrap.className += "range-wrap";
+
+            if (info.Variables[i].ControlType == "Slider") {
+                variablecontrol = document.createElement("div");
+                variablecontrol.id = "slider" + i;
+                variableranges = buildVariableRanges(i);
+                noUiSlider.create(variablecontrol, {
+                    start: [4, 7],
+                    connect: true,
+                    range: {
+                        'min': 0,
+                        'max': 10
+                    }
+                });
+                variablecontrol.setAttribute("disabled", true);
+                
+            }
+            else {
+                variableranges = document.createElement("div");
+                variablecontrol = document.createElement("select");
+                for (b = 0; b < info.Variables[i].Values.length; b++) {
+                    var opt = document.createElement("option");
+                    opt.value = info.Variables[i].Values[b];
+                    opt.text = info.Variables[i].Values[b];
+                    variablecontrol.appendChild(opt);
+                }
+            }
+            
+            rangewrap.appendChild(header);
+            rangewrap.appendChild(variablecontrol);
+            rangewrap.appendChild(variableranges);
+            gcol.appendChild(rangewrap);
+            
+            gcol.disabled = true;
+            var nodes = gcol.getElementsByTagName("*");
+            for (a = 0; a < nodes.length; a++) {
+                nodes[a].disabled = true;
+            }
+            grd.appendChild(gcol);
+
+            colcount++;
+        }
+        else {
+            colcount = 0;
+        }
+    }
+}
+function buildInfoButton(info) {
+    //build info button
+    var quest = document.createElement("div");
+    quest.className += "range-question";
+    var questmodalbutton = document.createElement("a");
+    questmodalbutton.href = "#modal-text";
+    questmodalbutton.className += "question";
+    questmodalbutton.innerHTML = "?";
+    questmodalbutton.style.pointerEvents = "none";
+    questmodalbutton.style.cursor = "default";
+    quest.appendChild(questmodalbutton);
+    return quest;
+}
+function buildLabel(info) {
+    var chkboxcontaner = document.createElement("div");
+    chkboxcontaner.className += "range-checkbox";
+    var label = document.createElement("label");
+    var chkbx = document.createElement("input");
+    chkbx.type = "checkbox";
+    label.for = "";
+    label.appendChild(chkbx);
+    label.innerHTML += info.Title;
+    chkboxcontaner.appendChild(label);
+    return chkboxcontaner;
+}
+function buildCheckBoxQuestionContainer(checkbox, question) {
+    var wrapper = document.createElement("div");
+    wrapper.appendChild(checkbox);
+    wrapper.appendChild(question);
+    wrapper.className += "range-checkbox-question-wrap";
+    return wrapper;
+}
+function buildVariableRanges(elementID) {
+    var vRanges = document.createElement("div");
+    vRanges.className += "grid";
+    var lowlabel = document.createElement("div");
+    lowlabel.className += "gcol";
+    var lowP = document.createElement("p");
+    lowP.className += "small muted";
+    lowP.id = "lowlabel" + elementID;
+    lowP.innerHTML = "Low:  0-29";
+    lowlabel.appendChild(lowP);
+    vRanges.appendChild(lowlabel);
+    var medlabel = document.createElement("div");
+    medlabel.className += "gcol";
+    var medP = document.createElement("p");
+    medP.className += "small muted";
+    medP.id = "medlabel" + elementID;
+    medP.innerHTML = "Med:  0-29";
+    medlabel.appendChild(medP);
+    vRanges.appendChild(medlabel);
+    var hilabel = document.createElement("div");
+    hilabel.className += "gcol";
+    var hiP = document.createElement("p");
+    hiP.className += "small muted";
+    hiP.id = "hidlabel" + elementID;
+    hiP.innerHTML = "High:  0-29";
+    hilabel.appendChild(hiP);
+    vRanges.appendChild(hilabel);
+    return vRanges;
 }
 ;
 function loadConfig($scope) {
@@ -626,7 +773,7 @@ function loadConfig($scope) {
                 if (!test) {
                     initMap($scope);
                 }
-                
+
                 //BuildInitPageContent($scope);
                 return "completed";
             },
@@ -635,7 +782,7 @@ function loadConfig($scope) {
                 return "failed";
             }
         });
-        
+
     }
     else
     {
@@ -663,7 +810,7 @@ function LoadStep1(map) {
             TimeOfYearChange(map);
             var applyquerybutton = document.getElementById("selectocsblocks");
             applyquerybutton.disabled = true;
-        }        
+        }
     });
 }
 function disableButton() {
@@ -671,7 +818,18 @@ function disableButton() {
 }
 function enableButton() {
     $("#selectocsblocks").removeClass("disabled");
-};
+}
+
+$(function(){
+  console.log("Ready!");
+  $('.modal-toggle').click(function(e){
+    e.preventDefault();
+    $('.modal').toggleClass('is-visible');
+  });
+});
+
+
+;
 
 /**
  * @license Angulartics v0.17.2

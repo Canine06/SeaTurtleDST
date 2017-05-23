@@ -14,8 +14,7 @@ QUnit.test("Select Area Of Interest Test", function (assert) {
     assert.equal(result, true, "Select Area of Interest Test passes");
 });
 QUnit.test("Pick Time of Year Test", function (assert) {
-    var result = TimeOfYearChange();
-    var blah = "";
+    var result = TimeOfYearChange(map);
     assert.equal(result, true, "Pick Time of Year Test passes");
 });
 QUnit.test("Load Layers Test", function (assert) {
@@ -35,4 +34,9 @@ QUnit.test("Load Layers Test", function (assert) {
     
     var result = BuildMap($scope);
     assert.equal(result, true, "Load Layers Test passes");
+});
+QUnit.test("Load Variables Test", function (assert) {
+    $scope.AppConfig.Variables = [];
+    var result = buildSlider($scope.AppConfig);
+    assert.equal(result, true, "Load Variables Test passes");
 });

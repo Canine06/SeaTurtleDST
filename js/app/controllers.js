@@ -8,6 +8,10 @@ angular.module('myApp.controllers', []).
       $scope.introNewReportKeyPress = function (e) {
           if (e.keyCode == 13) {
               $scope.changeView("step1");
+              disableButton();
+              resetTimeSelect();
+              clearSelection($scope.map);
+              disableDraw();
           }
       }
       $(".leaflet-right").slideUp(1);
@@ -40,11 +44,19 @@ angular.module('myApp.controllers', []).
         $location.path(view);
         if (view == "step1") {
             LoadStep1($scope.map);
+            disableButton();
+            resetTimeSelect();
+            clearSelection($scope.map);
+            disableDraw();
         }
     }
     $scope.newReportKeyPress = function (e) {
         if (e.keyCode == 13) {
             $scope.changeView("step1");
+            disableButton();
+            resetTimeSelect();
+            clearSelection($scope.map);
+            disableDraw();
         }
     }
     $scope.testLegend = function () {

@@ -33,10 +33,7 @@ function BuildMap($scope) {
             url: AppConfig.MapLayers[2].url
         });
 
-        ocsb_feats.query().bounds(function (error, latlngbounds) {
-            $scope.map.fitBounds(latlngbounds);
-        });
-
+        zoomToFullExtent($scope);
     }
     else {
         AppConfig = $scope.AppConfig;
@@ -49,6 +46,15 @@ function BuildMap($scope) {
         $scope.ocsBlocks = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[0].url, layers: [AppConfig.MapLayers[0].layers] }).addTo($scope.map);
     }
     return true;
+}
+function zoomToFullExtent($scope) {
+    var ocsb_feats = L.esri.featureLayer({
+        url: AppConfig.MapLayers[2].url
+    });
+
+    ocsb_feats.query().bounds(function (error, latlngbounds) {
+        $scope.map.fitBounds(latlngbounds);
+    });
 }
 function BuildLegend($scope) {
     var opts = {
@@ -107,6 +113,10 @@ function NewReportClick() {
 
     return true;
 }
+function resetTimeSelect() {
+    var timeselect = document.getElementById("timeofyear");
+    timeselect.selectedIndex = 0;
+}
 function SelectAOIComplete(map) {
 
     poly = new L.Draw.Polygon(map);
@@ -133,11 +143,8 @@ function QueryOCSBlocks(polygon, map) {
 
         selectedOCSBlocks = featureCollection;
 
-        if (geojson != null) {
-            if (map.hasLayer(geojson)) {
-                map.removeLayer(geojson);
-            }
-        }
+        clearSelection(map);
+        
         geojson = L.geoJSON(featureCollection, { pane: "selectedblocks" }).addTo(map);
 
         var selectocsblocksbutton = document.getElementById("selectocsblocks");
@@ -147,6 +154,19 @@ function QueryOCSBlocks(polygon, map) {
     });
 
     return true;
+}
+function clearSelection(map) {
+    if (geojson != null) {
+        if (map.hasLayer(geojson)) {
+            map.removeLayer(geojson);
+        }
+    }
+}
+function disableDraw() {
+    if (poly) {
+        poly.disable();
+    }
+    
 }
 function TimeOfYearChange(map) {
     var timeofyear = document.getElementById("timeofyear");
@@ -223,6 +243,7 @@ function buildSlider(info) {
             colcount = 0;
         }
     }
+    return true;
 }
 function buildInfoButton(info) {
     //build info button
