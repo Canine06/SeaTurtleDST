@@ -184,6 +184,9 @@ function buildSlider(info) {
     var grd, gcol, rangewrap, variablecontrol, variableranges;
     var varscontainer = document.getElementById("variables");
     for (i = 0; i < varscount; i++) {
+        if (colcount > 2) {
+            colcount = 0;
+        }
         if (colcount == 0) {
             grd = document.createElement("div")
             grd.className += "grid";
@@ -238,9 +241,6 @@ function buildSlider(info) {
             grd.appendChild(gcol);
 
             colcount++;
-        }
-        else {
-            colcount = 0;
         }
     }
     return true;
