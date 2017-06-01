@@ -1072,6 +1072,15 @@ select[multiple] {
 .range-wrap > .grid {
   margin-top: 0.3125rem; }
 
+.range-wrap .grid .gcol:nth-child(2) {
+  text-align: center; }
+
+.range-wrap .grid .gcol:nth-child(3) {
+  text-align: right; }
+
+#variables select {
+  margin-bottom: 30px !important; }
+
 .modal {
   position: absolute;
   z-index: 10000;

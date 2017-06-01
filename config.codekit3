@@ -77,6 +77,26 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/css\/jquery.modal.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/css\/jquery.modal.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/css\/jquery.modal.min.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/css\/jquery.modal.min.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/css\/leaflet.css": {
 		"aP": 0,
 		"bl": 0,
@@ -1148,6 +1168,24 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/js\/jquery.modal.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/jquery.modal.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/js\/jquery.modal.min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/jquery.modal.min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/js\/leaflet\/images\/layers-2x.png": {
 		"ft": 32768,
 		"iS": 1259,
@@ -1334,6 +1372,12 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
+		},
+	"\/modal.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/modal.html",
+		"oF": 0
 		},
 	"\/package.json": {
 		"ft": 524288,
