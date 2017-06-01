@@ -2,6 +2,8 @@
   // wrapper
   &-wrap, &-checkbox-question-wrap
    overflow: hidden
+   margin-bottom: 0.625rem
+   position: relative
 
   // checkbox & modal
   // checkbox
@@ -9,13 +11,15 @@
     float: left
 
     label
-      font-size: 12px
+      font-size: 11px
 
     input[type=checkbox]
       margin-right: 5px
 
   &-question
-    float: right
+    position: absolute
+    top: 0
+    right: 0
 
     a
       color: #4a4a4a
@@ -26,3 +30,6 @@
       display: block
       width: 10px
       height: 10px
+
+  &-wrap > .grid
+    margin-top: 0.3125rem

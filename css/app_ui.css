@@ -773,6 +773,10 @@ label {
 .float-right {
   float: right !important; }
 
+.mar-top-24 {
+  margin-top: 24px !important;
+  margin-bottom: 0 !important; }
+
 .mar-top-30 {
   margin-top: 30px !important;
   margin-bottom: 0 !important; }
@@ -791,12 +795,16 @@ label {
         -ms-flex: 1;
             flex: 1;
     padding: 1em 0 0 1em; }
+    .grid .gcol.end {
+      -webkit-box-flex: 0;
+          -ms-flex: none;
+              flex: none; }
   .grid-bottom {
     -ms-flex-item-align: end;
         align-self: flex-end; }
 
 select {
-  height: 2.4375rem;
+  height: 34px;
   margin: 0 0 1rem;
   padding: 0.5rem;
   -webkit-appearance: none;
@@ -806,7 +814,7 @@ select {
   border-radius: 0;
   background-color: #fefefe;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 14px !important;
   line-height: normal;
   color: #0a0a0a;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>");
@@ -911,6 +919,8 @@ select[multiple] {
     background-color: #f0f0f0; }
   #new-report-button h3 {
     font-size: 1.375rem; }
+  #new-report-button p {
+    font-size: 0.9375rem; }
   #new-report-button .img-border {
     margin: 0 auto 2rem;
     width: 25px;
@@ -1034,17 +1044,21 @@ select[multiple] {
     margin-left: 0; }
 
 .range-wrap, .range-checkbox-question-wrap {
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 0.625rem;
+  position: relative; }
 
 .range-checkbox {
   float: left; }
   .range-checkbox label {
-    font-size: 12px; }
+    font-size: 11px; }
   .range-checkbox input[type=checkbox] {
     margin-right: 5px; }
 
 .range-question {
-  float: right; }
+  position: absolute;
+  top: 0;
+  right: 0; }
   .range-question a {
     color: #4a4a4a;
     font-size: 8px;
@@ -1054,6 +1068,9 @@ select[multiple] {
     display: block;
     width: 10px;
     height: 10px; }
+
+.range-wrap > .grid {
+  margin-top: 0.3125rem; }
 
 .modal {
   position: absolute;
