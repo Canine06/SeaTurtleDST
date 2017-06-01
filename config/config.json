@@ -52,7 +52,8 @@
       "Title": "Sand Resources",
       "FieldName": "",
       "HelpContent": "",
-      "ControlType": "Slider"
+      "ControlType": "Dropdown",
+      "Values": [ "Presence", "Absense"]
     },
     {
       "Title": "Number of Trawl Encounters",
@@ -70,57 +71,110 @@
       "Title": "Loggerhead Critical Habitat",
       "FieldName": "",
       "HelpContent": "",
+      "ControlType": "Dropdown",
+      "Values": [ "Presence", "Absense" ]
+    },
+    {
+      "Title": "Loggerhead Atlantic Distribution Density",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Loggerhead GoM Distribution Density",
+      "FieldName": "",
+      "HelpContent": "",
       "ControlType": "Slider"
     },
     {
       "Title": "USGS East Coast Sediment Texture",
       "FieldName": "",
       "HelpContent": "",
-      "ControlType": "Slider"
+      "ControlType": "Dropdown",
+      "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "Seagrasses",
       "FieldName": "",
       "HelpContent": "",
-      "ControlType": "Slider"
+      "ControlType": "Dropdown",
+      "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "NAMERA Benthic Habitat",
       "FieldName": "",
       "HelpContent": "",
-      "ControlType": "Slider"
+      "ControlType": "Dropdown",
+      "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "NOAA Benthic Habitat",
       "FieldName": "",
       "HelpContent": "",
-      "ControlType": "Slider"
+      "ControlType": "Dropdown",
+      "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "US Navy Benthic Type",
       "FieldName": "",
       "HelpContent": "",
-      "ControlType": "Slider"
-    },
-    {
-      "Title": "Test 1",
-      "FieldName": "",
-      "HelpContent": "",
       "ControlType": "Dropdown",
-      "Values": [ "High", "Medium", "Low"]
+      "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "SEAMAP Benthic Type",
       "FieldName": "",
       "HelpContent": "",
+      "ControlType": "Dropdown",
+      "Values": [ "Presence", "Absense" ]
+    },
+    {
+      "Title": "Bathymetry",
+      "FieldName": "",
+      "HelpContent": "",
       "ControlType": "Slider"
     },
     {
-      "Title": "Test 2",
+      "Title": "Slope",
       "FieldName": "",
       "HelpContent": "",
-      "ControlType": "Dropdown",
-      "Values": [ "High", "Medium", "Low"]
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Roughness",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Sea Surface Temperature (Deg C)",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Current Velocity (m/s)",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Wind Velocity (m/s)",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Significant Wave Height (meters)",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
+    },
+    {
+      "Title": "Chlorophyll A (mg/m3)",
+      "FieldName": "",
+      "HelpContent": "",
+      "ControlType": "Slider"
     }
   ]
 }
