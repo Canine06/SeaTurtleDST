@@ -9,17 +9,25 @@
   ],
   "Footer": "The results of the analysis will be available for export as both a PDF and related data.",
   "Step1Header": "Step 1. Analysis",
-  "Step1Instructions":  "In order to select your area of interest, first select a time period over which to summarize the data. This will activate the ability to select one or more contiguous blocks to analyze. Variables available for analysis will be enabled once you submit your area of interest using the “Apply Selection” button. When you have made your selections and documented any assumptions, click the “Analyze Data” button at the bottom of the screen.",
+  "Step1Instructions":  "Currently, the decision to limit dredging to a certain temporal window is based mostly on sea surface temperature. However, many variables may affect the risk turtle populations face as a result of dredging. Coordination with dredging and turtle experts has identified the following key risk variables to help inform decision making.",
+  "Step1InstructionSteps": [
+    "Select seasons or months for the temporal analysis.",
+    "Draw a polygon on the map to define the area of interest and click the “Apply Selection” button.",
+    "Risk variables available for analysis within the selected OCS blocks will be activated.",
+    "Select desired variables for analysis and define the associated risk values using the slider bar.",
+    "Document any assumptions relevant to the analysis in the text box click the “Analyze Data” button at the bottom of the screen."
+  ],
   "BaseMap": "Imagery",
+  "GeometryServer":  "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/Utilities/Geometry/GeometryServer",
   "MapLayers": [
     {
-      "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/OCSBlocks/MapServer",
-      "label": "OCSBlocks"
+      "url": "http://dev-public.quantumspatial.com/arcgis/rest/services/SeaTurtle/AllBlocks_Service/MapServer",
+      "label": "State and Federal Block Grid"
     },
     {
-      "url": "http://23.23.179.177/arcgis/rest/services/PlanningandAdministration/MapServer",
-      "label": "Sand Resource Areas",
-      "layers": "7"
+      "url": "http://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+      "label": "Sand Resources",
+      "layers": "5"
     },
     {
       "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/OCSBlocks/FeatureServer/0",
@@ -44,136 +52,205 @@
   "Variables": [
     {
       "Title": "Lease Areas",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "LeaseNo",
+      "HelpContent": "The presence of a lease area may indicate a higher risk than an area that has not previously been dredged. Anecdotally, there has been evidence that sea turtles can inhabit/prefer areas after disturbance (e.g., dredging, trawling) which can imply that turtles prefer high rugosity areas for resting/feeding in troughs and valleys, increasing the risk of entrainment. Generally, the local scale morphology of the sea floor is more important than large scale slope in increasing the likelihood of entrainment because TSHD dragheads can skip over “holes” where sea turtles cannot escape. Areas with no previous leases and therefore less bottom disturbance are lower risk for attracting and trapping turtles.",
+      "HelpInstructions": [ ],
+      "SourceLink": "",
+      "SourceTitle": "Data Source: BOEM MMIS",
       "ControlType": "Slider"
     },
     {
       "Title": "Sand Resources",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "Resource",
+      "HelpContent": "The presence of known sand resources can be used as a baseline for where dredging could likely occur, which would influence the level of entrainment risk. Definitions adapted from Freedenberg and Hoenstine, 1999.",
+      "HelpInstructions": [
+        "Possible – features identified as a result of bathymetry delineation of a supposed shoal. No additional physical data exists to support these areas as a resource",
+        "Potential – resource areas hypothesized to exist on the basis of indirect evidence such as acoustic subsurface profile (seismic) character or sidescan sonar character. The presence of sand through direct sampling methods has not yet been confirmed.",
+        "Probable – resource areas whose existence has been established through the use of vibracores, push cores and/or grab samples. Thickness and/or lateral extent has not been fully determined. These are reserves that could be viable if additional coring is done",
+        "Proven – resource areas whose thickness and lateral extent have been fully determined through the use of vibracore and/or push cores. Generally reserved for shoals that have already been authorized as part of a lease.",
+        "Unusable – resource areas that as a result of additional surveys, prior dredging activity, or infrastructure development are not (or no longer) suitable for future dredging."
+      ],
+      "SourceLink": "",
+      "SourceTitle": "Data Source: BOEM MMIS",
       "ControlType": "Dropdown",
       "Values": [ "Presence", "Absense"]
     },
     {
       "Title": "Number of Trawl Encounters",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Relocation trawling data (captures/area trawled) give more information on the presence/abundance of sea turtles occurring at the same place and time as dredging, information that is extremely useful in assessing entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "",
+      "SourceTitle": "Data Source: BOEM MMIS/USACE",
       "ControlType": "Slider"
     },
     {
       "Title": "Number of Turtle Records",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "TurtleCHD",
+      "HelpContent": "Tracking the location/movements of sea turtles using satellite telemetry can show distribution on a horizontal scale at a relatively high temporal resolution.  Duke University’s Ocean Biogeographic Information System Spatial Ecological Analysis of Megavertebrate Populations (OBIS-SEAMAP) has catalogued many sea turtle telemetry datasets and is the first stop for identifying applicable turtle data and data contacts.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://seamap.env.duke.edu",
+      "SourceTitle": "Data Source: OBIS-SEAMAP",
       "ControlType": "Slider"
     },
     {
       "Title": "Loggerhead Critical Habitat",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Setting the toggle to High indicates that if a Critical Habitat is present then it is a higher risk to turtle entrainment. General areas for nearshore reproductive, breeding, migratory, and winter critical habitats have been identified within the range of the Northwest Atlantic Ocean loggerhead distinct population segment (DPS), highlighting habitats frequently utilized.  These designated critical habitats can help determine entrainment risk relative to other undesignated areas.",
+      "HelpInstructions": [ ],
+      "SourceLink": "ftp://ftp.coast.noaa.gov/pub/MSP/CriticalHabitatDesignations.zip",
+      "SourceTitle": "Data Source: NOAA National Marine Fisheries Service",
       "ControlType": "Dropdown",
       "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "Loggerhead Atlantic Distribution Density",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Based on a model developed by the US Navy. Values indicate number of animals per square kilometer. A higher value would indicate more turtles present during a particular month or season which may increase risk associated with dredging.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://seamap.env.duke.edu/serdp",
+      "SourceTitle": "Data Source: SERDP-NODE",
       "ControlType": "Slider"
     },
     {
       "Title": "Loggerhead GoM Distribution Density",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Based on a model developed by the US Navy. Values indicate number of animals per square kilometer. A higher value would indicate more turtles present during a particular month or season which may increase risk associated with dredging.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://seamap.env.duke.edu/serdp",
+      "SourceTitle": "Data Source: SERDP-NODE",
       "ControlType": "Slider"
     },
     {
       "Title": "USGS East Coast Sediment Texture",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Setting the toggle to Medium indicates that if sand is present then it is a medium risk to turtle entrainment. The presence of sand surface samples can be used as a baseline for where dredging can occur, which would influence the level of entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://woodshole.er.usgs.gov/project-pages/sediment/gis-data-catalog.html",
+      "SourceTitle": "Data Source: USGS",
       "ControlType": "Dropdown",
       "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "Seagrasses",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Setting the toggle to High indicates that if Seagrass is present then it is a higher risk to turtle entrainment. Some sea turtle species forage in areas with seagrass, however, it is not yet known if this is linked to how much time they spend on the bottom or entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://coast.noaa.gov/arcgis/rest/services/MarineCadastre/Seagrasses/MapServer",
+      "SourceTitle": "Data Source: NOAA Seagrasses",
       "ControlType": "Dropdown",
       "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "NAMERA Benthic Habitat",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Setting the toggle to Low indicates that if Hard Bottom (gravel or larger) is present then it is a lower risk to turtle entrainment. The presence of hardbottom surfaces can be used as a baseline for where dredging cannot occur, which would decrease the level of entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://www.conservationgateway.org/ConservationByGeography/NorthAmerica/UnitedStates/edc/reportsdata/marine/namera/namera/Pages/Spatial-Data.aspx",
+      "SourceTitle": "Data Source: The Nature Conservancy",
       "ControlType": "Dropdown",
       "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "NOAA Benthic Habitat",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Setting the toggle to Low indicates that if Hard Bottom (not sand or mud) is present then it is a lower risk to turtle entrainment. The presence of hardbottom surfaces can be used as a baseline for where dredging cannot occur, which would decrease the level of entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://coast.noaa.gov/arcgis/rest/services/MarineCadastre/BenthicCover/MapServer",
+      "SourceTitle": "Data Source: NOAA Benthic Cover",
       "ControlType": "Dropdown",
       "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "US Navy Benthic Type",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Setting the toggle to Low indicates that if Hard Bottom (or partial hardbottom) is present then it is a lower risk to turtle entrainment. The presence of hardbottom surfaces can be used as a baseline for where dredging cannot occur, which would decrease the level of entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "",
+      "SourceTitle": "Data Source: US Navy",
       "ControlType": "Dropdown",
       "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "SEAMAP Benthic Type",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Setting the toggle to Low indicates that if Hard Bottom (or partial hardbottom) is present then it is a lower risk to turtle entrainment. The presence of hardbottom surfaces can be used as a baseline for where dredging cannot occur, which would decrease the level of entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://www.seamap.org/SouthAtlantic.html",
+      "SourceTitle": "Data Source: South Atlantic Fisheries Management Council",
       "ControlType": "Dropdown",
       "Values": [ "Presence", "Absense" ]
     },
     {
       "Title": "Bathymetry",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Habitat utilization at different depths can depend on sea turtle species, sex, life history stage, and season. Generally, dredging does not usually occur in depths shallower than 3m or deeper than 35m therefore these intermediate depths pose the greatest risk for turtle entrainment.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://www.ngdc.noaa.gov/mgg/coastal/crm.html",
+      "SourceTitle": "Data Source: NOAA Coastal Relief Model",
       "ControlType": "Slider"
     },
     {
       "Title": "Slope",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "Slope",
+      "HelpContent": "Optimal sea turtle foraging areas may be near areas with a high slope (near ledges), so that they can more easily access deeper, warmer waters for thermoregulation, compared to foraging in an area where the shelf break is further away. Higher slope values may indicate higher risk of entrainment. Slope values were determined using the slope tool in ESRI ArcMap.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://www.ngdc.noaa.gov/mgg/coastal/crm.html",
+      "SourceTitle": "Data Source: NOAA Coastal Relief Model",
       "ControlType": "Slider"
     },
     {
       "Title": "Roughness",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "Roughness",
+      "HelpContent": "Anecdotally, there has been evidence that sea turtles can inhabit/prefer areas after disturbance (e.g., dredging, trawling) which can imply that turtles prefer high rugosity areas for resting/feeding in troughs and valleys, increasing the risk of entrainment. Generally, the morphology of the sea floor is more important than slope in increasing the likelihood of entrainment because TSHD dragheads can skip over “holes” where sea turtles cannot escape. The rugosity of the seafloor and draghead-related trenching may increase the risk of “crabbing” (when the draghead is pulled away from or under the dredge) due to the draghead falling into the trench or steep slope and orienting in a different direction from the dredge.  Increased “crabbing” risk may affect sea turtle entrainment risk levels because dragheads need to be raised and reset more often during dredging to maintain vessel safety and to avoid equipment damage and, thus, decreasing dredging operations efficiency. Rugosity values were determined as the standard deviation of the slope using focal statistics in ESRI ArcMap.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://www.ngdc.noaa.gov/mgg/coastal/crm.html",
+      "SourceTitle": "Data Source: NOAA Coastal Relief Model",
       "ControlType": "Slider"
     },
     {
       "Title": "Sea Surface Temperature (Deg C)",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "SST_month1",
+      "HelpContent": "Sea surface temperature is an important factor commonly found to be related to sea turtle distribution. Migratory behaviors are influenced by the movement away from declining water temperatures into more favorable habitats. Water temperatures lower than 10° C can lead to cold stunning. Conversely, higher than average temperatures may be related to higher abundances of turtles in an area, resulting in an increased potential for interactions between turtles and dredging activities.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://dx.doi.org/10.5067/GHCMC-4FM02",
+      "SourceTitle": "Data Source: Canada Meteorological Center",
       "ControlType": "Slider"
     },
     {
       "Title": "Current Velocity (m/s)",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "Velocity_month1",
+      "HelpContent": "Ocean currents was recognized as a possible factor affecting sea turtle entrainment risk, since they have been found to influence sea turtle prey, movements, and distribution, but more research is necessary to determine the role of ocean currents and sea turtle entrainment risk in TSHDs.  In general, stronger surface currents may increase “crabbing” risk and decrease the ability to keep dragheads hard on the bottom at all times, which could increase sea turtle entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://podaac.jpl.nasa.gov/dataset/OSCAR_L4_OC_third-deg",
+      "SourceTitle": "Data Source: NASA Ocean Surface Current Analyses Real-time (OSCAR)",
       "ControlType": "Slider"
     },
     {
       "Title": "Wind Velocity (m/s)",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "Wind_month1",
+      "HelpContent": "The duration of a dredging project can vary greatly depending on the time of year, due to the increase in limiting environmental factors during certain seasons (e.g., adverse weather conditions, significant wave height, etc.), which can affect risk of entrainment based on dredging efficiency and duration.  Higher sea state, stronger surface currents, etc. may increase “crabbing” risk, decrease the ability to keep dragheads hard on the bottom at all times, and increase sea turtle entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://www.aviso.altimetry.fr/",
+      "SourceTitle": "Data Source: The Archiving, Validation and Interpretation of Satellite Oceanographic data (AVISO) group",
       "ControlType": "Slider"
     },
     {
       "Title": "Significant Wave Height (meters)",
-      "FieldName": "",
-      "HelpContent": "",
+      "FieldName": "SWH_month1",
+      "HelpContent": "The duration of a dredging project can vary greatly depending on the time of year, due to the increase in limiting environmental factors during certain seasons (e.g., adverse weather conditions, significant wave height, etc.), which can affect risk of entrainment based on dredging efficiency and duration.  Higher sea state, stronger surface currents, etc. may increase “crabbing” risk, decrease the ability to keep dragheads hard on the bottom at all times, and increase sea turtle entrainment risk.  An increase in significant wave height also decreases the ability to keep dragheads hard on the bottom at all times, and increases the likelihood that the TSHD will need to dredge perpendicular to the prevailing sea direction, which may or may not be ideal relative to the orientation of the borrow area or for minimizing sea turtle entrainment risk.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://www.aviso.altimetry.fr/",
+      "SourceTitle": "Data Source: The Archiving, Validation and Interpretation of Satellite Oceanographic data (AVISO) group",
       "ControlType": "Slider"
     },
     {
       "Title": "Chlorophyll A (mg/m3)",
       "FieldName": "",
-      "HelpContent": "",
+      "HelpContent": "Some sea turtle species forage in areas with seagrass/high chlorophyll a concentration, however, it is not yet known if this is linked to how much time they spend on the bottom or entrainment risk. Sea surface chlorophyll a concentrations can be linked with the presence of pelagic foraging, but may more research is needed to determine if it is highly related to benthic foraging behavior, which is when sea turtles are at greater risk of entrainment.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://oceancolor.gsfc.nasa.gov/",
+      "SourceTitle": "Data Source: NASA GSFC OceanColor Group - MODIS-Aqua L3 SMI",
       "ControlType": "Slider"
     }
   ]

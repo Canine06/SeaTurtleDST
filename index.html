@@ -13,12 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="x-dns-prefetch-control" content="off">
     <link href="css/app_style.css?9725669e91fd4a66" rel="stylesheet" />
-    <link href="css/app_ui.css?d03105eb34aec3d8" rel="stylesheet" />
+    <link href="css/app_ui.css?d0f43962832cf813" rel="stylesheet" />
     <!-- Fonts -->
     <link rel="stylesheet" href="//coast.noaa.gov/assets/fonts/fonts.css">
     <!-- Application CSS file -->
     <link rel="stylesheet" href="css/stdst.min.css?657d9d0d6b599cfa">
-
+    <link rel="stylesheet" href="css/jquery.modal.css?ecdc329db3082688" type="text/css" media="screen" />
     <link href="css/app_style.css?9725669e91fd4a66" rel="stylesheet" />
     <link href="js/leaflet/leaflet.css?772083c71fa064e6" rel="stylesheet" />
     <link href="css/nouislider.css?29b0bff5415f44b2" rel="stylesheet" />
@@ -31,6 +31,7 @@
     <script src="js/nouislider.js?0361a532a75eee4f"></script>
     <!-- Google Analytics -->
     <script src="//coast.noaa.gov/js/federated-angularlitics.js?angular=true"></script>
+    
 </head>
 <body ng-controller="AppController">
     <div id="app-container">
@@ -56,13 +57,20 @@
             
         </div>
     </div>
+    
     <!-- DO NOT INCLUDE SCRIPTS HERE, USE GRUNT. README! -->
-    <script src="js/stdst.js?949e1f45ef625a80"></script>
-    <script src="js/app_jquery.js?c17d33345dd6ae82"></script>
-    <script src="js/app_gis.js?c893ac43c4648877"></script>
+    <script src="js/stdst.js?7b2cde82f923825e"></script>
+    <script src="js/app_jquery.js?a0c56540e9267e73"></script>
+    <script src="js/app_gis.js?9f0ba2179afc98dc"></script>
+    <script src="js/jquery.modal.js?3fae18fff0800c83" type="text/javascript" charset="utf-8"></script>
+    
+
     <!-- HTML5 Polyfil to help screen readers with HTML5 elements https://github.com/yatil/accessifyhtml5.js -->
     <script>AccessifyHTML5();</script>
     <script src="js/angulartics.js?5d18dc4e31f19e67"></script>
     <script src="js/angulartics-google-analytics.js?ba5aa92affb327fa"></script>
+    <div class="modal" id="ex1" style="display:none;">
+        <p>Thanks for clicking.  That felt good.  <br />Click <a href="#" rel="modal:close">close</a>, click the overlay, or press ESC</p>
+    </div>
 </body>
 </html>

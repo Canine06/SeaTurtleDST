@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+	<meta charset="utf-8" />
+    <link href="js/leaflet/leaflet.css?772083c71fa064e6" rel="stylesheet" />
+    <script src="js/leaflet/leaflet-src.js?c666ac6524336dda"></script>
+    <script src="js/esri-leaflet-v2.0.8/dist/esri-leaflet.js?e242206edd80a2d3"></script>
+    <script src="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw-src.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw-src.css">
+    
+</head>
+<body>
+    <button style="position:absolute; right:20px; top:20px; z-index:1000;" onclick="drawAOI()">Draw AOI</button>
+    <div id="map"></div>
+    
+    <script>
+        var drawnItems = new L.featureGroup();
+        var geojson = null;
+
+        map = L.map("map", { attributionControl: false }).setView([39, -97.5], 4);
+        //Add basemap
+        baseMap = L.esri.basemapLayer("Imagery").addTo(map);
+
+        //Add dynamic layers
+        map.createPane("sandresources");
+        sandResources = L.esri.dynamicMapLayer({ url: "http://23.23.179.177/arcgis/rest/services/PlanningandAdministration/MapServer", layers: ["7"], pane: 'sandresources' }).addTo(map);
+
+        map.createPane("ocsblocks");
+        ocsBlocks = L.esri.dynamicMapLayer({ url: "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/OCSBlocks/MapServer", layers: ["0"], pane: 'ocsblocks' }).addTo(map);
+
+        map.createPane("killshoal");
+        killShoal = L.esri.dynamicMapLayer({ url: "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST_devData/MapServer", layers: ["0"], pane: 'killshoal' }).addTo(map);
+
+        map.createPane("selectedblocks");
+        map.addLayer(drawnItems);
+
+        zoomToFullExtent();
+
+
+        function zoomToFullExtent() {
+            var ocsb_feats = L.esri.featureLayer({
+                url: "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/OCSBlocks/FeatureServer/0"
+            });
+
+            ocsb_feats.query().bounds(function (error, latlngbounds) {
+                map.fitBounds(latlngbounds);
+            });
+        }
+        function drawAOI() {
+            poly = new L.Draw.Polygon(map);
+
+            // listen to the draw created event
+            map.on('draw:created', function (e) {
+                // add the feature as GeoJSON (feature will be converted to ArcGIS JSON internally)
+
+                drawnItems.clearLayers();
+                drawnItems.addLayer(e.layer);
+                QueryOCSBlocks(e.layer);
+            });
+            poly.enable();
+        }
+        function QueryOCSBlocks(polygon) {
+            // query the service executing the selected relation with the selected input geometry
+            ocsBlocks.query().layer(0).intersects(polygon).run(function (error, featureCollection, response) {
+                clearSelection();
+                geojson = L.geoJSON(featureCollection, { pane: "selectedblocks" }).addTo(map);
+                drawnItems.clearLayers();
+            });
+
+            return true;
+        }``
+        function clearSelection() {
+            if (geojson != null) {
+                if (map.hasLayer(geojson)) {
+                    map.removeLayer(geojson);
+                }
+            }
+        }
+        function intersectVariable(polygon, layer) {
+            // query the service executing the selected relation with the selected input geometry
+            ocsBlocks.query().layer(0).intersects(polygon).run(function (error, featureCollection, response) {
+                clearSelection();
+                geojson = L.geoJSON(featureCollection, { pane: "selectedblocks" }).addTo(map);
+                drawnItems.clearLayers();
+            });
+
+            return true;
+        }
+    </script>
+</body>
+</html>

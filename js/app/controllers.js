@@ -12,6 +12,7 @@ angular.module('myApp.controllers', []).
               resetTimeSelect();
               clearSelection($scope.map);
               disableDraw();
+              resetSlider();
           }
       }
       $(".leaflet-right").slideUp(1);
@@ -20,11 +21,22 @@ angular.module('myApp.controllers', []).
   .controller('Step1', ['$scope', function ($scope) {
       $scope.step1Header = document.getElementById("Step1-Header");
       $scope.step1Instructions = document.getElementById("Step1-Instructions");
+      $scope.step1ContentInstructions = document.getElementById("Step1-ContentInstructions");
       $scope.step1Header.innerHTML = $scope.AppConfig.Step1Header;
       $scope.step1Instructions.innerHTML = $scope.AppConfig.Step1Instructions;
+
+      $scope.step1ContentInstructions.innerHTML = "";
+      var listitems = [];
+      for (var i = 0; i < AppConfig.Step1InstructionSteps.length; i++) {
+          var listitem = document.createElement("li");
+          listitem.appendChild(document.createTextNode(AppConfig.Step1InstructionSteps[i]));
+          $scope.step1ContentInstructions.appendChild(listitem);
+      }
+
       $("#selectocsblocks").addClass("disabled");
       LoadStep1($scope.map);
       buildSlider($scope.AppConfig);
+      resetSlider();
       $scope.queryBlocks = function () {
           var applyquerybutton = document.getElementById("selectocsblocks");
           //applyquerybutton.disabled = true;
@@ -34,7 +46,9 @@ angular.module('myApp.controllers', []).
           }
           else {
               poly.enable();
+              
               applyquerybutton.innerHTML = "Apply Selection";
+              resetSlider();
           }
 
       }
@@ -48,6 +62,7 @@ angular.module('myApp.controllers', []).
             resetTimeSelect();
             clearSelection($scope.map);
             disableDraw();
+            resetSlider();
         }
     }
     $scope.newReportKeyPress = function (e) {
@@ -57,6 +72,7 @@ angular.module('myApp.controllers', []).
             resetTimeSelect();
             clearSelection($scope.map);
             disableDraw();
+            resetSlider();
         }
     }
     $scope.testLegend = function () {
