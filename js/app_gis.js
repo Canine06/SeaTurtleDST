@@ -334,7 +334,7 @@ function enableSingleVariable(name, pos, enable) {
     var nodes = gcol.getElementsByTagName("*");
 
     for (a = 0; a < nodes.length; a++) {
-        if (enable) {
+        if (!enable) {
             if (nodes[a].hasAttribute("disabled")) {
                 nodes[a].removeAttribute("disabled");
             }
@@ -381,7 +381,7 @@ function setSliders() {
                 if (AppConfig.Variables[i].FieldName == props) {
                     if (AppConfig.Variables[i].ControlType == "Slider") {
                         if (blocks[b].properties[props] != null) {
-                            enableSingleVariable(AppConfig.Variables[i].Title, i, true);
+                            enableSingleVariable(AppConfig.Variables[i].Title, i, false);
                         }
                     }
                     else {
@@ -469,19 +469,15 @@ function intersectEnvelope(featureCollection, id) {
 
     for (i = 0; i < dropdownCount.Layers.length; i++) {
         if (dropdownCount.Layers[i].Title == variable.Title) {
-            if (bounds._northEast.lat >= dropdownCount.Layers[i].ProjectedExtent.xmin && bounds._southWest.lat <= dropdownCount.Layers[i].ProjectedExtent.xmax) {
+            if (bounds._northEast.lng >= dropdownCount.Layers[i].ProjectedExtent.xmin && bounds._southWest.lng <= dropdownCount.Layers[i].ProjectedExtent.xmax) {
                 _rate++;
             }
-            if (bounds._northEast.long >= dropdownCount.Layers[i].ProjectedExtent.ymin && bounds._southWest.long <= dropdownCount.Layers[i].ProjectedExtent.ymax) {
+            if (bounds._northEast.lat >= dropdownCount.Layers[i].ProjectedExtent.ymin && bounds._southWest.lat <= dropdownCount.Layers[i].ProjectedExtent.ymax) {
                 _rate++;
             }
             if (_rate == 2) {
-                enableSingleVariable(AppConfig.Variables[id].Title, id, true);
-            }
-            else {
                 enableSingleVariable(AppConfig.Variables[id].Title, id, false);
             }
-            return intersects;
         }
     }
 }
