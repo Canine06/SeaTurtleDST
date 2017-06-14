@@ -18,14 +18,14 @@
     "Document any assumptions relevant to the analysis in the text box click the “Analyze Data” button at the bottom of the screen."
   ],
   "BaseMap": "Imagery",
-  "GeometryServer":  "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/Utilities/Geometry/GeometryServer",
+  "ProjectBoundsService":  "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/projectBounds/GPServer/projectBounds",
   "MapLayers": [
     {
       "url": "http://dev-public.quantumspatial.com/arcgis/rest/services/SeaTurtle/AllBlocks_Service/MapServer",
       "label": "State and Federal Block Grid"
     },
     {
-      "url": "http://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+      "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
       "label": "Sand Resources",
       "layers": "5"
     },
@@ -73,7 +73,11 @@
       "SourceLink": "",
       "SourceTitle": "Data Source: BOEM MMIS",
       "ControlType": "Dropdown",
-      "Values": [ "Presence", "Absense"]
+      "Values": [ "Presence", "Absense" ],
+      "MapLayer": {
+        "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+        "Index":  "5"
+      }
     },
     {
       "Title": "Number of Trawl Encounters",
@@ -101,7 +105,11 @@
       "SourceLink": "ftp://ftp.coast.noaa.gov/pub/MSP/CriticalHabitatDesignations.zip",
       "SourceTitle": "Data Source: NOAA National Marine Fisheries Service",
       "ControlType": "Dropdown",
-      "Values": [ "Presence", "Absense" ]
+      "Values": [ "Presence", "Absense" ],
+      "MapLayer": {
+        "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+        "Index":  "5"
+      }
     },
     {
       "Title": "Loggerhead Atlantic Distribution Density",
@@ -129,7 +137,11 @@
       "SourceLink": "https://woodshole.er.usgs.gov/project-pages/sediment/gis-data-catalog.html",
       "SourceTitle": "Data Source: USGS",
       "ControlType": "Dropdown",
-      "Values": [ "Presence", "Absense" ]
+      "Values": [ "Presence", "Absense" ],
+      "MapLayer": {
+        "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+        "Index":  "5"
+      }
     },
     {
       "Title": "Seagrasses",
@@ -139,7 +151,11 @@
       "SourceLink": "https://coast.noaa.gov/arcgis/rest/services/MarineCadastre/Seagrasses/MapServer",
       "SourceTitle": "Data Source: NOAA Seagrasses",
       "ControlType": "Dropdown",
-      "Values": [ "Presence", "Absense" ]
+      "Values": [ "Presence", "Absense" ],
+      "MapLayer": {
+        "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+        "Index":  "5"
+      }
     },
     {
       "Title": "NAMERA Benthic Habitat",
@@ -149,7 +165,11 @@
       "SourceLink": "https://www.conservationgateway.org/ConservationByGeography/NorthAmerica/UnitedStates/edc/reportsdata/marine/namera/namera/Pages/Spatial-Data.aspx",
       "SourceTitle": "Data Source: The Nature Conservancy",
       "ControlType": "Dropdown",
-      "Values": [ "Presence", "Absense" ]
+      "Values": [ "Presence", "Absense" ],
+      "MapLayer": {
+        "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+        "Index":  "5"
+      }
     },
     {
       "Title": "NOAA Benthic Habitat",
@@ -159,7 +179,11 @@
       "SourceLink": "https://coast.noaa.gov/arcgis/rest/services/MarineCadastre/BenthicCover/MapServer",
       "SourceTitle": "Data Source: NOAA Benthic Cover",
       "ControlType": "Dropdown",
-      "Values": [ "Presence", "Absense" ]
+      "Values": [ "Presence", "Absense" ],
+      "MapLayer": {
+        "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+        "Index":  "5"
+      }
     },
     {
       "Title": "US Navy Benthic Type",
@@ -169,7 +193,11 @@
       "SourceLink": "",
       "SourceTitle": "Data Source: US Navy",
       "ControlType": "Dropdown",
-      "Values": [ "Presence", "Absense" ]
+      "Values": [ "Presence", "Absense" ],
+      "MapLayer": {
+        "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+        "Index":  "5"
+      }
     },
     {
       "Title": "SEAMAP Benthic Type",
@@ -179,7 +207,11 @@
       "SourceLink": "http://www.seamap.org/SouthAtlantic.html",
       "SourceTitle": "Data Source: South Atlantic Fisheries Management Council",
       "ControlType": "Dropdown",
-      "Values": [ "Presence", "Absense" ]
+      "Values": [ "Presence", "Absense" ],
+      "MapLayer": {
+        "url": "https://mmis.quantumspatial.com/arcgis/rest/services/MMIS/PlanningandAdministration/MapServer",
+        "Index":  "5"
+      }
     },
     {
       "Title": "Bathymetry",

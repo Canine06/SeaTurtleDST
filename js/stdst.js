@@ -517,7 +517,7 @@ function BuildMap($scope) {
 
         //Add dynamic layers
 
-        $scope.sandResources = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[1].url, layers: [AppConfig.MapLayers[1].layers] }).addTo($scope.map);
+        $scope.sandResources = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[1].url, layers: [AppConfig.MapLayers[1].layers],  }).addTo($scope.map);
         $scope.ocsBlocks = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[0].url, layers: [AppConfig.MapLayers[0].layers] }).addTo($scope.map);
     }
     return true;
@@ -593,7 +593,7 @@ function resetTimeSelect() {
     if (timeselect) {
         timeselect.selectedIndex = 0;
     }
-    
+
 }
 function SelectAOIComplete(map) {
 
@@ -618,18 +618,25 @@ function SelectAOIComplete(map) {
 function QueryOCSBlocks(polygon, map) {
     // query the service executing the selected relation with the selected input geometry
     killShoal.query().layer(0).intersects(polygon).run(function (error, featureCollection, response) {
-    //ocsBlocks.query().layer(0).intersects(polygon).run(function (error, featureCollection, response) {
+        //ocsBlocks.query().layer(0).intersects(polygon).run(function (error, featureCollection, response) {
 
         selectedOCSBlocks = featureCollection;
 
         clearSelection(map);
-        
+
         geojson = L.geoJSON(featureCollection, { pane: "selectedblocks" }).addTo(map);
 
         var selectocsblocksbutton = document.getElementById("selectocsblocks");
         selectocsblocksbutton.innerHTML = "Redraw Selection";
         selectocsblocksbutton.disabled = false;
         drawnItems.clearLayers();
+
+
+        sandResources.metadata(function (error, metadata) {
+            console.log(metadata);
+            intersectEnvelope(metadata, geojson);
+            setSliders();
+        });
         setSliders();
     });
 
@@ -646,7 +653,7 @@ function disableDraw() {
     if (poly) {
         poly.disable();
     }
-    
+
 }
 function TimeOfYearChange(map) {
     var timeofyear = document.getElementById("timeofyear");
@@ -697,7 +704,7 @@ function buildSlider(info) {
                     }
                 });
                 //variablecontrol.setAttribute("disabled", true);
-                
+
             }
             else {
                 variableranges = document.createElement("div");
@@ -711,12 +718,12 @@ function buildSlider(info) {
                     variablecontrol.appendChild(opt);
                 }
             }
-            
+
             rangewrap.appendChild(header);
             rangewrap.appendChild(variablecontrol);
             rangewrap.appendChild(variableranges);
             gcol.appendChild(rangewrap);
-            
+
             //gcol.disabled = true;
             var nodes = gcol.getElementsByTagName("*");
             for (a = 0; a < nodes.length; a++) {
@@ -729,10 +736,10 @@ function buildSlider(info) {
     }
     return true;
 }
-function enableSingleVariable(name, pos){
+function enableSingleVariable(name, pos) {
     var variablecontrol = document.getElementById("variable" + pos);
     variablecontrol.removeAttribute("disabled");
-    
+
     variablecontrol.disable = false;
     var gcol = document.getElementById("gcol" + pos);
     gcol.disabled = false;
@@ -743,10 +750,10 @@ function enableSingleVariable(name, pos){
             nodes[a].removeAttribute("disabled");
         }
         if (nodes[a].className == "question") {
-            nodes[a].style.pointerEvents = "auto";
-            nodes[a].style.cursor = "pointer";
+            //nodes[a].style.pointerEvents = "auto";
+            //nodes[a].style.cursor = "pointer";
         }
-        nodes[a].removeAttribute("disabled");        
+        nodes[a].removeAttribute("disabled");
         var foo = "";
     }
 }
@@ -770,7 +777,7 @@ function setSliders() {
     var blocks = selectedOCSBlocks.features;
     var varscount = AppConfig.Variables.length;
     var varscontainer = document.getElementById("variables");
-    for (b=0; b < blocks.length; b++){
+    for (b = 0; b < blocks.length; b++) {
         for (var props in blocks[b].properties) {
             for (i = 0; i < varscount; i++) {
                 if (AppConfig.Variables[i].FieldName == props) {
@@ -781,7 +788,6 @@ function setSliders() {
             }
         }
     }
-    
     return true;
 }
 function buildInfoButton(info) {
@@ -847,6 +853,38 @@ function buildVariableRanges(elementID) {
     hilabel.appendChild(hiP);
     vRanges.appendChild(hilabel);
     return vRanges;
+}
+function intersectEnvelope(compasscoords, featureCollection) {
+    var _rate = 0;
+    var intersects = false;
+    var bounds;
+    featureCollection.eachLayer(function (pol) {
+        bounds = pol.getBounds();
+    });
+
+    var coords = L.esri.Util.boundsToExtent(bounds);
+    var jsn = JSON.stringify(compasscoords.fullExtent);
+    
+    var projectService = L.esri.GP.service({ url: AppConfig.ProjectBoundsService });
+    var myprojectTask = projectService.createTask();
+    myprojectTask.on("initialized", function () {
+        myprojectTask.setParam("input", jsn);
+        myprojectTask.run(function (error, geojson, response) {
+            if (compasscoords.fullExtent.xmin <= bounds._northEast.lat && compasscoords.fullExtents.xmax >= bounds._southWest.lat) {
+                _rate++;
+            }
+            if (compasscoords.fullExtent.ymin <= bounds._northEast.long && compasscoords.fullExtent.ymax >= bounds._southWest.long) {
+                _rate++;
+            }
+            if (_rate == 2) {
+                intersects = true;
+            }
+            return intersects;
+        });
+    });
+
+
+    
 }
 ;
 function loadConfig($scope) {
