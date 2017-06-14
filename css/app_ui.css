@@ -794,7 +794,10 @@ label {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    padding: 1em 0 0 1em; }
+    padding: 1em 0 0 1em;
+    min-height: 128px; }
+    .grid .gcol .grid .gcol {
+      min-height: inherit; }
     .grid .gcol.end {
       -webkit-box-flex: 0;
           -ms-flex: none;
@@ -1044,14 +1047,16 @@ select[multiple] {
     margin-left: 0; }
 
 .range-wrap, .range-checkbox-question-wrap {
-  overflow: hidden;
   margin-bottom: 0.625rem;
   position: relative; }
+
+.range-checkbox-question-wrap {
+  overflow: hidden; }
 
 .range-checkbox {
   float: left; }
   .range-checkbox label {
-    font-size: 11px; }
+    font-size: 12px; }
   .range-checkbox input[type=checkbox] {
     margin-right: 5px; }
 
@@ -1061,6 +1066,7 @@ select[multiple] {
   right: 0; }
   .range-question a {
     color: #4a4a4a;
+    background-color: #fefefe;
     font-size: 8px;
     border: 1px solid #4a4a4a;
     border-radius: 50%;
@@ -1070,7 +1076,8 @@ select[multiple] {
     height: 10px; }
 
 .range-wrap > .grid {
-  margin-top: 0.3125rem; }
+  margin-top: 0;
+  margin-bottom: 0; }
 
 .range-wrap .grid .gcol:nth-child(2) {
   text-align: center; }
@@ -1168,3 +1175,32 @@ select[multiple] {
 
 .modal-content > *:last-child {
   margin-bottom: 0; }
+
+.noUi-connect {
+  background: none !important;
+  box-shadow: none !important; }
+
+.noUi-horizontal {
+  height: 10px !important; }
+
+.noUi-target {
+  box-shadow: none !important;
+  background: #fbff32 !important;
+  background: -webkit-linear-gradient(left, #fbff32 0%, red 100%) !important;
+  background: linear-gradient(to right, #fbff32 0%, red 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbff32', endColorstr='#ff0000',GradientType=1 ) !important; }
+
+[disabled].noUi-target {
+  background: #fafafa !important; }
+
+.noUi-horizontal .noUi-handle {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50px; }
+  .noUi-horizontal .noUi-handle:after {
+    left: 10px !important; }
+  .noUi-horizontal .noUi-handle:before {
+    left: 7px;
+    top: 6px; }
+  .noUi-horizontal .noUi-handle:before, .noUi-horizontal .noUi-handle:after {
+    height: 7px !important; }

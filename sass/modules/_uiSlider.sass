@@ -1,0 +1,31 @@
+.noUi-connect
+  background: none !important
+  box-shadow: none !important
+
+.noUi-horizontal
+  height: 10px !important
+
+.noUi-target
+  box-shadow: none !important
+  background: rgb(251,255,50) !important
+  background: -moz-linear-gradient(left, rgba(251,255,50,1) 0%, rgba(255,0,0,1) 100%) !important
+  background: -webkit-linear-gradient(left, rgba(251,255,50,1) 0%,rgba(255,0,0,1) 100%) !important
+  background: linear-gradient(to right, rgba(251,255,50,1) 0%,rgba(255,0,0,1) 100%) !important
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbff32', endColorstr='#ff0000',GradientType=1 ) !important
+
+[disabled].noUi-target
+  background: #fafafa !important
+
+// The handles
+.noUi-horizontal
+  .noUi-handle
+    width: 20px !important
+    height: 20px !important
+    border-radius: 50px
+    &:after
+      left: 10px !important
+    &:before
+      left: 7px
+      top: 6px
+    &:before, &:after
+      height: 7px !important
