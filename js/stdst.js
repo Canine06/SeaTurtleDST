@@ -484,7 +484,8 @@ function initMap($scope) {
     AppConfig = $scope.AppConfig;
     BuildMap($scope);
     BuildLegend($scope);
-
+    buildMetaData();
+    
 }
 function BuildMap($scope) {
     if (!test) {
@@ -517,10 +518,74 @@ function BuildMap($scope) {
 
         //Add dynamic layers
 
-        $scope.sandResources = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[1].url, layers: [AppConfig.MapLayers[1].layers],  }).addTo($scope.map);
+        $scope.sandResources = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[1].url, layers: [AppConfig.MapLayers[1].layers], }).addTo($scope.map);
         $scope.ocsBlocks = L.esri.dynamicMapLayer({ url: AppConfig.MapLayers[0].url, layers: [AppConfig.MapLayers[0].layers] }).addTo($scope.map);
     }
     return true;
+}
+var dropdownEntity = {
+    "Title": "",
+    "MapLayer": "",
+    "Metadata": {},
+    "ProjectedExtent": {}
+}
+var dropdownCount = { "Layers": [dropdownEntity] };
+var buildCount = 0;
+function buildMetaData() {
+    for (var a = 0; a < AppConfig.Variables.length; a++) {
+        if (AppConfig.Variables[a].ControlType == "Dropdown") {
+            
+            if (AppConfig.Variables[a].Title !== "") {
+                var ddEntity = {
+                    "Title": AppConfig.Variables[a].Title,
+                    "MapLayer": AppConfig.Variables[a].MapLayer,
+                    "Metadata": null,
+                    "ProjectedExtent": null
+                };
+                dropdownCount.Layers.push(ddEntity);
+            }
+        }
+    }
+    var indx = -1;
+    for (var b = 0; b < dropdownCount.Layers.length; b++) {
+        if (dropdownCount.Layers[b].Title == "") {
+            indx = b;
+        }
+    }
+    if (b != -1) {
+        dropdownCount.Layers.splice(indx, 1);
+    }
+    getMetaData();
+}
+function getMetaData() {
+    if (buildCount < dropdownCount.Layers.length) {
+        if (dropdownCount.Layers[buildCount].Title != "") {
+            var lyr = L.esri.dynamicMapLayer({ url: dropdownCount.Layers[buildCount].MapLayer.url, layers: [dropdownCount.Layers[buildCount].MapLayer.Index] });
+            lyr.metadata(function (error, metadata) {
+                dropdownCount.Layers[buildCount].Metadata = metadata;
+                projectMetadata(metadata);
+            });
+        }
+    }
+    
+}
+function projectMetadata(metadata) {
+    var compjson = JSON.stringify(metadata.fullExtent);
+    var projectService = L.esri.GP.service({ url: AppConfig.ProjectBoundsService, asyncInterval: 1 });
+    var myprojectTask = projectService.createTask();
+    myprojectTask.options.async = true;
+    myprojectTask.options.path = "submitJob";
+    myprojectTask.on('initialized', function () {
+        myprojectTask.setParam("input", compjson);
+        myprojectTask.setOutputParam("output");
+        myprojectTask.run(function (error, response, raw) {
+            if (response !== null) {
+                dropdownCount.Layers[buildCount].ProjectedExtent = response.output;
+            }
+            buildCount++;
+            getMetaData();
+        });
+    });
 }
 function zoomToFullExtent($scope) {
     var ocsb_feats = L.esri.featureLayer({
@@ -625,18 +690,12 @@ function QueryOCSBlocks(polygon, map) {
         clearSelection(map);
 
         geojson = L.geoJSON(featureCollection, { pane: "selectedblocks" }).addTo(map);
+        
 
         var selectocsblocksbutton = document.getElementById("selectocsblocks");
         selectocsblocksbutton.innerHTML = "Redraw Selection";
         selectocsblocksbutton.disabled = false;
         drawnItems.clearLayers();
-
-
-        sandResources.metadata(function (error, metadata) {
-            console.log(metadata);
-            intersectEnvelope(metadata, geojson);
-            setSliders();
-        });
         setSliders();
     });
 
@@ -736,24 +795,35 @@ function buildSlider(info) {
     }
     return true;
 }
-function enableSingleVariable(name, pos) {
+function enableSingleVariable(name, pos, enable) {
     var variablecontrol = document.getElementById("variable" + pos);
     variablecontrol.removeAttribute("disabled");
 
-    variablecontrol.disable = false;
+    variablecontrol.disable = enable;
     var gcol = document.getElementById("gcol" + pos);
-    gcol.disabled = false;
+    gcol.disabled = enable;
 
     var nodes = gcol.getElementsByTagName("*");
+
     for (a = 0; a < nodes.length; a++) {
-        if (nodes[a].hasAttribute("disabled")) {
+        if (!enable) {
+            if (nodes[a].hasAttribute("disabled")) {
+                nodes[a].removeAttribute("disabled");
+            }
+            if (nodes[a].className == "question") {
+                //nodes[a].style.pointerEvents = "auto";
+                //nodes[a].style.cursor = "pointer";
+            }
             nodes[a].removeAttribute("disabled");
+        } else {
+
+            nodes[a].setAttribute("disabled", true);
+            if (nodes[a].className == "question") {
+                //nodes[a].style.pointerEvents = "";
+                //nodes[a].style.cursor = "default";
+            }
         }
-        if (nodes[a].className == "question") {
-            //nodes[a].style.pointerEvents = "auto";
-            //nodes[a].style.cursor = "pointer";
-        }
-        nodes[a].removeAttribute("disabled");
+
         var foo = "";
     }
 }
@@ -781,8 +851,15 @@ function setSliders() {
         for (var props in blocks[b].properties) {
             for (i = 0; i < varscount; i++) {
                 if (AppConfig.Variables[i].FieldName == props) {
-                    if (blocks[b].properties[props] != null) {
-                        enableSingleVariable(AppConfig.Variables[i].Title, i);
+                    if (AppConfig.Variables[i].ControlType == "Slider") {
+                        if (blocks[b].properties[props] != null) {
+                            enableSingleVariable(AppConfig.Variables[i].Title, i, false);
+                        }
+                    }
+                    else {
+                        if (blocks[b].properties[props] != null) {
+                            intersectEnvelope(geojson, i);
+                        }
                     }
                 }
             }
@@ -854,37 +931,29 @@ function buildVariableRanges(elementID) {
     vRanges.appendChild(hilabel);
     return vRanges;
 }
-function intersectEnvelope(compasscoords, featureCollection) {
+function intersectEnvelope(featureCollection, id) {
     var _rate = 0;
     var intersects = false;
     var bounds;
     featureCollection.eachLayer(function (pol) {
         bounds = pol.getBounds();
     });
+    var variable = AppConfig.Variables[id];
 
-    var coords = L.esri.Util.boundsToExtent(bounds);
-    var jsn = JSON.stringify(compasscoords.fullExtent);
-    
-    var projectService = L.esri.GP.service({ url: AppConfig.ProjectBoundsService });
-    var myprojectTask = projectService.createTask();
-    myprojectTask.on("initialized", function () {
-        myprojectTask.setParam("input", jsn);
-        myprojectTask.run(function (error, geojson, response) {
-            if (compasscoords.fullExtent.xmin <= bounds._northEast.lat && compasscoords.fullExtents.xmax >= bounds._southWest.lat) {
+
+    for (i = 0; i < dropdownCount.Layers.length; i++) {
+        if (dropdownCount.Layers[i].Title == variable.Title) {
+            if (bounds._northEast.lng >= dropdownCount.Layers[i].ProjectedExtent.xmin && bounds._southWest.lng <= dropdownCount.Layers[i].ProjectedExtent.xmax) {
                 _rate++;
             }
-            if (compasscoords.fullExtent.ymin <= bounds._northEast.long && compasscoords.fullExtent.ymax >= bounds._southWest.long) {
+            if (bounds._northEast.lat >= dropdownCount.Layers[i].ProjectedExtent.ymin && bounds._southWest.lat <= dropdownCount.Layers[i].ProjectedExtent.ymax) {
                 _rate++;
             }
             if (_rate == 2) {
-                intersects = true;
+                enableSingleVariable(AppConfig.Variables[id].Title, id, false);
             }
-            return intersects;
-        });
-    });
-
-
-    
+        }
+    }
 }
 ;
 function loadConfig($scope) {

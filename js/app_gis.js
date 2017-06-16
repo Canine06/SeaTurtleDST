@@ -13,7 +13,23 @@ function initMap($scope) {
     BuildMap($scope);
     BuildLegend($scope);
     buildMetaData();
-    
+    buildModal();
+}
+function buildModal() {
+    modalTinyNoFooter = new tingle.modal({
+        onClose: function () {
+            console.log('close');
+        },
+        onOpen: function () {
+            console.log('open');
+        },
+        beforeClose: function () {
+            console.log('before close');
+            return true;
+        },
+        cssClass: ['class1', 'class2']
+    });
+    modalTinyNoFooter.setContent(document.querySelector(".tingle-demo-tiny").innerHTML);
 }
 function BuildMap($scope) {
     if (!test) {
@@ -339,16 +355,19 @@ function enableSingleVariable(name, pos, enable) {
                 nodes[a].removeAttribute("disabled");
             }
             if (nodes[a].className == "question") {
-                nodes[a].style.pointerEvents = "auto";
-                nodes[a].style.cursor = "pointer";
+                //nodes[a].style.pointerEvents = "auto";
+                //nodes[a].style.cursor = "pointer";
+            }
+            if (nodes[a].tagName == "LABEL") {
+                nodes[a].className -= "disabled";
             }
             nodes[a].removeAttribute("disabled");
         } else {
 
             nodes[a].setAttribute("disabled", true);
             if (nodes[a].className == "question") {
-                nodes[a].style.pointerEvents = "";
-                nodes[a].style.cursor = "default";
+                //nodes[a].style.pointerEvents = "";
+                //nodes[a].style.cursor = "default";
             }
         }
 
@@ -385,7 +404,9 @@ function setSliders() {
                         }
                     }
                     else {
-                        intersectEnvelope(geojson, i);
+                        if (blocks[b].properties[props] != null) {
+                            intersectEnvelope(geojson, i);
+                        }
                     }
                 }
             }
@@ -397,6 +418,14 @@ function buildInfoButton(info) {
     //build info button
     var quest = document.createElement("div");
     quest.className += "range-question";
+    quest.addEventListener("click", function () {
+        var par = this.parentElement;
+        var par2 = par.children;
+        var quest = par2[0];
+        var title = quest.innerText;
+        buildModalContent(title);
+        modalTinyNoFooter.open();
+    });
     var questmodalbutton = document.createElement("a");
     //questmodalbutton.href = "#modal-text";
     questmodalbutton.title = "help";
@@ -413,6 +442,7 @@ function buildLabel(info) {
     var chkboxcontaner = document.createElement("div");
     chkboxcontaner.className += "range-checkbox";
     var label = document.createElement("label");
+    label.className += "disabled";
     var chkbx = document.createElement("input");
     chkbx.type = "checkbox";
     label.for = "";
@@ -478,6 +508,34 @@ function intersectEnvelope(featureCollection, id) {
             if (_rate == 2) {
                 enableSingleVariable(AppConfig.Variables[id].Title, id, false);
             }
+        }
+    }
+}
+function buildModalContent(title) {
+    for (zz = 0; zz < AppConfig.Variables.length; zz++) {
+        if (AppConfig.Variables[zz].Title == title.trim()) {
+            var modalHeaderContent = document.getElementById("ModalHeaderContent");
+            modalHeaderContent.innerHTML = "";
+            var modalBulletsContent = document.getElementById("ModalBulletsContent");
+            modalBulletsContent.innerHTML = "";
+            var modalLinksContent = document.getElementById("ModalLinksContent");
+            modalLinksContent.innerHTML = "";
+            
+            modalHeaderContent.innerHTML = AppConfig.Variables[zz].HelpContent;
+            
+            var ahref = document.createElement("a");
+            ahref.href = AppConfig.Variables[zz].SourceLink;
+            ahref.text = AppConfig.Variables[zz].SourceTitle;
+            ahref.target = "_blank";
+            modalBulletsContent.appendChild(ahref);
+
+            for (yy = 0; yy < AppConfig.Variables[zz].HelpInstructions.length; yy++) {
+                var li = document.createElement("li");
+                li.innerHTML = AppConfig.Variables[zz].HelpInstructions[yy];
+                modalBulletsContent.appendChild(li);
+            }
+
+
         }
     }
 }

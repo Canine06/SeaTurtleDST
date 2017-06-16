@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="x-dns-prefetch-control" content="off">
     <link href="css/app_style.css?9725669e91fd4a66" rel="stylesheet" />
-    <link href="css/app_ui.css?d0f43962832cf813" rel="stylesheet" />
+    <link href="css/app_ui.css?b82412b8b50919a4" rel="stylesheet" />
     <!-- Fonts -->
     <link rel="stylesheet" href="//coast.noaa.gov/assets/fonts/fonts.css">
     <!-- Application CSS file -->
@@ -22,6 +22,7 @@
     <link href="css/app_style.css?9725669e91fd4a66" rel="stylesheet" />
     <link href="js/leaflet/leaflet.css?772083c71fa064e6" rel="stylesheet" />
     <link href="css/nouislider.css?29b0bff5415f44b2" rel="stylesheet" />
+    <link href="css/tingle.css" rel="stylesheet" />
     <script src="js/leaflet/leaflet-src.js?c666ac6524336dda"></script>
     <script src="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw-src.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw-src.css">
@@ -30,6 +31,7 @@
     <script src="js/esri-leaflet-legend-master/dist/esri-leaflet-legend-compat-src.js?45e4e66a82abd2ca"></script>
     <script src="https://unpkg.com/esri-leaflet-gp"></script>
     <script src="js/nouislider.js?0361a532a75eee4f"></script>
+    <script src="js/tingle.js"></script>
     <!-- Google Analytics -->
     <script src="//coast.noaa.gov/js/federated-angularlitics.js?angular=true"></script>
     
@@ -60,9 +62,9 @@
     </div>
     
     <!-- DO NOT INCLUDE SCRIPTS HERE, USE GRUNT. README! -->
-    <script src="js/stdst.js?50a7dd6c96e3a2f1"></script>
+    <script src="js/stdst.js?55093ea7ea0d0c85"></script>
     <script src="js/app_jquery.js?a0c56540e9267e73"></script>
-    <script src="js/app_gis.js?dd760c2ddeaaf729"></script>
+    <script src="js/app_gis.js?f2d5faff2097cd30"></script>
     <script src="js/jquery.modal.js?3fae18fff0800c83" type="text/javascript" charset="utf-8"></script>
     
 
@@ -70,8 +72,11 @@
     <script>AccessifyHTML5();</script>
     <script src="js/angulartics.js?5d18dc4e31f19e67"></script>
     <script src="js/angulartics-google-analytics.js?ba5aa92affb327fa"></script>
-    <div class="modal" id="ex1" style="display:none;">
-        <p>Thanks for clicking.  That felt good.  <br />Click <a href="#" rel="modal:close">close</a>, click the overlay, or press ESC</p>
+    <!-- Tingle tiny content -->
+    <div class="tingle-demo tingle-demo-tiny">
+       <div id="ModalHeaderContent"></div>
+       <div id="ModalLinksContent"></div>
+        <ul id="ModalBulletsContent"></ul>
     </div>
 </body>
 </html>
