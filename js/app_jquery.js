@@ -42,12 +42,27 @@ function LoadStep1(map) {
     //NewReportClick();
     $("#timeofyear").change(function () {
         var val = $("#timeofyear option:selected").text();
+       
+        if ($("div.nicEdit-main").text().length > 0) {
+            $('#AnalyzeData').attr('disabled', false);
+            $('#AnalyzeData').removeClass('disabled');
+        }
+        else
+        {
+            $('#AnalyzeData').attr('disabled', true);
+            $('#AnalyzeData').addClass('disabled');
+        }
         if (val == "Months" || val == "Seasons") {
             TimeOfYearChange(map);
             var applyquerybutton = document.getElementById("selectocsblocks");
             applyquerybutton.disabled = true;
         }
     });
+    $(document).ready(function () {
+        $('#AnalyzeData').attr('disabled', true);
+        $('#AnalyzeData').addClass('disabled');
+    });
+    
 }
 function disableButton() {
     $("#selectocsblocks").addClass("disabled");

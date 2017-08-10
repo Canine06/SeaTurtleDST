@@ -691,16 +691,17 @@ EsriLeaflet.LegendControl = L.Control.extend({
         //Added PL - legend was drawing all layers, not just visible layers
 		selectedLayers = []
 		for (i = 0; i < legend.layers.length; i++) {
-		    for (a = 0; a < AppConfig.MapLayers.length; a++) {
-		        if (legend.layers[i].layerName == AppConfig.MapLayers[a].label) {
-		            if (legend.layers[i].layerName == "OCSBlocks") {
-		                legend.layers[i].layerName = "OCS Blocks";
-		                legend.layers[i].legend[0].label = "OCS Blocks";
-		            }
-		            selectedLayers.push(legend.layers[i]);
-		        }
-		    }
-			
+		    //for (a = 0; a < AppConfig.MapLayers.length; a++) {
+		    //    if (legend.layers[i].layerName == AppConfig.MapLayers[a].label) {
+		    //        if (legend.layers[i].layerName == "OCSBlocks") {
+		    //            legend.layers[i].layerName = "OCS Blocks";
+		    //            legend.layers[i].legend[0].label = "OCS Blocks";
+		    //        }
+		            
+		    //    }
+		       
+		    //}
+		    selectedLayers.push(legend.layers[i]);
 			//if (legend.layers[i].layerName == "OCSBlocks"){
 			//	selectedLayers.push(legend.layers[i]);
 			//}

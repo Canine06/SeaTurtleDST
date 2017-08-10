@@ -1,0 +1,350 @@
+﻿{
+  "Header": "The Analyzing Sea Turtle Entrainment Risk (ASTER) tool integrates multiple data sources within a simple and standardized user interface.  The DST enables users to qualitatively analyze project specific sea turtle entrainment risk associated with Trailing Suction Hopper Dredges.",
+  "InstructionsHeader" :  "How to get started",
+  "Instructions": [
+
+    "Pan and Zoom to your area of interest using the interactive map on the left side of the screen.",
+    "Once the area of interest is defined, create a new analysis by clicking the button below.",
+    "After creating a new analysis the user will be guided through a 4 step process to “ANALYZE” relevant data, “DEFINE” absolute risk thresholds, “MITIGATE” risk, and generate a final “REPORT.”"
+  ],
+  "Footer": "The results of the analysis will be available for export as both a PDF and related data.",
+  "Step1Header": "Step 1. Analysis",
+  "Step1Instructions":  "Currently, the decision to limit dredging to a certain temporal window is based mostly on sea surface temperature. However, many variables may affect the risk turtle populations face as a result of dredging. Coordination with dredging and turtle experts has identified the following key risk variables to help inform decision making.",
+  "Step1InstructionSteps": [
+    "Select seasons or months for the temporal analysis.",
+    "Draw a polygon on the map to define the area of interest and click the “Apply Selection” button.",
+    "Risk variables available for analysis within the selected OCS blocks will be activated.",
+    "Select desired variables for analysis and define the associated risk values using the slider bar.",
+    "Document any assumptions relevant to the analysis in the text box click the “Analyze Data” button at the bottom of the screen."
+  ],
+  "BaseMap": "Imagery",
+  "ProjectBoundsService":  "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/projectBounds/GPServer/projectBounds",
+  "MapLayers": [
+    {
+      "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST_devData/MapServer",
+      "label": "State and Federal Block Grid",
+      "layers": "0"
+    },
+    {
+      "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+      "label": "Known Sand Resources",
+      "layers": "16"
+    },
+    {
+      "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/OCSBlocks/FeatureServer/0",
+      "label": "OCSBlocksFeatures"
+    },
+    {
+      "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer",
+      "label": "Analyzing Sea Turtle Entrainment Risk Data"
+    }
+  ],
+  "LinksHeader": "Links",
+  "Links": [
+    {
+      "url": "http://arcg.is/298s5BO",
+      "label": "Analyzing Sea Turtle Entrainment Story Map"
+    },
+    {
+      "url": "https://marinecadastre.gov/",
+      "label": "MarineCadastre.gov"
+    },
+    {
+      "url": "http://www.google.com",
+      "label": "Marine Minerals Information System"
+    }
+  ],
+  "Variables": [
+    {
+      "Title": "Lease Areas",
+      "FieldName": "LeaseNo",
+      "HelpContent": "Anecdotal evidence suggests that sea turtles can inhabit/prefer areas after disturbance (e.g., dredging, trawling) which can imply that turtles prefer high rugosity areas for resting/feeding in troughs and valleys. Generally, the local scale morphology of the sea floor is important with respect to the efficacy of the turtle deflecting draghead.  Previously dredged borrow areas may present a more challenging dredging environment when using turtle deflecting dragheads.  Deflector efficacy can be reduced as it skips over post-dredging troughs and valleys where sea turtles may be present and cannot escape rather than pushing a sand wave ahead of the deflector and promoting their movement away from the draghead suction field.",
+      "HelpInstructions": [ ],
+      "SourceLink": "",
+      "SourceTitle": "Data Source: BOEM MMIS",
+      "ControlType": "Slider",
+      "LayerID": 15,
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "Sand Resources",
+      "FieldName": "Resource",
+      "HelpContent": "The presence of known sand resources can be used as a baseline for where dredging could occur relative to other factors related to sea turtle distribution and abundance.  Definitions adapted from Freedenberg and Hoenstine, 1999.",
+      "HelpInstructions": [
+        "Possible – features identified as a result of bathymetry delineation of a supposed shoal. No additional physical data exists to support these areas as a resource",
+        "Potential – resource areas hypothesized to exist on the basis of indirect evidence such as acoustic subsurface profile (seismic) character or sidescan sonar character. The presence of sand through direct sampling methods has not yet been confirmed.",
+        "Probable – resource areas whose existence has been established through the use of vibracores, push cores and/or grab samples. Thickness and/or lateral extent has not been fully determined. These are reserves that could be viable if additional coring is done",
+        "Proven – resource areas whose thickness and lateral extent have been fully determined through the use of vibracore and/or push cores. Generally reserved for shoals that have already been authorized as part of a lease.",
+        "Unusable – resource areas that as a result of additional surveys, prior dredging activity, or infrastructure development are not (or no longer) suitable for future dredging."
+      ],
+      "SourceLink": "",
+      "SourceTitle": "Data Source: BOEM MMIS",
+      "ControlType": "Dropdown",
+      "LayerID":  16,
+      "Values": [ "Presence", "Low", "Medium", "High" ],
+      "MapLayer": {
+        "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+        "Index":  "16"
+      },
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "Number of Trawl Encounters",
+      "FieldName": "",
+      "HelpContent": "Modified shrimp trawling equipment and techniques are used to capture and relocate sea turtles from the vicinity of hopper dredge operations to mitigate entrainment risk.  Data collected from these operations may provide important information on the presence/abundance of sea turtles occurring at the same place and time as dredging as well as other information regarding species, size class, sex, etc. that may inform specific behavior patterns.",
+      "HelpInstructions": [ ],
+      "SourceLink": "",
+      "SourceTitle": "Data Source: BOEM MMIS/USACE",
+      "ControlType": "Slider",
+      "LayerID":  1,
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "Number of Turtle Records",
+      "FieldName": "TurtleCHD",
+      "HelpContent": "Tracking the location/movements of sea turtles using satellite telemetry can show distribution on a horizontal scale at a relatively high temporal resolution.  Duke University’s Ocean Biogeographic Information System Spatial Ecological Analysis of Megavertebrate Populations (OBIS-SEAMAP) has catalogued many sea turtle telemetry datasets and is the first stop for identifying applicable turtle data and data contacts.  These data provide important temporal and spatial sea turtle distribution information within a particular area of interest.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://seamap.env.duke.edu",
+      "SourceTitle": "Data Source: OBIS-SEAMAP",
+      "ControlType": "Slider",
+      "LayerID":  2,
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "Loggerhead Critical Habitat",
+      "FieldName": "",
+      "HelpContent": "General areas for nearshore reproductive, breeding, migratory, and winter critical habitats have been identified within the range of the Northwest Atlantic Ocean loggerhead distinct population segment (DPS), highlighting habitats frequently utilized.",
+      "HelpInstructions": [ ],
+      "SourceLink": "ftp://ftp.coast.noaa.gov/pub/MSP/CriticalHabitatDesignations.zip",
+      "SourceTitle": "Data Source: NOAA National Marine Fisheries Service",
+      "ControlType": "Dropdown",
+      "LayerID":  8,
+      "Values": [ "Presence", "Low", "Medium", "High" ],
+      "MapLayer": {
+        "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+        "Index":  "8"
+      },
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "Loggerhead Atlantic Distribution Density",
+      "FieldName": "",
+      "HelpContent": "Loggerhead sea turtle distribution densities are based on a model developed by the US Navy. Reported values indicate number of animals per square kilometer. A higher value would indicate more turtles present during a particular month or season.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://seamap.env.duke.edu/serdp",
+      "SourceTitle": "Data Source: SERDP-NODE",
+      "ControlType": "Slider",
+      "LayerID":  3,
+      "DataType":  "Raster",
+      "RasterLayers":  0
+    },
+    {
+      "Title": "Loggerhead GoM Distribution Density",
+      "FieldName": "",
+      "HelpContent": "Loggerhead sea turtle distribution densities are based on a model developed by the US Navy. Reported values indicate number of animals per square kilometer. A higher value would indicate more turtles present during a particular month or season.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://seamap.env.duke.edu/serdp",
+      "SourceTitle": "Data Source: SERDP-NODE",
+      "ControlType": "Slider",
+      "LayerID":  4,
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "USGS East Coast Sediment Texture",
+      "FieldName": "",
+      "HelpContent": "This dataset represents the a collection of surficial sediment samples collected throughout the U.S. EEZ. The presence of sand surface samples can be used as a baseline for where dredging may occur and could be indicative of a potenital benthic oriented sea turtle forage base. Additionally, dredging production rates and efficacy of the turtle deflecting draghead may be dependent on sediment properties.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://woodshole.er.usgs.gov/project-pages/sediment/gis-data-catalog.html",
+      "SourceTitle": "Data Source: USGS",
+      "ControlType": "Dropdown",
+      "LayerID":  6,
+      "Values": [ "Presence", "Low", "Medium", "High" ],
+      "MapLayer": {
+        "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+        "Index":  "6"
+      },
+      "DataType":  "Raster",
+      "RasterLayers":  0
+    },
+    {
+      "Title": "Seagrasses",
+      "FieldName": "",
+      "HelpContent": "This dataset represents the distribution of seagrass in the nearshore environment. The presence of seagrasses in the vicinity of the dredging environment may be indicative of a sea turtle foraging area.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://coast.noaa.gov/arcgis/rest/services/MarineCadastre/Seagrasses/MapServer",
+      "SourceTitle": "Data Source: NOAA Seagrasses",
+      "ControlType": "Dropdown",
+      "LayerID":  7,
+      "Values": [ "Presence", "Low", "Medium", "High" ],
+      "MapLayer": {
+        "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+        "Index":  "7"
+      },
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "NAMERA Benthic Habitat",
+      "FieldName": "",
+      "HelpContent": "This dataset represents the high level bottom type of the offshore environment from the mid-Atlantic north. The presence of hard bottom surfaces can be used as a baseline for where dredging would not occur.  Addionally, benthic habitat type (i.e., hard bottom) may also be indicative of a potenital benthic oriented sea turtle forage base.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://www.conservationgateway.org/ConservationByGeography/NorthAmerica/UnitedStates/edc/reportsdata/marine/namera/namera/Pages/Spatial-Data.aspx",
+      "SourceTitle": "Data Source: The Nature Conservancy",
+      "ControlType": "Dropdown",
+      "LayerID":  12,
+      "Values": [ "Presence", "Low", "Medium", "High" ],
+      "MapLayer": {
+        "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+        "Index":  "12"
+      },
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "NOAA Benthic Habitat",
+      "FieldName": "",
+      "HelpContent": "This dataset represents the bottom type of the near shore environment of the Florida Keys. The presence of hard bottom surfaces can be used as a baseline for where dredging would not occur.  Addionally, benthic habitat type (i.e., hard bottom) may also be indicative of a potenital benthic oriented sea turtle forage base.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://coast.noaa.gov/arcgis/rest/services/MarineCadastre/BenthicCover/MapServer",
+      "SourceTitle": "Data Source: NOAA Benthic Cover",
+      "ControlType": "Dropdown",
+      "LayerID":  12,
+      "Values": [ "Presence", "Low", "Medium", "High" ],
+      "MapLayer": {
+        "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+        "Index":  "11"
+      },
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "US Navy Benthic Type",
+      "FieldName": "",
+      "HelpContent": "This dataset represents the high level bottom type of the offshore environment off of North Carolina and Louisiana. The presence of hard bottom surfaces can be used as a baseline for where dredging would not occur.  Addionally, benthic habitat type (i.e., hard bottom) may also be indicative of a potenital benthic oriented sea turtle forage base.",
+      "HelpInstructions": [ ],
+      "SourceLink": "",
+      "SourceTitle": "Data Source: US Navy",
+      "ControlType": "Dropdown",
+      "LayerID":  10,
+      "Values": [ "Presence", "Low", "Medium", "High" ],
+      "MapLayer": {
+        "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+        "Index":  "10"
+      },
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "SEAMAP Benthic Type",
+      "FieldName": "",
+      "HelpContent": "This dataset represents the high level bottom type of the offshore environment from Florida to North Carolina. The presence of hard bottom surfaces can be used as a baseline for where dredging would not occur.  Addionally, benthic habitat type (i.e., hard bottom) may also be indicative of a potenital benthic oriented sea turtle forage base.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://www.seamap.org/SouthAtlantic.html",
+      "SourceTitle": "Data Source: South Atlantic Fisheries Management Council",
+      "ControlType": "Dropdown",
+      "LayerID":  13,
+      "Values": [ "Presence", "Low", "Medium", "High" ],
+      "MapLayer": {
+        "url": "http://dev-public.quantumspatial.com:6080/arcgis/rest/services/SeaTurtle/SeaTurtleDST/MapServer/",
+        "Index":  "13"
+      },
+      "DataType":  "Feature"
+    },
+    {
+      "Title": "Bathymetry",
+      "FieldName": "",
+      "HelpContent": "Habitat utilization at different depths can depend on sea turtle species, sex, life history stage, and season. Generally, hopper dredging does not occur in depths shallower than 3m or deeper than 30m.  Additionally, a dredging environment with highly variable bathymetric contours may present challenges in keeping the TSHD dragheads on the bottom and promoting the efficacy of the turtle deflectors.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://www.ngdc.noaa.gov/mgg/coastal/crm.html",
+      "SourceTitle": "Data Source: NOAA Coastal Relief Model",
+      "ControlType": "Slider",
+      "LayerID":  32,
+      "DataType":  "Raster",
+      "RasterLayers":  0
+    },
+    {
+      "Title": "Slope",
+      "FieldName": "Slope",
+      "HelpContent": "Optimal sea turtle foraging areas may be near areas with a high slope (near ledges), so that they can more easily access deeper, warmer waters for thermoregulation, compared to foraging in an area where the shelf break is further away. Higher slope values may also indicate a more challenging hopper dredging environment and limit the ability of the dragtender to keep the dragheads on the bottom at all times.  Slope values were determined using the slope tool in ESRI ArcMap.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://www.ngdc.noaa.gov/mgg/coastal/crm.html",
+      "SourceTitle": "Data Source: NOAA Coastal Relief Model",
+      "ControlType": "Slider",
+      "LayerID":  38,
+      "DataType":  "Raster",
+      "RasterLayers":  0
+    },
+    {
+      "Title": "Roughness",
+      "FieldName": "Roughness",
+      "HelpContent": "Anecdotally, there has been evidence that sea turtles can inhabit/prefer areas after disturbance (e.g., dredging, trawling) which can imply that turtles prefer high rugosity areas for resting/feeding in troughs and valleys. Generally, the local scale morphology of the sea floor is more important than large scale slope with respect to the efficacy of the turtle deflecting draghead.  Borrow areas that have been previously dredged may present a more challenging dredging environment when using turtle deflecting dragheads and reduce their efficacy as they can skip over post-dredging troughs and valleys where sea turtles may be present and cannot escape, rather than pushing a sand wave ahead of the deflector and promoting their movement.<br /><br /> The rugosity of the seafloor and draghead-related trenching may increase the risk of “crabbing” (when the draghead is pulled away from or under the dredge) due to the draghead falling into the trench or steep slope and orienting in a different direction from the dredge.  Increased “crabbing” risk may result in the need to raise dragheads and reset more often during dredging to maintain vessel safety and to avoid equipment damage, thus, decreasing dredging operations efficiency. Rugosity values were determined as the standard deviation of the slope using focal statistics in ESRI ArcMap.",
+      "HelpInstructions": [ ],
+      "SourceLink": "https://www.ngdc.noaa.gov/mgg/coastal/crm.html",
+      "SourceTitle": "Data Source: NOAA Coastal Relief Model",
+      "ControlType": "Slider",
+      "LayerID":  44,
+      "DataType":  "Raster",
+      "RasterLayers":  0
+    },
+    {
+      "Title": "Sea Surface Temperature (Deg C)",
+      "FieldName": "SST_month1",
+      "HelpContent": "Sea surface temperature is an important factor related to sea turtle distribution. Migratory behaviors are influenced by the movement away from declining water temperatures into more favorable habitats. Water temperatures lower than 10° C can lead to cold stunning. Conversely, higher than average temperatures may be related to higher abundances of turtles in an area.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://dx.doi.org/10.5067/GHCMC-4FM02",
+      "SourceTitle": "Data Source: Canada Meteorological Center",
+      "ControlType": "Slider",
+      "LayerID":  19,
+      "DataType": "Raster",
+      "RasterLayers": 12,
+      "FieldSuffix" :  "SST_month"
+    },
+    {
+      "Title": "Current Velocity (m/s)",
+      "FieldName": "Velocity_month1",
+      "HelpContent": "Ocean currents have been found to influence sea turtle prey, movements, and distribution.<br /><br />In general, stronger surface currents may increase “crabbing” risk and decrease the ability to keep dragheads hard on the bottom at all times.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://podaac.jpl.nasa.gov/dataset/OSCAR_L4_OC_third-deg",
+      "SourceTitle": "Data Source: NASA Ocean Surface Current Analyses Real-time (OSCAR)",
+      "ControlType": "Slider",
+      "LayerID":  50,
+      "DataType":  "Raster",
+      "RasterLayers": 12,
+      "FieldSuffix" :  "Velocity_month"
+    },
+    {
+      "Title": "Wind Velocity (m/s)",
+      "FieldName": "Wind_month1",
+      "HelpContent": "The duration of a dredging project can vary greatly depending on the time of year, due to the increase in limiting environmental factors during certain seasons (e.g., adverse weather conditions, significant wave height, etc.), which can affect dredging efficiency and duration.  <br /><br />Higher sea state, stronger surface currents, etc. may increase “crabbing” risk and decrease the ability to keep dragheads hard on the bottom at all times.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://www.aviso.altimetry.fr/",
+      "SourceTitle": "Data Source: The Archiving, Validation and Interpretation of Satellite Oceanographic data (AVISO) group",
+      "ControlType": "Slider",
+      "LayerID":  63,
+      "DataType":  "Raster",
+      "RasterLayers":  12,
+      "FieldSuffix" :  "Wind_month"
+    },
+    {
+      "Title": "Significant Wave Height (meters)",
+      "FieldName": "SWH_month1",
+      "HelpContent": "The duration of a dredging project can vary greatly depending on the time of year, due to the increase in limiting environmental factors during certain seasons (e.g., adverse weather conditions, significant wave height, etc.), which can affect risk of entrainment based on dredging efficiency and duration.  <br /><br />Higher sea state, stronger surface currents, etc. may increase “crabbing” risk, decrease the ability to keep dragheads hard on the bottom at all times, and increase sea turtle entrainment risk.  An increase in significant wave height also decreases the ability to keep dragheads hard on the bottom at all times, and increases the likelihood that the TSHD will need to dredge perpendicular to the prevailing sea direction, which may or may not be ideal relative to the orientation of the borrow area.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://www.aviso.altimetry.fr/",
+      "SourceTitle": "Data Source: The Archiving, Validation and Interpretation of Satellite Oceanographic data (AVISO) group",
+      "ControlType": "Slider",
+      "LayerID":  76,
+      "DataType":  "Raster",
+      "RasterLayers":  12,
+      "FieldSuffix" :  "SWH_month"
+    },
+    {
+      "Title": "Chlorophyll A (mg/m3)",
+      "FieldName": "",
+      "HelpContent": "This dataset represents water column concentrations of Chlorophyll A. Some sea turtle species forage in areas with seagrass or low chlorophyll a concentrations.",
+      "HelpInstructions": [ ],
+      "SourceLink": "http://oceancolor.gsfc.nasa.gov/",
+      "SourceTitle": "Data Source: NASA GSFC OceanColor Group - MODIS-Aqua L3 SMI",
+      "ControlType": "Slider",
+      "LayerID":  89,
+      "DataType":  "Raster",
+      "RasterLayers":  0
+    }
+  ]
+}

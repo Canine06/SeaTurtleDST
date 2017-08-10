@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -8,42 +8,41 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Sea Turtle DST</title>
+    <title>Analyzing Sea Turtle Entrainment Risk</title>
     <meta name="description" content="SEO description of this app">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="x-dns-prefetch-control" content="off">
-    <link href="css/app_style.css?9725669e91fd4a66" rel="stylesheet" />
+    <link href="css/app_style.css?adf008302f09e69e" rel="stylesheet" />
     <link href="css/app_ui.css?b82412b8b50919a4" rel="stylesheet" />
     <!-- Fonts -->
     <link rel="stylesheet" href="//coast.noaa.gov/assets/fonts/fonts.css">
     <!-- Application CSS file -->
     <link rel="stylesheet" href="css/stdst.min.css?657d9d0d6b599cfa">
     <link rel="stylesheet" href="css/jquery.modal.css?ecdc329db3082688" type="text/css" media="screen" />
-    <link href="css/app_style.css?9725669e91fd4a66" rel="stylesheet" />
+    <link href="css/app_style.css?adf008302f09e69e" rel="stylesheet" />
     <link href="js/leaflet/leaflet.css?772083c71fa064e6" rel="stylesheet" />
     <link href="css/nouislider.css?29b0bff5415f44b2" rel="stylesheet" />
-    <link href="css/tingle.css" rel="stylesheet" />
+    <link href="css/tingle.css?f37eecc505f2577e" rel="stylesheet" />
     <script src="js/leaflet/leaflet-src.js?c666ac6524336dda"></script>
     <script src="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw-src.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@0.4.9/dist/leaflet.draw-src.css">
     <script src="js/esri-leaflet-v2.0.8/dist/esri-leaflet.js?e242206edd80a2d3"></script>
-    <script src="js/esri-leaflet-renderers-master/src/EsriLeafletRenderers.js?d98f9a3ec2aacbd7"></script>
-    <script src="js/esri-leaflet-legend-master/dist/esri-leaflet-legend-compat-src.js?45e4e66a82abd2ca"></script>
+    <script src="js/esri-leaflet-renderers-master/src/EsriLeafletRenderers.js?f8326236bfd1f4b5"></script>
+    <script src="js/esri-leaflet-legend-master/dist/esri-leaflet-legend-compat-src.js?0b91a194ceefc7ec"></script>
     <script src="https://unpkg.com/esri-leaflet-gp"></script>
+    <script src="js/wNumb.js?1cec7fe380e9fa20"></script>
     <script src="js/nouislider.js?0361a532a75eee4f"></script>
-    <script src="js/tingle.js"></script>
-    <!-- Google Analytics -->
-    <script src="//coast.noaa.gov/js/federated-angularlitics.js?angular=true"></script>
-    
+    <script src="js/tingle.js?57a98c4b34f9b60c"></script>
+    <script src="js/nicEdit.js?6b8d8e9cd293d2f8"></script>
 </head>
 <body ng-controller="AppController">
     <div id="app-container">
         <header class="header">
             <div class="header-left float-left">
-                <h1>Sea Turtle Decision Support Tool</h1>
+                <h1>Analyzing Sea Turtle Entrainment Risk Tool</h1>
             </div>
             <div class="header-right float-right">
-                <a id="button-pane" tabindex="0" title="Click for New Report" ng-keypress="newReportKeyPress($event)" ng-click="changeView('step1')"><img src="img/icon-file-white.png?a968cfbd819a9456" alt="">&nbsp; New Report</a>
+                <a id="button-pane" tabindex="0" alt="New Report" title="Click for New Report" ng-keypress="newReportKeyPress($event)" ng-click="changeView('step1')"><img src="img/icon-file-white.png?a968cfbd819a9456">&nbsp; New Report</a>
             </div>
         </header>
         <div id="page">
@@ -57,25 +56,27 @@
 
             <div ng-view id="right-pane" class="app-content"></div>
 
-            
+
         </div>
     </div>
-    
+
     <!-- DO NOT INCLUDE SCRIPTS HERE, USE GRUNT. README! -->
-    <script src="js/stdst.js?55093ea7ea0d0c85"></script>
-    <script src="js/app_jquery.js?a0c56540e9267e73"></script>
-    <script src="js/app_gis.js?f2d5faff2097cd30"></script>
+    <script src="js/stdst.js?e6ef8506bd40e011"></script>
+    <script src="js/app_jquery.js?5c82907eacaff330"></script>
+    <script src="js/app_gis.js?20c9b9bac9514449"></script>
     <script src="js/jquery.modal.js?3fae18fff0800c83" type="text/javascript" charset="utf-8"></script>
-    
+
 
     <!-- HTML5 Polyfil to help screen readers with HTML5 elements https://github.com/yatil/accessifyhtml5.js -->
     <script>AccessifyHTML5();</script>
     <script src="js/angulartics.js?5d18dc4e31f19e67"></script>
     <script src="js/angulartics-google-analytics.js?ba5aa92affb327fa"></script>
     <!-- Tingle tiny content -->
-    <div class="tingle-demo tingle-demo-tiny">
-       <div id="ModalHeaderContent"></div>
-       <div id="ModalLinksContent"></div>
+    <div class="tingle-demo tingle-demo-force-close">
+        <h4 id="ModalTitle" alt="ModalTitle"></h4>
+        <p id="ModalDataRange"></p>
+        <p id="ModalHeaderContent"></p>
+        <p id="ModalLinksContent"></p>
         <ul id="ModalBulletsContent"></ul>
     </div>
 </body>

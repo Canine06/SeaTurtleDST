@@ -1,4 +1,4 @@
-     { version as VERSION } from '../package.json';
+export { version as VERSION } from '../package.json';
 
 export { Renderer } from './Renderers/Renderer';
 export { SimpleRenderer, simpleRenderer } from './Renderers/SimpleRenderer';

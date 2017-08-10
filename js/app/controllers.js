@@ -52,6 +52,24 @@ angular.module('myApp.controllers', []).
           }
 
       }
+      $(document).ready(function () {
+          new nicEditor({ buttonList: ['bold', 'italic', 'underline', 'left', 'center', 'right', 'justify', 'ol', 'ul', 'fontSize', 'fontFamily', 'fontFormat', 'forecolor'] }).panelInstance('CommentArea');
+          //new nicEditor({ fullPanel: true }).panelInstance('CommentArea');
+          $("div.nicEdit-main").keyup(function () {
+              if ($(this).text().length > 0) {
+                  if ($("#timeofyear option:selected").text() != "Select time period" && selectedOCSBlocks != null) {
+                      $('#AnalyzeData').attr('disabled', false);
+                      $('#AnalyzeData').removeClass('disabled');
+                  }
+              }
+              else {
+                  $('#AnalyzeData').attr('disabled', true);
+                  $('#AnalyzeData').addClass('disabled');
+              }
+          });
+      });
+          
+    
   }])
 .controller('AppController', ['$scope', '$location', function ($scope, $location) {
     $scope.changeView = function (view) {

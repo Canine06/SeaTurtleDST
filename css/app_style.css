@@ -3,10 +3,13 @@
 }*/
 
 #app-container{
-    height:94vh;
+    height:91vh;
 }
 #step-1-container{
     display: none;
+}
+.selectedVariable {
+    font-weight: bold;
 }
 /*.timeofyearcontainer{
     float:left;

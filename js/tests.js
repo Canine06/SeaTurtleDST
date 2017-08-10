@@ -35,8 +35,8 @@ QUnit.test("Load Layers Test", function (assert) {
     var result = BuildMap($scope);
     assert.equal(result, true, "Load Layers Test passes");
 });
-QUnit.test("Load Variables Test", function (assert) {
+QUnit.test("Load Variables/Set Variable Ranges Test", function (assert) {
     $scope.AppConfig.Variables = [];
     var result = buildSlider($scope.AppConfig);
-    assert.equal(result, true, "Load Variables Test passes");
+    assert.equal(result, true, "Load Variables/Set Variable Ranges Test passes");
 });
