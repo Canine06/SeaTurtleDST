@@ -1074,6 +1074,9 @@ select[multiple] {
     display: block;
     width: 10px;
     height: 10px; }
+    .range-question a:hover {
+      cursor: pointer !important;
+      pointer-events: auto !important; }
 
 .range-wrap > .grid {
   margin-top: 0;
